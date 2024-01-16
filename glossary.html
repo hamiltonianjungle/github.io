@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Hamiltonian Jungle | Glossary</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="..." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="media/style/default.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="media/scripts/theme.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" fill="currentColor" viewBox="0 0 16 16"
+                    class="d-inline-block align-text-top">
+                    <path
+                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
+                </svg>
+                <span>The Hamiltonian Jungle</span>
+            </a>
+            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
+                    aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        </div>
+    </nav>
+    <div class="d-flex">
+        <div class="sidebar bg-body-tertiary border-end">
+            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
+                aria-labelledby="sidebar">
+                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+                    <div class="container p-0">
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
+                                    aria-expanded="false">Models</a></li>
+                            <ul class="collapse p-0" id="models">
+                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
+                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="general.html">General</a></li>
+                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
+                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
+                                <li><a class="nav-link" href="ising.html">Ising</a></li>
+                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                            </ul>
+                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
+                            <li><a class="nav-link" href="glossary.html" aria-current="true">Glossary</a></li>
+                            <li><a class="nav-link" href="references.html">References</a></li>
+                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
+                                    aria-expanded="false">Theme</a></li>
+                            <ul class="collapse p-0" id="themes">
+                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="flex-grow w-100 px-4 pb-4">
+            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+                <h2>Glossary</h2>
+            </div>
+            <dl class="row">
+                <dt class="col-sm-3">Arthur</dt>
+                <dd class="col-sm-9">Arthur (verifier) is a computational entity, typically represented as a Turing
+                    Machine, thus
+                    having bounded capabilities. Arthur's job is to verify the solutions for a given decision problem
+                    using the
+                    proof/witness state provided by Merlin (prover). Based on certain criterion, Arthur will accept or
+                    reject with
+                    some probability.</dd>
+                <dt class="col-sm-3">Merlin</dt>
+                <dd class="col-sm-9">Merlin (prover) exists as an omniscient, omnipotent and mendacious entity, having
+                    unbounded
+                    computational resources &mdash; essentially representing an infinitely powerful oracle.
+                    Additionally, Merlin possesses
+                    the ability to generate quantum states. The role of Merlin is to convince Arthur (verifier) as to
+                    the validity of
+                    a decision problem's solution via some proof/witness state.</dd>
+                <dt class="col-sm-3">Polynomial Time</dt>
+                <dd class="col-sm-9">In computational theory, a polynomial time algorithm is an algorithm whose running
+                    time is
+                    bounded by a polynomial function of the input size. More formally, an algorithm is said to run in
+                    polynomial
+                    time if there exists a polynomial function $f(n)$, where $n$ represents the size of the input, such
+                    that the
+                    algorithm's running time is $O\big(f(n)\big)$.</dd>
+                <dt class="col-sm-3">Quantum Computer</dt>
+                <dd class="col-sm-9">A quantum computer is a computational machine that utilises the fundamental
+                    principles of
+                    quantum mechanics to execute computation tasks. The primitive elements of a quantum computer are
+                    quantum bits
+                    (qubits) &mdash; naturally exhibiting superposition and entanglement properties. Their attributes
+                    generate the
+                    quantum advantage in information processing not efficiently produced on classical computers.</dd>
+                <dt class="col-sm-3">Reduction (From)</dt>
+                <dd class="col-sm-9">A reduction 'From' one problem $A$, to a problem $B$, refers to reducing (in
+                    polynomial time)
+                    or perhaps relaxing conditions on problem $A$ to produce problem $B$. Informally, this can be
+                    understood as $B\subseteq A$,
+                    where $A$ is the parent problem we reduce <i>from</i> to obtain $B$.</dd>
+                <dt class="col-sm-3">Reduction (To)</dt>
+                <dd class="col-sm-9">A reduction 'To' one problem $Y$, from a problem $X$, refers to reducing (in
+                    polynomial time)
+                    or perhaps relaxing conditions on problem $X$ to produce problem $Y$. Informally, this can be
+                    understood as $Y\subseteq X$,
+                    where $Y$ is the child problem we reduce <i>to</i> from $X$.</dd>
+                <dt class="col-sm-3">Isotropic Antiferromagnetic (IaF)</dt>
+                <dd class="col-sm-9">An isotropic antiferromagnetic Hamiltonian is one such that each present
+                    interaction term, $J_{ij}, K_{ij}, \ldots$ is
+                    of the form $J_{ij} \geq 0$.
+                    Antiferromagnetism refers to the non&ndash;negative interaction strength sector.
+                    The isotropic labeling refers to the fact that <i>all</i> interaction terms adhere to the positive
+                    weight restriction but do not
+                    necessarily all have the same value.
+                    Isotropic Ferromagnetic is the analogous non&ndash;positive regime.</dd>
+                <dt class="col-sm-3">Homogeneous Antiferromagnetic (HaF)</dt>
+                <dd class="col-sm-9">A homogeneous antiferromagnetic Hamiltonian is one such that all present
+                    interaction terms, $J_{ij}, K_{ij}, \ldots$ are
+                    different but fixed non&ndash;negative values for all particle interactions.
+                    Antiferromagnetism refers to the non&ndash;negative interaction strength sector.
+                    The homogeneous labeling refers to the fact that all interaction terms between particles are now
+                    some constant non&ndash;negative value.
+                    Homogeneous Ferromagnetic is the analogous non&ndash;positive regime.</dd>
+                <dt class="col-sm-3">Ground State Energy Problem</dt>
+                <dd class="col-sm-9">The ground state energy problem, synonymous with the local Hamiltonian problem, is
+                    a promise problem concerned
+                    with determining whether the ground state of a given local Hamiltonian is above or below some
+                    threshold.
+                    See <a href="glossary.html#LHP_glossary">Local Hamiltonian Problem</a> definition for more details.
+                </dd>
+                <dt class="col-sm-3" id="LHP_glossary">Local Hamiltonian Problem</dt>
+                <dd class="col-sm-9">Given a $k=O(1)$ local Hamiltonian, $H$, acting on an $n$&ndash;qubit system, such
+                    that,
+                    $$H = \sum_{j=1}^m H_j$$
+                    where $||H_j||\leq\mathsf{poly}(n)$, each element of every $H_j$ can be specified in
+                    $\mathsf{poly}(n)$ bits and $m\leq\mathsf{poly}(n)$,
+                    the problem statement is to determine which of the following is true, promised one is so:
+                    <ol>
+                        <li>The smallest eigenvalue of $H$ is $\leq a$</li>
+                        <li>All eigenvalues of $H$ are $\geq b$</li>
+                    </ol>
+                </dd>
+            </dl>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Complexity Theory</h3>
+            See the <a href="https://complexityzoo.net/Complexity_Zoo">Complexity Zoo</a> for a more comprehensive list
+            of complexity classes.
+            <br>
+            <br>
+            <dl class="row">
+                <dt class="col-sm-3">Polynomial Time &mdash; <span class='cm-sans-serif'>P</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span class='cm-sans-serif'>P</span> if there exists:
+                    a <i>deterministic</i> Turing Machine, $M$, such that
+                    <ol>
+                        <li>For any input $x$, $M$ runs for a time $O(\mathsf{poly}(|x|)\big)$.</li>
+                        <li>For all $x\in L$, $M$ outputs $\mathtt{1}$.</li>
+                        <li>For all $x\notin L$, $M$ outputs $\mathtt{0}$.</li>
+                    </ol>
+                </dd>
+                <dt class="col-sm-3">Bounded&ndash;Error Probabilistic Polynomial &mdash; <span
+                        class="cm-sans-serif">BPP($\mathsf{a}$,$\mathsf{b}$)</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span
+                        class="cm-sans-serif">BPP($\mathsf{a}$,$\mathsf{b}$)</span> if there exists: a
+                    <i>probabilistic</i> Turing Machine, $M$, such that
+                    <ol>
+                        <li>For any input $x$, $M$ runs for a time $O(\mathsf{poly}(|x|))$.</li>
+                        <li>For all $x\in L$, $\text{Pr}\left[M(x)=\mathtt{1} \right] \geq a$.</li>
+                        <li>For all $x\notin L$, $\text{Pr}\left[M(x)=\mathtt{1} \right] \leq b$.</li>
+                    </ol>
+                </dd>
+                <dt class="col-sm-3">Nondeterministic Polynomial &mdash; <span class="cm-sans-serif">NP</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span class="cm-sans-serif">NP</span> if there exists:
+                    a <i>deterministic</i> verification Turing Machine, $M$, and a polynomial, $\mathsf{poly}(|x|)$,
+                    such that
+                    <ol>
+                        <li>For all $x\in L$, $M(x,\mathsf{poly}(|x|))=\mathtt{1}$.</li>
+                        <li>For all $x\notin L$, $M(x,\mathsf{poly}(|x|))=\mathtt{0}$.</li>
+                    </ol>
+                </dd>
+                <dt class="col-sm-3">Merlin&ndash;Arthur &mdash; <span
+                        class="cm-sans-serif">MA($\mathsf{a}$,$\mathsf{b}$)</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span
+                        class="cm-sans-serif">MA($\mathsf{a}$,$\mathsf{b}$)</span> if there exists: a
+                    <i>deterministic</i> verification Turing Machine, $M$, and a polynomial, $\mathsf{poly}(|x|)$, such
+                    that
+                    <ol>
+                        <li>For all $x\in L$, there exists a proof state, $z \in \{0,1\}^{\mathsf{poly}(|x|)}$, such
+                            that, $\text{Pr}\left[M(x,z)=\mathtt{1} \right] \geq a$.</li>
+                        <li>For all $x\notin L$, for any proof state, $z \in \{0,1\}^{\mathsf{poly}(|x|)}$, then,
+                            $\text{Pr}\left[M(x,\mathsf{poly}(|x|))=\mathtt{1} \right] \leq b$.</li>
+                    </ol>
+                </dd>
+                <dt class="col-sm-3">Bounded&ndash;Error Quantum Polynomial &mdash; <span
+                        class="cm-sans-serif">BQP($\mathsf{a}$,$\mathsf{b}$)</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span
+                        class="cm-sans-serif">BQP($\mathsf{a}$,$\mathsf{b}$)</span> if there exists: a
+                    polynomial&ndash;time uniform family of quantum circuits, $Q = \{Q_n | n \in \mathbb{N}\}$, such
+                    that
+                    <ol>
+                        <li>$Q_n$ has $n$&ndash;qubits as input and $1$ qubit as output.</li>
+                        <li>For all $x\in L$, $\text{Pr}\left[Q(x)=\mathtt{1} \right] \geq a$.</li>
+                        <li>For all $x\notin L$, $\text{Pr}\left[Q(x)=\mathtt{1} \right] \leq b$.</li>
+                    </ol>
+                </dd>
+                <dt class="col-sm-3">Stoquastic Merlin&ndash;Arthur &mdash; <span
+                        class="cm-sans-serif">StoqMA($\alpha$,$\beta$)</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span
+                        class="cm-sans-serif">StoqMA($\alpha$,$\beta$)</span> if there exists: a polynomial stoquastic
+                    verifier, $V = (n,w,m,p, U)$, such that
+                    <ol>
+                        <li>$n$ is the number of input bits, $w$, the number of proof qubits, $m$, the number of
+                            $\ket{0}$ ancillae and $p$, the number of $\ket{+}$ ancillae.</li>
+                        <li>$U$ is a quantum circuit on $n + w + m +p$ qubits using gates from the set $\{ X$, <span
+                                class="cm-serif-roman-small">Cnot</span>, <span
+                                class="cm-serif-roman-small">Toff</span>$\}$.</li>
+                        <li>The acceptance probability of a stoquastic verifier $V$ given some input string $x\in L$ and
+                            a proof state $\ket{\psi}$,
+                            $\text{Pr}\left[V(x,\ket{\psi})\right]= \bra{\phi}U^\dagger \Pi_{\text{out}} U \ket{\phi}$,
+                            where $\ket{\phi} = \ket{x,\psi,0^{m},+^{p}}$ and $\Pi_{\text{out}} =
+                            \ketbra{+}{+}_1$.</li>
+                        <li><strong>Completeness:</strong> For all $x\in L$, there exists a quantum proof state,
+                            $\ket{\psi}\in\mathcal{B}^{w}$, such that, $\text{Pr}\left[V(x,\ket{\psi})=\mathtt{1}
+                            \right] \geq \alpha$.</li>
+                        <li><strong>Soundness:</strong> For all $x\notin L$, for any quantum proof state,
+                            $\ket{\psi}\in\mathcal{B}^{w}$, then, $\text{Pr}\left[V(x,\ket{\psi})=\mathtt{1} \right]
+                            \leq \beta$.</li>
+                    </ol>
+                    Where $\alpha$ refers to the completeness parameter and $\beta$ the soundness parameter, where $-1/2
+                    \leq \beta(n) \lt \alpha(n) \leq 1$ and satisfying $\alpha-\beta\geq\frac{1}{\mathsf{poly}(n)}$.
+                </dd>
+                <dt class="col-sm-3">Quantum Merlin&ndash;Arthur &mdash; <span class="cm-sans-serif">QMA($c$,$s$)</span>
+                </dt>
+                <dd class="col-sm-9">A promise problem $L$ is in <span class="cm-sans-serif">QMA($c$,$s$)</span> if
+                    there exists: a polynomial quantum verifier, $V$, and a polynomial, $\mathsf{poly}(|x|)$, for $x\in
+                    L$, such that
+                    <ol>
+                        <li><strong>Completeness:</strong> For all $x\in L$, there exists a quantum proof state,
+                            $\ket{\psi}\in\mathcal{B}^{\mathsf{poly}(|x|)}$, such that,
+                            $\text{Pr}\left[V(x,\ket{\psi})=\mathtt{1} \right] \geq c$.</li>
+                        <li><strong>Soundness:</strong> For all $x\notin L$, for any quantum proof state,
+                            $\ket{\psi}\in\mathcal{B}^{\mathsf{poly}(|x|)}$, then,
+                            $\text{Pr}\left[V(x,\ket{\psi})=\mathtt{1} \right] \leq s$.</li>
+                    </ol>
+                    Where $c - s \geq\frac{1}{\mathsf{poly}(n)}$.
+                </dd>
+            </dl>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Model Preliminaries</h3>
+            <p>
+                In each model definition below, we adopt a general approach, leaving the exact interaction type and underlying geometry unspecified.
+                We represent the underlying graph by $\Lambda$.
+                The particles involved in the Hamiltonian interactions are labeled using Roman indices.
+                The interaction distance can sometimes be inferred from the underlying geometry.
+                For instance, on a 2D square lattice, interactions are assumed to be nearest neighbors unless explicitly specified otherwise.
+                However, this restriction may not apply to a spatially sparse lattice.
+                This highlights the subtle difference that can arise with algebraically local interactions and geometrically local ones.
+            </p>
+            <p>
+                The definitions outlined in this section are not exhaustive but cover a significant proportion of commonly occurring examples.
+                As an additional point, it is crucial to note that interaction strengths, such as $J_{ij}$, $K$, $t_{\text{hop}}$, etc., do not possess predetermined values in the general setting.
+                To maintain consistency with the information provided on the website, we propose a novel naming convention for Pauli Hamiltonians.
+                This convention aims to establish a universal naming standard that completely specifies the terms present, minimizing ambiguities in model names.
+                While the primary focus of this work is on $2$&ndash;local Hamiltonians, it is important to highlight that the proposed convention is adaptable to other locality degrees.
+                Throughout our discussion, we provide illustrative examples to emphasize each aspect of the proposed naming convention.
+                These examples serve as practical demonstrations, enhancing understanding and showcasing the convention's applicability.
+                As a final note, we mention the addition of new Hamiltonian prefixes.
+                Simply stating "<i>the antiferromagnetic [name] Hamiltonian ...</i>" is insufficient in the realm of complexity theory; this is because the prefix '<i>antiferromagnetic</i>' does not completely specify the problem instance.
+                Antiferromagnetism only refers to the interaction strengths being non&ndash;negative, not about the uniformity.
+                We, therefore, propose compact prefix notation to help specify the exact interaction strengths of a given model.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Naming Convention</h4>
+            <div style="line-height: 2.5em;">
+                <ol>
+                    <li>2&ndash;local and 1&ndash;local terms are divided via '$/$' where the left hand side represents
+                        2&ndash;local terms.</li>
+                    <li>Repeated ($XX, YY, ZZ$), are represented by a single letter such that the repetition is implied
+                        for terms on the left.</li>
+                    <ul>
+                        <li>(<span class="cm-serif-roman-small">x/z</span>)&ndash;H = $\displaystyle\sum_{i,j}
+                            J_{ij}X_iX_j + \displaystyle\sum_{i,j} h_iZ_i$</li>
+                    </ul>
+                    <li>Cross ($XZ, YX, ZY, \ldots$), the terms are bracketed $[*]$ or $[\![ * ]\!]$ (for when both
+                        cross terms appear).
+                        <ol type="a">
+                            <li>If it is known that both cross terms are present under different general parameters,
+                                then the superscript $*$ can be used.</li>
+                        </ol>
+                        <ul>
+                            <li>(<span class="cm-serif-roman-small">[xz]/.</span>)&ndash;H = $\displaystyle\sum_{i,j}
+                                Q_{ij} X_iZ_j$</li>
+                            <li>(<span class="cm-serif-roman-small">$[\![$xy$]\!]$/z</span>)&ndash;H =
+                                $\displaystyle\sum_{i,j} P_{ij}\big( X_iY_j + Y_iX_j \big) + \displaystyle\sum_{i,j}
+                                h_iZ_i$</li>
+                            <li>(<span class="cm-serif-roman-small">[xz]-[zx]/.</span>)&ndash;H = (<span
+                                    class="cm-serif-roman-small">$[\![$xy$]\!]$<sup>*</sup>/.</span>)&ndash;H =
+                                $\displaystyle\sum_{i,j} Q_{ij} X_iZ_j + T_{ij}Z_iX_j$</li>
+                        </ul>
+                    </li>
+                    <li>The name follows the lexicographical ordering.</li>
+                    <li>Terms which adhere to different parameters are separated via a '$-$'.
+                        <ul>
+                            <li>(<span class="cm-serif-roman-small">x-yz/.</span>)&ndash;H = $\sum_{i,j} J_{ij}X_iX_j +
+                                K_{ij}\big(Y_iY_j + Z_iZ_j\big)$</li>
+                        </ul>
+                    </li>
+                    <li>Each parameter, $J, K, \ldots$, is assumed to be in $\mathbb{R}$.
+                        <ol type="a">
+                            <li>If all parameters are $\in\mathbb{R}^\pm$ then use the superscript $\pm$.
+                                <ul>
+                                    <li>(<span class="cm-serif-roman-small">x/z</span>)<sup>+</sup>&ndash;H =
+                                        $\displaystyle\sum_{i,j} J_{ij}^{^{(\geq 0)}}X_iX_j + \displaystyle\sum_{i,j}
+                                        h_i^{^{(\geq 0)}}Z_i$</li>
+                                </ul>
+                            </li>
+                            <li>Underline the terms for which the parameters are uniform.
+                                <ul>
+                                    <li>(<span
+                                            class="cm-serif-roman-small"><u>[xz]</u><sup>-</sup>-[zx]/.</span>)&ndash;H
+                                        = $\displaystyle\sum_{i,j} Q^{^{(\leq 0)}} X_iZ_j + T_{ij}Z_iX_j$</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </div>
+            <p>
+                It should be noted that, like all other naming conventions, there are Hamiltonian instances that are difficult to attribute a cohesive name to that completely specifies the terms.
+                For example, a Hamiltonian with several different mixed terms and repeating terms, all of which adhere to different types of interaction strengths, can be too complex for a specific name.                
+                In such an example, it is beneficial to just state the Hamiltonian outright and if relevant, attribute a unique name to it.                
+                The naming convention above is proposed as a compact way of referring to common model instances in many&ndash;body physics, such that, in the complexity sector, it becomes easy to see how each model is related.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Model Prefixes</h4>
+            <p>
+                The two frequent subclasses of many&ndash;body models fall into <i>ferromagnetic</i> and <i>antiferromagnetic</i>.
+                We define the ferromagnetic regime as each interaction strength (where appropriate) having some non&ndash;positive value.                
+                We define the antiferromagnetic regime as each interaction strength (where appropriate) having some non&ndash;negative value.                
+                To further specify different model types, we note that a given model can either have <i>variable</i> interaction strengths or <i>constant</i> interaction strengths.                
+                By variable, we refer to the fact that $J_{ij}$ &mdash; the interaction strength between qubit $i$ and qubit $j$, need not be the same as $J_{ik}$ &mdash; the interaction strength between qubit $i$ and qubit $k$.                
+                Constant interaction strengths then refer to $J_{ij} = J$ for all $i,j\in\Lambda$.
+            </p>
+            <p>
+                Here we stick to the antiferromagnetic (aF) sector of a model; the same principles apply to the
+                ferromagnetic sector also. 
+                The two immediate subclasses of a general Hamiltonian like
+                $$
+                H = \displaystyle\sum_{i,j} J_{ij}X_iX_j + K_{ij}Y_iY_j
+                $$
+                are clearly,
+                $$
+                H = \displaystyle\sum_{i,j} J^{^{(\geq 0)}}_{ij}X_iX_j + K^{^{(\geq 0)}}_{ij}Y_iY_j \quad\quad H =
+                \displaystyle\sum_{i,j} J^{^{(\geq 0)}}X_iX_j + K^{^{(\geq 0)}}Y_iY_j
+                $$
+                We refer to the left example as <i>Isotropic Antiferromagnetic</i> and the right as <i>Homogeneous
+                    Antiferromagnetic</i>. 
+                The need for this subtle difference can be seen in a number of instances.
+                For example, a HaF instance on a positively weighted graph is an equivalent to the IaF instance.
+                Further, an IaF instance on a weighted graph that has positive and negative weights is equivalent to
+                the general instance.
+                Another angle can be seen from the conclusions of <a href="references.html#SV09">[SV09]</a> and <a
+                    href="references.html#PM15">[PM15]</a>, who both showed the complexity of a specific instance of the
+                Heisenberg Hamiltonian.
+                The former demonstrated that the antiferromagnetic Heisenberg Hamiltonian with some global parameter $J$
+                and external fields was <span class="cm-sans-serif">QMA</span>&ndash;complete.
+                The latter showed a similar result with interaction strengths $J_{ij}$ but without external fields.
+                The question whether the HaF&ndash;Heisenberg Hamiltonian, on an interaction graph with constant
+                weights, can simulate the IaF&ndash;Heisenberg Hamiltonian (as seen in <a
+                    href="references.html#PM15">[PM15]</a>) is not so trivial and remains an open problem.
+            </p>
+            <p>
+                Notice that in the event $K=J$, in either of the above cases, we actually reduce to another model.
+                Let us refer to the event where all interaction parameters have the same value as the <i>Uniform</i>
+                case. We make a note there that for situations concerning the Heisenberg Hamiltonian or (<span
+                    class="cm-serif-roman-small">xz/.</span>)&ndash;Hamiltonian, for example, the HaF
+                case is entirely equivalent to the Uniform aF case.
+                Clearly however, for the example above, the Uniform&ndash;(<span
+                    class="cm-serif-roman-small">x&ndash;y/.</span>)&ndash;Hamiltonian is equivalent to
+                the (<span class="cm-serif-roman-small">xy/.</span>)&ndash;Hamiltonian.
+                This is one instance where the novel naming convention becomes particularly useful.
+            </p>
+            <p>
+                For the more niche examples, such as
+                $$
+                H = \displaystyle\sum_{i,j} J_{ij}X_iX_j + K^{^{(\geq 0)}}_{ij}Y_iY_j + LZ_iZ_j,
+                $$
+                where there is a mixture of different interaction strength conditions. On the one hand, simply referring
+                to this as an instance of the (<span
+                    class="cm-serif-roman-small">x&ndash;y&ndash;z/.</span>)&ndash;Hamiltonian is acceptable
+                but does not capture the full picture. We therefore propose an indication of this outlier example by
+                introducing the prefix <i>Mixed</i>.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Model Definitions</h3>
+            <h4>Parent Pauli Hamiltonian</h4>
+            $$
+            H =\sum_{i,j \in \Lambda} a_{i}^\mu \sigma_\mu \otimes b_{j}^\nu \sigma_\nu
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">x&ndash;y&ndash;z/.</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda}J_{ij}X_iX_j + K_{ij}Y_iY_j + L_{ij}Z_iZ_j
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">xy&ndash;z/.</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda}J_{ij}\big(X_iX_j + Y_iY_j\big) + L_{ij}Z_iZ_j
+            $$
+            <p>
+                This is often refered to as the "$XXZ$&ndash;Hamiltonian" in physics literature.
+            </p>
+            <span class="anchor" id="x-y/.-ham"></span>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">x&ndash;y/.</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda}J_{ij}X_iX_j + K_{ij}Y_iY_j
+            $$
+            <p>
+                This Hamiltonian and the <a href="glossary.html#xy/.-ham">(<span
+                        class="cm-serif-roman-small">xy/.</span>)</a> Hamiltonian are often confused. It can be found
+                that
+                each are refered to as "the $XY$&ndash;Hamiltonian". With the present convention, this ambiguity is
+                removed and the confusion no longer persists.
+            </p>
+            <span class="anchor" id="xy/.-ham"></span>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda}J_{ij} \big(X_iX_j + Y_iY_j\big)
+            $$
+            Notice this Hamiltonian is a restricted version of the <a href="glossary.html#x-y/.-ham">(<span
+                    class="cm-serif-roman-small">x&ndash;y/.</span>)</a> Hamiltonian; specifically when
+            $K_{ij} = J_{ij}$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda} J_{ij} X_iX_j + L_{ij} Z_iZ_j + \sum_{i\in\Lambda} f_i X_i + h_i Z_i
+            $$
+            This Hamiltonian is referred to as the $ZZXX$&ndash;Hamiltonian in <a
+                href="references.html#BL08">[BL08]</a>. This is a somewhat confusing name if no prior
+            exposure to the Hamiltonian's explicit form is present. The new naming convention creates a clear picture of
+            the terms involved.
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>(<span class="cm-serif-roman-small">$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j} Q_{ij} X_iZ_j + T_{ij} Z_iX_j + \sum_{i\in\Lambda} f_i X_i + h_i Z_i
+            $$
+            This Hamiltonian is referred to as the $ZX$&ndash;Hamiltonian in <a href="references.html#BL08">[BL08]</a>.
+            This is a somewhat confusing name if no prior
+            exposure to the Hamiltonian's explicit form is present. The new naming convention creates a clear picture of
+            the terms involved.
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</h4>
+            $$
+            H=\sum_{i,j\in\Lambda} J_{ij} \big( \alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j\big)
+            $$
+            We use the term <i>weighted</i> to signify the parameters, $\alpha$, $\beta$ and $\gamma$.
+            Technically, for arbitary parameters, this model is entirely equivalent to the (<span
+                class="cm-serif-roman-small">x&ndash;y&ndash;z/.</span>) Hamiltonian.
+            For the purposes of the work conducted in <a href="references.html#PM15">[PM15]</a>, this definition is
+            appropriate.
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>General Heisenberg Model</h4>
+            $$
+            H=\sum_{i,j\in\Lambda}J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)
+            $$
+            It is common for the Heisenberg Hamiltonian to be defined with a single external field. In this work we
+            stick to the above defintion for clarity.
+            Within complexity classifications, external fields can have a significant impact on the outcome. We would
+            therefore refer to a Heisenberg Hamiltonian <i>with external fields</i> in that context;
+            it is also important to ensure the specification of the external fields.
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>General Transverse Ising Model</h4>
+            $$
+            H =\sum_{i,j\in\Lambda}L_{ij}Z_iZ_j + \sum_{i\in\Lambda}f_iX_i
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>General Fermi&ndash;Hubbard Model</h4>
+            $$
+            H = \sum_{i,j\in\Lambda}\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger c_{j\sigma} + t_{ji} c_{j\sigma}^\dagger c_{i\sigma} +
+            \sum_{i\in\Lambda}U_{i}n_{i\uparrow}n_{i\downarrow}
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>General Bose&ndash;Hubbard Model</h4>
+            $$
+            H = \sum_{i,j\in\Lambda}t_{ij} a_i^\dagger a_j + t_{ji} a_j^\dagger a_i + \frac{1}{2}\sum_{i\in\Lambda}U_{i}n_i(n_i - 1)
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>General Electronic Structre Hamiltonian</h4>
+            $$
+            H = \sum_{i,j \in [n]}\sum_{\sigma} t_{ij} c_{i\sigma}^\dagger c_{j\sigma} + t_{ji} c_{j\sigma}^\dagger c_{i\sigma} + \frac{1}{2} \sum_{i,j,k,l \in
+            [n]}\sum_{\sigma,\tau} u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma} c_{l\sigma}
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>The $t$&ndash;$J$ Model<sup>*</sup></h4>
+            $$
+            H = \sum_{i,j\in\Lambda}\frac{4t_{ij}^2}{U} \boldsymbol{\sigma}_i \cdot \boldsymbol{\sigma}_j
+            $$
+            <hr class="border-top bs-border-color opacity-100" />
+        </main>
+    </div>
+</body>
+
+</html>

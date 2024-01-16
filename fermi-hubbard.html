@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Hamiltonian Jungle | Fermi&ndash;Hubbard Model</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="..." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="media/style/default.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="media/scripts/theme.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" fill="currentColor" viewBox="0 0 16 16"
+                    class="d-inline-block align-text-top">
+                    <path
+                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
+                </svg>
+                <span>The Hamiltonian Jungle</span>
+            </a>
+            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
+                    aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        </div>
+    </nav>
+    <div class="d-flex">
+        <div class="sidebar bg-body-tertiary border-end">
+            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
+                aria-labelledby="sidebar">
+                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+                    <div class="container p-0">
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
+                                    aria-expanded="true">Models</a></li>
+                            <ul class="collapse show p-0" id="models">
+                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
+                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="fermi-hubbard.html"
+                                        aria-current="true">Fermi&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="general.html">General</a></li>
+                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
+                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
+                                <li><a class="nav-link" href="ising.html">Ising</a></li>
+                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                            </ul>
+                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
+                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                            <li><a class="nav-link" href="references.html">References</a></li>
+                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
+                                    aria-expanded="false">Theme</a></li>
+                            <ul class="collapse p-0" id="themes">
+                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="flex-grow w-100 px-4 pb-4">
+            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+                <h2>Fermi&ndash;Hubbard Model</h2>
+            </div>
+
+
+            <!-- Item FHM01 --><!-- Item FHM01 --><!-- Item FHM01 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: FHM01</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Fermi&ndash;Hubbard Model
+                    $$H = \displaystyle\sum_{i,j\in\Lambda}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
+                    c_{j\sigma} + U\displaystyle\sum_{i\in\Lambda}n_{i\uparrow}n_{i\downarrow} +
+                    \displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot \boldsymbol{S}_i $$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#SV09">[SV09]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$U\gg t$</li>
+                        <li>$U/t$ grows polynomially in system size</li>
+                        <li>Half filling</li>
+                        <li>Nearest neighbour interactions</li>
+                        <li>$\Lambda$ is a 2D square lattice</li>
+                        <li>External fields of the form: $-\displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot
+                            \boldsymbol{S}_i$</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>From HaF&ndash;Heisenberg model on a 2D square lattice</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Item FHM02 --><!-- Item FHM02 --><!-- Item FHM02 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: FHM02</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Fermi&ndash;Hubbard Model
+                    $$H = \displaystyle\sum_{i,j\in\Lambda}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
+                    c_{j\sigma} + U\displaystyle\sum_{i\in\Lambda}n_{i\uparrow}n_{i\downarrow}$$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$|t| \leq \sqrt{\mathsf{poly}(n) U}$</li>
+                        <li>$U/t$ grows polynomially in system size</li>
+                        <li>Half filling</li>
+                        <li>$\Lambda$ represents an interaction graph</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>From HaF&ndash;Heisenberg model on a weighted interaction graph (IaF&ndash;Heisenberg
+                            Hamiltonian)</li>
+                        <li>To the Electronic Structure Hamiltonian</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Item FHM03 --><!-- Item FHM03 --><!-- Item FHM03 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: FHM03</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Fermi&ndash;Hubbard Model
+                    $$H = \displaystyle\sum_{i,j\in\Lambda}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
+                    c_{j\sigma} + U\displaystyle\sum_{i\in\Lambda}n_{i\uparrow}n_{i\downarrow}$$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#Wai23">[Wai23]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$|t| \leq \sqrt{\mathsf{poly}(n) U}$</li>
+                        <li>$U/t$ grows polynomially in system size</li>
+                        <li>Half filling</li>
+                        <li>$\Lambda$ represents a triangular lattice</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>From HaF&ndash;Heisenberg model on a weighted 2D triangular lattice (IaF&ndash;Heisenberg
+                            Hamiltonian on 2D triangular lattice)</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

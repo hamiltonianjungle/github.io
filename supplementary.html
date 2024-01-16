@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>The Hamiltonian Jungle | Supplementary</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="..." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="media/style/default.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="media/scripts/theme.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top border-bottom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="30" fill="currentColor" viewBox="0 0 16 16"
+                    class="d-inline-block align-text-top">
+                    <path
+                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
+                </svg>
+                <span>The Hamiltonian Jungle</span>
+            </a>
+            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
+                    aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        </div>
+    </nav>
+    <div class="d-flex">
+        <div class="sidebar bg-body-tertiary border-end">
+            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
+                aria-labelledby="sidebar">
+                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+                    <div class="container p-0">
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
+                                    aria-expanded="false">Models</a></li>
+                            <ul class="collapse p-0" id="models">
+                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
+                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="general.html">General</a></li>
+                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
+                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
+                                <li><a class="nav-link" href="ising.html">Ising</a></li>
+                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                            </ul>
+                            <li><a class="nav-link" href="supplementary.html" aria-current="true">Supplementary</a></li>
+                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                            <li><a class="nav-link" href="references.html">References</a></li>
+                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
+                                    aria-expanded="false">Theme</a></li>
+                            <ul class="collapse p-0" id="themes">
+                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <main class="flex-grow w-100 px-4 pb-4">
+            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+                <h2>Supplementary</h2>
+            </div>
+            <h4>Mathematical Preliminaries</h4>
+            <p>
+                A qubit serves as the quantum counterpart to the classical bit, forming the fundamental unit of quantum information. 
+                In the computational basis, we conventionally express the state of a single qubit using the basis states $\ket{0}$ and $\ket{1}$ or as a superposition of both, denoted as $\alpha\ket{0} + \beta\ket{1}$. 
+                Here, $\alpha$ and $\beta$ are complex probability amplitudes that satisfy the normalization condition $|\alpha|^2 + |\beta|^2 = 1$.
+                Beyond the computational basis, another frequently employed basis for single qubits is the Hadamard basis. 
+                In this basis, we define two states: $\ket{+} = \frac{1}{\sqrt{2}}(\ket{0} + \ket{1})$ and $\ket{-} = \frac{1}{\sqrt{2}}(\ket{0} - \ket{1})$. 
+                The Hadamard basis is particularly valuable for quantum algorithms and quantum gates, providing a versatile framework for qubit manipulation and quantum state transformations. 
+                The states $\ket{+}$ and $\ket{-}$ represent equal superpositions with opposite relative phases.
+            </p>
+            <p>
+                To evolve qubit states we act unitary operators on them.
+                Unitary operators are mathematical transformations that preserve the norm of a quantum state, ensuring that the probabilities associated with different outcomes sum to one. 
+                The evolution of qubit states through unitary operators is a fundamental concept in quantum mechanics and underpins the quantum circuit model.
+                When a unitary operator acts on a qubit state, it induces a transformation, allowing the qubit to exist in a superposition of states. 
+                Mathematically, if $U$ is a unitary operator and $\ket{\psi}$ is the initial state of a qubit, the evolved state is given by $\ket{\psi'} = U\ket{\psi}$. 
+                This transformation preserves the inner product of the state vector, maintaining the normalisation condition.
+                Unitary operations form the basis for quantum gates in quantum circuits. 
+                These gates manipulate qubit states by applying specific unitary transformations, allowing for the execution of quantum algorithms. 
+                Examples include: Hadamard gate, <span class="cm-serif-roman-small">cnot</span> gate and the Pauli&ndash;$X$, Pauli&ndash;$Y$, Pauli&ndash;$Z$ gates.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Perturbation Gadget Jungle</h4>
+            <p>
+                The rationale behind the use of perturbation techniques becomes evident through a straightforward illustration.
+                At the heart of all subsequent gadget constructions lies the concept of a <i>mediator gadget</i>.
+                As the name implies, a mediator gadget serves as an intermediary, facilitating a specific interaction between two particles.
+                To elaborate, consider a rudimentary example involving a two&ndash;particle ferromagnetic interaction, where spins tend to align.
+                Here, we introduce a mediator gadget that engages in an antiferromagnetic interaction with each of the original particles.
+                Assuming, without loss of generality, that the original spins are vertically aligned, the net outcome of the mediator particle being in a downward spin state is an effective ferromagnetic interaction between the original particles.
+                Moreover, this interaction indirectly connects the two original particles.
+            </p>
+            <div>
+                <div class="column">
+                    <div class="gadget" style="display: flex; justify-content: center;">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=2]
+                                \draw[thick] (0,-0.866) -- (2,-0.866);
+                                \draw[fill=black,draw,thick] (0,0-0.866)circle(3pt);
+                                \draw[fill=black,draw,thick] (2,0-0.866)circle(3pt);
+                                \draw[very thick,-latex] (0,-0.5-0.866)--(0,0.5-0.866);
+                                \draw[very thick,-latex] (2,-0.5-0.866)--(2,0.5-0.866);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="gadget" style="display: flex; justify-content: center;">
+                        <script type="text/tikz">
+                            \begin{tikzpicture}[scale=2]
+                                \draw[thick] (0,0) -- (60:2) -- (2,0);
+                                \draw[thick, dashed] (0,0) -- (2,0);
+                                \draw[fill=black,draw,thick] (0,0)circle(3pt);
+                                \draw[fill=black,draw,thick] (2,0)circle(3pt);
+                                \draw[fill=white,draw,thick] (60:2)circle(3pt);
+                                \draw[very thick,-latex] (0,-0.5)--(0,0.5);
+                                \draw[very thick,latex-] (1,1.732+-0.5)--(1,1.732+0.5);
+                                \draw[very thick,-latex] (2,-0.5)--(2,0.5);
+                            \end{tikzpicture}
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <p>
+                The intricacies of perturbation gadgets involve complex mathematics. However, a somewhat informal yet
+                instructive overview can be provided as follows: When faced with a pre&ndash;existing interaction between
+                particles $i$ and $j$, the introduction of a mediator qubit $c$, serves to produce an effective indirect
+                interaction between $i$ and $$. This newly formed interaction approximates the original, while
+                preserving the low&ndash;energy
+                spectrum.
+            </p>
+            <p>
+                The gadgets we explore below are further developed in their respective areas. We provide a high&ndash;level
+                overview of the construction and possible use cases. The general construction procedure is as follows:
+            <ol>
+                <li>Define the target Hamiltonian term, $H_{\text{targ.}}$</li>
+                <li>Define the logical target Hamiltonian via some isometry, $\bar{H}_{\text{targ.}}$</li>
+                <li>Define the perturbation Hamiltonian, which is the sum of the unperturbed Hamiltonian and the
+                    perturbation term, $\widetilde{H} = H + V$</li>
+                <li>Use the perturbation theory expansion of the low-energy spectrum truncated to an appropriate
+                    order to define the effective Hamiltonian,
+                    $H_{\text{eff.}} \approx \widetilde{H}_{-}$</li>
+            </ol>
+            </p>
+            <p>
+                One subtle condition that influences the construction of the gadgets is the allowed interaction terms of the Hamiltonian in question.
+
+                For example, as will be demonstrated, introducing a mediator qubit $c$ that interacts with some system qubit $i$ via the Pauli&ndash;$X$ unitary demands that the original Hamiltonian must permit such interactions.
+
+                To delve further into this point, let's consider a Hamiltonian instance with interactions from the set ${Y, Z}$. 
+                In this case, the interaction term between a mediator and a system qubit of the form $X_c\otimes Y_j$ is illegal, as such a term is not allowed in this system. 
+                This restriction underscores the importance of aligning the chosen mediator interactions with the permissible terms dictated by the Hamiltonian.
+            </p>
+            <p>
+                It should be noted that there are certain conditions that must be in place in order for the proper use
+                of
+                the perturbation gadgets.
+                These ideas are not developed here, rather we provide an overview of a <i>use case</i> for each gadget.
+            </p>
+            <p>
+                Now we introduce a more formal, mathematical definition to perturbation gadgets. 
+                Note that this is not a full treatment but provides an overview of the equations used and the rationale behind the justification at each step.
+
+                Remember, we defined the perturbed Hamiltonian as $\widetilde{H} = H + V$. 
+                The unperturbed Hamiltonian, $H$, is chosen such that its Hilbert space is <i>split</i>, i.e., $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$. 
+                We denote $\mathcal{L}-$ as the <i>low&ndash;energy spectrum</i> and $\mathcal{L}+$ the <i>high&ndash;energy spectrum</i>. 
+                The <i>spectral gap</i> is defined as the distance between the maximal low&ndash;eigenenergy and the minimal high&ndash;eigenenergy. 
+                The unperturbed Hamiltonian can be thought of as a <i>penalty</i> Hamiltonian, in that, if a state is in the high&ndash;energy spectrum of $H$, it suffers a large penalty. 
+                For a natural system, such states are undesirable.
+                For analysis about the spectral information, it is useful to introduce the resolvent operator. 
+                The resolvent operator is formally defined as
+                $$
+                G(z) := (z\mathbb{I} - H)^{-1} = \sum_j (z - \lambda_j)^{-1}\ketbra{\psi_j}{\psi_j}.
+                $$
+                Notice, $G(z)$, has poles at the eigenvalues of $H$ &mdash; the resolvent is undefined on the spectrum
+                of
+                $H$. One property of the resolvent that will aid these perturbation analyses is
+                the fact that the poles of $G(z)$ are invariant under projections! 
+                We also define the self&ndash;energy operator,
+                $$
+                \Sigma_{-}(z) = z\mathbb{I} - \widetilde{G}^{-1}_{-}(z).
+                $$
+                The subscripts represent a projection on the low&ndash;energy subspace. 
+                The term $\widetilde{G}^{-1}_{-}(z)$ represents the perturbation Hamiltonian's resolvent operator projected onto the low&ndash;energy subspace. 
+                The self&ndash;energy operator approximates $\widetilde{H}_{-}$.
+                Furthermore, the self&ndash;energy operator has a Taylor expansion we must truncate and hence derive an effective Hamiltonian from, $H_{\text{eff}} :\approx \Sigma_{-}(z)$. 
+                The form of the effective Hamiltonian is chosen to mimic $\bar{H}_{\text{targ}}$. 
+                In this way, we have an approximation for the low&ndash;energy spectrum of $H_{\text{targ}}$ using $H_{\text{eff}}$.
+                To spare further mathematical details, we finish this section by mentioning how these ideas combine to
+                help us in the subsequent analyses; the discussion follows from the structure of the above steps.
+            </p>
+            <p>
+                Given a target Hamiltonian, $H_{\text{targ.}}$, our objective is to approximate its low&ndash;energy spectrum using a distinct Hamiltonian characterized by specific conditions, such as a lower degree of locality.
+                To achieve this, we use perturbation theory and mediator gadgets. 
+                Initially, we define an isometry, $\bar{H}_{\text{targ}} \sim H_{\text{targ}}\otimes\ketbra{0}{0}$ with the aim of determining $\bar{H}_{\text{targ}}$.                
+                We then introduce a perturbation Hamiltonian, $\widetilde{H} = H + V$, where the spectrum of $H$ undergoes a split. 
+                By analysing the low&ndash;energy spectrum of $\widetilde{H}$ and truncating the series expansion of its self&ndash;energy operator, we establish an effective Hamiltonian, $H_{\text{eff.}}$.                
+                Conducting spectral analysis and considering the overlap between $H_{\text{eff.}}$ and $\Sigma_{-}(z)$, we observe the low&ndash;energy eigenvalues of each are close. 
+                Consequently, we identify an alternate Hamiltonian possessing the desired characteristics, effectively approximating the original Hamiltonian.
+            </p>
+            <p>
+                As a concluding remark, one can conceptualize perturbation gadget reductions as follows: 
+                    "The complexity of determining the ground state energy of Hamiltonian $A$ is known. 
+                    If I can utilise Hamiltonian $A$ to emulate Hamiltonian $B$," ensuring their low&ndash;energy sectors are $\epsilon$&ndash;close, "then deducing the ground state energy of Hamiltonian $B$ becomes, at the very least, as challenging as solving the same problem for Hamiltonian $A."
+                To illustrate this concept with a straightforward example from the initial discussion, consider the scenario where an antiferromagnetic system has the capacity to simulate the general system. 
+                Consequently, the antiferromagnetic system is positioned within the same complexity class. 
+                This serves as a highlight as to the potential for perturbation gadgets to establish connections between the complexity of different Hamiltonian systems.
+            </p>
+            <h5>Oliveira and Terhal Gadgets</h5>
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#OTSubdivison" aria-expanded="false">Subdivision</button>
+                    <div id="OTSubdivison" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                Given two disjoint subsets of qubits $a$ and $b$, influenced by some $k$&ndash;local
+                                interactions, succinctly expressed as $A\otimes B$,
+                                where $A$ acts over qubits $a$ and $B$ over qubits $b$. More specifically, $A =
+                                \bigotimes_{a_i \in a}A_{a_i}$ and $B = \bigotimes_{b_i \in b}B_{b_i}$.
+                                Let the cardinality of $a$ and $b$ be upper bounded by $\lceil k/2 \rceil$; the goal of
+                                the
+                                subdivision gadget is to introduce a mediator qubit, $c$,
+                                to reduce the degree of locality and approximate the original $k$&ndash;local
+                                interaction
+                                $A\otimes B$, using $(\lceil k/2 \rceil + 1)$&ndash;local interactions.
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (-1,0)--(-4,0);
+                                                \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[above,yshift=5pt] {\large $A$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(4,0);
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[above,yshift=5pt] {\large $A$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=white] (2.5,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt,xshift=-7.5pt] {$X$}
+                                                node[above,yshift=5pt,xshift=7.5pt] {$X$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                This gadget can be used to reduce $k$&ndash;local interactions, for $k>3$, to
+                                $3$&ndash;local ones via repeated application 'in parallel'.
+                                This can trivially be seen with a small calculation. For this example, the isometry is
+                                defined as, $\bar{H}_{\text{targ}} \sim H_{\text{targ}}\otimes\ketbra{0}{0}$;
+                                where the final '$\ketbra{0}{0}$' is for the mediator qubit and, as we will see, is the
+                                ground state.
+                                We define the following equations:
+                                $$\widetilde{H} = H + V$$
+                                $$H = \Delta \ketbra{1}{1}_c$$
+                                $$V_{\text{main}} = (A - B)X_c$$
+                                $$V_{\text{extra}} = \frac{1}{2}(A^2 + B^2)$$
+                            </p>
+                            <p>
+                                Up to second order in the self&ndash;energy expansion, we have
+                                $$
+                                \begin{align*}
+                                H_{\text{eff.}} &= H_{-} + V_{-} + V_{-+}\frac{-1}{\Delta}V_{+-} \\
+                                &= 0 + \frac{1}{2}\left(A^2 + B^2 \right)\ketbra{0}{0} -
+                                \frac{1}{\Delta}\left(\frac{\Delta}{2} (A^2+B^2 - 2AB) \right)\ketbra{0}{0} \\
+                                &= AB\ketbra{0}{0}
+                                \end{align*}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#OTCrossing" aria-expanded="false">Fork</button>
+                    <div id="OTCrossing" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                Given a set of qubits interacting as shown below (left), the goal of this gadget is to
+                                introduce a mediator qubit that produces an effective target
+                                interaction of the form, $H_{\text{targ.}} = A\otimes B + A\otimes C$. Notice, this
+                                gadget
+                                reduces the locality of certain qubits and also separates
+                                the local interactions.
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                        \begin{tikzpicture}[scale=2]
+                                            \draw[thick] (-1,0)--(-2.5,-2);
+                                            \draw[thick] (-2.5,-2)--(-4,0);
+                                            \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                            \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                            \draw[fill=black] (-2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
+                                        \end{tikzpicture}
+                                    </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(2.5,-1);
+                                                \draw[thick] (2.5,-1)--(4,0);
+                                                \draw[thick] (2.5,-1)--(2.5,-2);
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
+                                                \draw[fill=white] (2.5,-1)circle(0.1) node[below,yshift=-4pt,xshift=4pt] {\large $d$} node[below,yshift=5pt,xshift=-9pt] {$X$} node[above,yshift=7.5pt,xshift=-7.5pt] {$X$}
+                                                node[above,yshift=7.5pt,xshift=7.5pt] {$X$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                For this gadget we choose,
+                                $$
+                                \begin{align*}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\ketbra{1}{1}_d \\
+                                V &= \sqrt{\frac{\Delta}{2}}V_{\text{main}} + V_{\text{extra,1}} + V_{\text{extra,2}}\\
+                                V_{\text{main}} &= \left(A-B-C\right)X_d \\
+                                V_{\text{extra,1}} &= \frac{1}{2}\left(A^2+B^2+C^2\right) \\
+                                V_{\text{extra,2}} &= - BC
+                                \end{align*}
+                                $$
+                                In this example we have two extra perturbation terms. This is because without the second
+                                the
+                                gadget produces and extra connection between qubits $b$ and $c$.
+                                By including $V_{\text{extra,2}}$ we can remove this unwanted term.
+                                Taking the series expansion, we have,
+                                $$
+                                H_{\text{eff}} = (AB+AC)\ketbra{0}{0}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#OTFork" aria-expanded="false">Crossing</button>
+                    <div id="OTFork" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                This gadget can be seen as a combination of the previous gadgets.
+                                The goal is to introduce a mediator qubit where there exists a crossing in the
+                                underlying
+                                interaction graph,
+                                such that the interaction with said mediator produces the effective tagret interaction
+                                of
+                                the form, $H_{\text{targ.}} = AD + BC$.
+                                This gadget removes the non--planar crossing but increases the degree of the mediator
+                                qubit
+                                to $4$.
+                                This construction also suffers from many unwanted extra interaction terms.
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (-1,0)--(-4,-2);
+                                                \draw[fill=white,draw=none] (-2.5,-1)circle(0.1);
+                                                \draw[thick] (-4,0)--(-1,-2);
+                                                \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[above,yshift=5pt] {\large $A$};
+                                                \draw[fill=black] (-1,-2)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                                \draw[fill=black] (-4,-2)circle(0.1) node[below,yshift=-5pt] {\large $d$} node[above,yshift=5pt] {\large $D$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(4,-2);
+                                                \draw[thick] (4,0)--(1,-2);
+                                                \draw[fill=white] (2.5,-1)circle(0.1) node[above,yshift=7.5pt] {$X$} node[below,yshift=-7.5pt] {$X$} node[left,xshift=-5pt] {$X$} node[right,xshift=5pt] {$X$};
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[above,yshift=5pt] {\large $A$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (1,-2)circle(0.1) node[below,yshift=-5pt] {\large $d$} node[above,yshift=5pt] {\large $D$};
+                                                \draw[fill=black] (4,-2)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                We therefore choose,
+                                $$
+                                \begin{align*}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\ketbra{1}{1}_e \\
+                                V &= \sqrt{\frac{\Delta}{2}}V_{\text{main}} + V_{\text{extra,1}} + V_{\text{extra,2}}\\
+                                V_{\text{main}} &= \left(A-C+B-D\right)X_e \\
+                                V_{\text{extra,1}} &= \frac{1}{2}\left(A^2+B^2+C^2+D^2\right) \\
+                                V_{\text{extra,2}} &= - (AB+BC+CD+DA)
+                                \end{align*}
+                                $$
+                                Taking the series expansion, we have,
+                                $$
+                                H_{\text{eff}} = (AC + BD)\ketbra{0}{0}_e
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#OTFork" aria-expanded="false">Triangle</button>
+                    <div id="OTFork" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (-1,0)--(-2.5,-2);
+                                                \draw[thick] (-2.5,-2)--(-4,0);
+                                                \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                                \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (-2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(2.5,-1);
+                                                \draw[thick] (2.5,-1)--(4,0);
+                                                \draw[thick] (2.5,-1)--(2.5,-2);
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
+                                                \draw[fill=black] (2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
+                                                \draw[fill=white] (2.5,-1)circle(0.1) node[below,yshift=-4pt,xshift=4pt] {\large $d$} node[below,yshift=5pt,xshift=-9pt] {$X$} node[above,yshift=7.5pt,xshift=-7.5pt] {$X$}
+                                                node[above,yshift=7.5pt,xshift=7.5pt] {$X$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#OT3-to-2Local" aria-expanded="false">3&ndash;to&ndash;2 Local</button>
+                    <div id="OT3-to-2Local" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The 3&ndash;to&ndash;2 local gadget presented by <a
+                                    href="references.html#OT08">[OT08]</a>
+                                is not the only gadget of this type.
+                                Work by Kempe, Kitaev and Regev, <a href="references.html#KKR05">[KKR05]</a> previously
+                                introduce a 3&ndash;to&ndash;2 local gadget in
+                                their proof that $2$&ndash;local Hamiltonians are <span class="cm-sans-serif">
+                                    QMA</span>&ndash;complete.
+                                The gadget here takes a different appoach to acheive the same answer. The
+                                3&ndash;to&ndash;2
+                                local gadget here uses third&ndash;order
+                                perturbation theory, unlike the previous examples that use only second&ndash;order.
+                                The desired target Hamiltonian, $H_{\text{targ.}} = A\otimes B\otimes C$.
+                                A diagrammatic representation for this gadget is difficult to define, however, intuition
+                                from previous constructions renders the understanding
+                                of the perturbation term $V$ much easier.
+                                We choose,
+                                $$
+                                \begin{align*}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\ketbra{1}{1}_d \\
+                                V &= \Delta^{2/3}V_{\text{main}} + \Delta^{1/3}V_{\text{extra}}' + V_{\text{extra}}\\
+                                V_{\text{main}} &= \frac{1}{\sqrt{2}}\left(A-B\right)X_d + C\otimes\ketbra{1}{1}_d \\
+                                V_{\text{extra}}' &= \frac{1}{2}\left(A-B\right)^2 \\
+                                V_{\text{extra}} &= \frac{1}{2}\left(A^2+B^2\right)\otimes C
+                                \end{align*}
+                                $$
+                                Taking the series expansion to third order, we have,
+                                $$
+                                H_{\text{eff}} = (ABC)\ketbra{0}{0}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h5>Biamonte and Love Gadgets</h5>
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#BLZZXX" aria-expanded="false">$ZZXX$</button>
+                    <div id="BLZZXX" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                This gadget and the one below take a slightly different approach that those above.
+                                Instead of approximating a completely new Hamiltonian using a gadgets, <a
+                                    href="references.html#OT08">[OT08]</a>
+                                aim to create <i>additional</i> terms for a given Hamiltonian.
+                                The $ZX$ gadget is used with the (<span
+                                    class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>) Hamiltonian to
+                                create the full set of interactions: $\{\mathbb{I},\mathbb{I}\otimes X,\mathbb{I}\otimes
+                                Z,X\otimes \mathbb{I},Z\otimes \mathbb{I}, X\otimes X,X\otimes Z,Z\otimes X,Z\otimes
+                                Z\}$.
+                                As mentioned in the introductory section, not all Hamiltonians have all possible
+                                combinations of Pauli matrices.
+                                The (<span class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>) Hamiltonian does not
+                                have terms like $XZ$ and $ZX$.
+                                Such terms are what the $ZZXX$ gadget aim to create.
+                                This gadget exploits a pseudo&ndash;3&ndash;local term of the form,
+                                $A\otimes\mathbb{I}\otimes C$, where, $A, C \in \{X, Z\}$.
+                                Framing the problem this way allows for the use of the 3&ndash;to&ndash;2 local gadget
+                                from
+                                <a href="references.html#OT08">[OT08]</a>.
+                                $$
+                                \begin{align*}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\ketbra{1}{1}_d \\
+                                V &= \Delta^{2/3}V_{\text{main}} + \Delta^{1/3}V_{\text{extra}}' + V_{\text{extra}} +
+                                \Gamma
+                                \\
+                                V_{\text{main}} &= \frac{1}{\sqrt{2}}\left(X_i-\mathbb{I}\right)X_k +
+                                Z_j\otimes\ketbra{1}{1}_k \\
+                                V_{\text{extra}}' &= \frac{1}{2}\left(X_i-\mathbb{I}\right)^2 = \mathbb{I} - X_i \\
+                                V_{\text{extra}} &= \frac{1}{2}\left(X_i^2+\mathbb{I}\right)\otimes Z_j = Z_{j}
+                                \end{align*}
+                                $$
+                                Where $\Gamma$ represents the original Hamiltonian terms.
+                                Notice all the interactions in the above terms are valid with respect to the (<span
+                                    class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>) Hamiltonian.
+                                Up to third order, it can be shown,
+                                $$
+                                H_{\text{eff}} = \left(\Gamma + X_iZ_j\right)\ketbra{0}{0}_k
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#BLZX" aria-expanded="false">$ZX$</button>
+                    <div id="BLZX" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The process for creating the additional $XX$ and $ZZ$ terms, absent in the (<span
+                                    class="cm-serif-roman-small">$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span>)
+                                Hamiltonian,
+                                is a simple application of the subdivision gadget seen in <a
+                                    href="references.html#OT08">[OT08]</a>.
+                                Here we cover how to construct $ZZ$ interactions, however, constructing $XX$
+                                interactions is
+                                an analogus process and can easily be seen by
+                                a Hadamard conjugation mapping.
+                                We define,
+                                $$
+                                \begin{align*}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\ketbra{1}{1}_c \\
+                                V &= \Delta^{1/2}V_{\text{main}} + \Gamma \\
+                                V_{\text{main}} &= \frac{1}{\sqrt{2}}\left(Z_a-Z_b\right)X_c
+                                \end{align*}
+                                $$
+                                To second&ndash;order truncation, it can be shown,
+                                $$
+                                H_{\text{eff}} = \left(\Gamma +Z_aZ_b\right)\ketbra{0}{0}_c
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h5>Schuch and Verstraete Gadgets</h5>
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#SVParameterFixing" aria-expanded="false">Parameter Fixing</button>
+                    <div id="SVParameterFixing" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The goal of the parameter fixing gadget, as the name suggests, is a reduction from
+                                arbitrary
+                                Pauli couplings to
+                                ones with constant interaction strength and different Pauli operators.
+                                More formally, we start with, $\lambda_{ij} P_i \otimes Q_j$ where $P,Q \in
+                                \{\mathbb{I},X,Y,Z\}$, by using a
+                                strong magnetic field and a mediator gadget, the desired, tunable interaction can be
+                                found.
+                                The strngth of the interaction is given by the angle in a chosen plane, for this
+                                example,
+                                the $XY$ plane.
+                                From this point we drop the subscripts.
+                                To reiterate the motivation slightly, note the goal of this gadget is to simulate the
+                                ground
+                                state of some $\lambda P\otimes Q$
+                                interaction using another, mediated interaction, that has a constant interaction
+                                strength.
+                                In this way, we can then say, the mediated interaction is sufficient to approximation
+                                the
+                                ground space.
+                                These reductions allow for external fields and hence the $V_{\text{extra}}$ terms
+                                present in
+                                previous constructions need not be present.
+                                We choose,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta_P\ketbra{e_\phi}{e_\phi}_k \\
+                                V &= \sqrt{\frac{\Delta_P}{2}}V_{\text{main}}\\
+                                V_{\text{main}} &= \left(PX_k - QY_k\right)
+                                \end{align}
+                                $$
+                                Where $\ket{e_\phi} = \frac{1}{\sqrt{2}}\left(\ket{0} - e^{i\phi}\ket{1} \right)$. The
+                                projected $X$ and $Y$ matrices are no longer as straightforward as previous examples.
+                                $$
+                                \begin{align}
+                                X_{--} &= \frac{1}{2}\cos\phi\ketbra{g}{g} \\
+                                X_{+-} &= \frac{i}{2}\sin\phi\ketbra{e}{g} \\
+                                X_{-+} &= \frac{-i}{2}\cos\phi\ketbra{g}{e} \\
+                                Y_{--} &= \frac{1}{2}\sin\phi\ketbra{g}{g} \\
+                                Y_{+-} &= \frac{-i}{2}\cos\phi\ketbra{e}{g} \\
+                                Y_{-+} &= \frac{i}{2}\sin\phi\ketbra{g}{e}
+                                \end{align}
+                                $$
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(3,0);
+                                                \draw[fill=black] (3,0)circle(0.1) node[below,yshift=-5pt] {\large $i$} node[above,yshift=5pt] {\large $Q$};
+                                                \draw[fill=black] (0,0)circle(0.1) node[below,yshift=-5pt] {\large $j$} node[above,yshift=5pt] {\large $P$};
+                                            \end{tikzpicture}
+                                            </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(4,0);
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $i$} node[above,yshift=5pt] {\large $P$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $j$} node[above,yshift=5pt] {\large $Q$};
+                                                \draw[fill=white] (2.5,0)circle(0.1) node[below,yshift=-5pt] {\large $k$} node[above,yshift=5pt,xshift=-7.5pt] {$X$}
+                                                node[above,yshift=5pt,xshift=7.5pt] {$X$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                To second order, the effective Hamiltonian can be shown as,
+                                $$
+                                H_{\text{eff}} = \sin\phi\cos\phi\,PQ\ketbra{g}{g} + \Gamma
+                                $$
+                                The term $\Gamma$ represents the residual local fields left from the perturbation
+                                analysis
+                                &mdash; these are important for subsequent gadgets.
+                                We mention here that the process shown above is different from that in the article.
+                                This is because here we are attempting a unified framework hence hsowcasing each gadget
+                                in a
+                                compramble manner.
+                                It takes a small calculation to translate the article's method to the one shown here.
+                                To note, the idea of the gadgets in <a href="references.html#SV09">[SV09]</a> is to
+                                create a
+                                chain of gadget reduction that approximate a Heisenberg interaction,
+                                i.e. go from
+                                $$P_i \otimes Q_j \xmapsto{\text{Gadgets}} X_iX_j + Y_iY_j + Z_iZ_j + \text{ext.
+                                fields}$$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#SVPauli-to-Ising" aria-expanded="false">Pauli&ndash;to&ndash;Ising</button>
+                    <div id="SVPauli-to-Ising" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                This gadget aims to take Pauli interactions of the form $P\otimes Q$ where $P$ and $Q$
+                                are
+                                necessarily different and
+                                reduce to Ising type couplings, i.e. some interaction using $P\otimes P + Q\otimes Q$.
+                                We introduce two peices of notation to ease the analysis.
+                                In this gadget, the ground state is chosen to be $\ket{g_{\pi/4}}$, hence, we define,
+                                $$
+                                \langle \sigma^{\mu}\rangle_{g_{\pi/4}} = \eta(\sigma)
+                                $$
+                                and,
+                                $$
+                                \sigma^{\mu}_{-+} = \xi(\sigma)\ketbra{e_{\pi/4}}{g_{\pi/4}} =
+                                (\sigma^{\mu}_{+-})^\dagger
+                                $$
+                                Where the former notation signifies the inner product of a given Pauli operator with the
+                                defined ground state.
+                                It is simple to verify what these values are.
+                                Secondly, the latter notation is the projected Pauli operator value.
+                                This calculation is slighlty more involved but nonetheless straightforward.
+                                We note that the only Pauli operator that has no cross projector value is the identity.
+                                We choose,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta_I\ketbra{e_{\pi/4}}{e_{\pi/4}}_k \\
+                                V &= \sqrt{\frac{\Delta_I}{2}}V_{\text{main}} + \Gamma \ketbra{g_{\pi/4}}{g_{\pi/4}}_k\\
+                                V_{\text{main}} &= \left(P_iP_k - Q_kQ_j\right)
+                                \end{align}
+                                $$
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(3,0);
+                                                \draw[fill=black] (3,0)circle(0.1) node[below,yshift=-5pt] {\large $i$} node[above,yshift=5pt] {\large $Q$};
+                                                \draw[fill=black] (0,0)circle(0.1) node[below,yshift=-5pt] {\large $j$} node[above,yshift=5pt] {\large $P$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(4,0);
+                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $i$} node[above,yshift=5pt] {\large $P$};
+                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $j$} node[above,yshift=5pt] {\large $Q$};
+                                                \draw[fill=red!25] (2.5,0)circle(0.1) node[below,yshift=-5pt] {\large $k$} node[above,yshift=5pt,xshift=-7.5pt] {$P$}
+                                                node[above,yshift=5pt,xshift=7.5pt] {$Q$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                It can be shown to second order, we retrive the interaction,
+                                $$
+                                H_{\text{eff}} = (\eta(P)\bar{\eta}(Q) PQ + \Gamma)\ketbra{g}{g}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#SVIsing-to-XX" aria-expanded="false">Ising&ndash;to&ndash;$XX$</button>
+                    <div id="SVIsing-to-XX" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The term $XX$ is a physics term related to labeling Pauli interactions.
+                                Informally, it means two of the terms like $XX$, $YY$ or $ZZ$ conform to the same
+                                parameter.
+                                We do not delve into the name here and be faithful to the original work.
+                                We reduce the Ising interactions we saw previously into these $XX$&ndash;type
+                                interactions.
+                                The idea behind this gadget is to convert the Ising interactions, interactions like
+                                $PP$,
+                                into
+                                $XX$&ndash;type interactions.
+                                To motivate and introduce this gadget, we deviate from the general path and consider a
+                                specific example.
+                                It should be noted that similar gadgets can be constructed for the all $PP$ Ising terms
+                                via
+                                appropriate unitary conjugation of the perturation Hamiltonian.
+                                We consider the example of the $XX$ Ising term.
+                                By choosing,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta_{XX}/2(\mathbb{I} - Y)_k \\
+                                V &= \sqrt{\frac{\Delta_{XX}}{2}}V_{\text{main}} + \Gamma \ketbra{g}{g}_k\\
+                                V_{\text{main}} &= \left((X_iX_k + Y_iY_k)\otimes\mathbb{I}_j - \mathbb{I}_i
+                                \otimes(X_kX_j
+                                + Y_kY_j)\right)
+                                \end{align}
+                                $$
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(3,0);
+                                                \draw[fill=black] (3,0)circle(0.1) node[below,yshift=-5pt,color=red] {\large $Y$} node[above,yshift=5pt] {\large $X$};
+                                                \draw[fill=black] (0,0)circle(0.1) node[below,yshift=-5pt,color=red] {\large $Y$} node[above,yshift=5pt] {\large $X$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (1,0)--(2.5,0) node[below, midway,yshift=-5pt,color=red] {\large $YY+ZZ$} node[above, midway,yshift=5pt] {\large $XX+YY$};
+                                                \draw[thick] (2.5,0)--(4,0) node[below, midway,yshift=-5pt,color=red] {\large $YY+ZZ$} node[above, midway,yshift=5pt] {\large $XX+YY$};
+                                                \draw[fill=black] (1,0)circle(0.1);
+                                                \draw[fill=black] (4,0)circle(0.1);
+                                                \draw[fill=green!25] (2.5,0)circle(0.1);
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                To second&ndash;order, it can be shown,
+                                $$
+                                H_{\text{eff}} = (XX + \Gamma)\ketbra{g}{g}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#SVXX-to-Heisenberg"
+                        aria-expanded="false">$XX$&ndash;to&ndash;Heisenberg</button>
+                    <div id="SVXX-to-Heisenberg" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The penultimate gadget in the Schuch and Verstraete line&ndash;up is the
+                                $XX$&ndash;to&ndash;Heisenberg gadget.
+                                The idea is that antiferromagnetic Heisenberg interaction with external $Z$ fields can
+                                simulate the $XX$&ndash;type interactions above.
+                                The roster of interactions to approximate are: $XX+YY$, $XX+ZZ$ and $YY+ZZ$.
+                                Similar to the previous example, appropriate unitary conjugation of the perturbation
+                                Hamiltonian will reveal the specific gadget
+                                for a given $XX$&ndash;type interaction.
+                                We follow the prvious example of $XX+YY$.
+                                Choosing,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta_{H}/2(\mathbb{I} - Z)_k \\
+                                V &= \sqrt{\frac{\Delta_{H}}{2}}V_{\text{main}} + V_{\text{extra}} + \Gamma
+                                \ketbra{g}{g}_k\\
+                                V_{\text{main}} &= \sum_{l\in\{1,2,3\}}
+                                \left(\sigma^{l}_i\otimes\sigma^{l}_k\otimes\mathbb{I}_j +
+                                \mathbb{I}_i\otimes\sigma^{l}_k\otimes\sigma^{l}_j \right) \\
+                                V_{\text{extra}} &= \left(Z_i\otimes\mathbb{I}_k\otimes\mathbb{I}_j +
+                                \mathbb{I}_i\otimes\mathbb{I}_k\otimes Z_j \right)
+                                \end{align}
+                                $$
+                            </p>
+                            <div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(3,0) node[above, midway,yshift=5pt] {\large $XX+YY$};
+                                                \draw[fill=black] (3,0)circle(0.1);
+                                                \draw[fill=black] (0,0)circle(0.1);
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(2,0) node[above, midway, yshift=5pt] {\large $XX+YY+ZZ$};
+                                                \draw[thick] (2,0)--(4,0) node[above, midway, yshift=5pt] {\large $XX+YY+ZZ$};
+                                                \draw[thick] (-0.35,0)circle(0.35) node[below] {\large $Z$};
+                                                \draw[thick] (4+0.35,0)circle(0.35) node[below] {\large $Z$};
+                                                \draw[fill=black] (0,0)circle(0.1);
+                                                \draw[fill=black] (4,0)circle(0.1);
+                                                \draw[fill=blue!25] (2,0)circle(0.1);
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                To second&ndash;order, it can be shown,
+                                $$
+                                H_{\text{eff}} = (XX + YY + \Gamma)\ketbra{g}{g}
+                                $$
+                                In a complete setting, the gadget outlined in this article create a chain of gadgets
+                                that
+                                approximate a Heisenberg interaction using
+                                a system of different Pauli interactions, vice versa.
+                                This is captured in the diagram below:
+                            </p>
+                            <div class="column">
+                                <div class="gadget" style="display: flex; justify-content: center;">
+                                    <script type="text/tikz">
+                                        \begin{tikzpicture}[scale=1.5]
+                                            \draw[thick] (0,1.5)--(18,1.5);
+                                            \draw[fill=black] (0,1.5)circle(0.1);
+                                            \draw[fill=black] (18,1.5)circle(0.1);
+                                            \draw[fill=white] (9,1.5)circle(0.1);
+                                            \foreach \i in {2,4,...,16}{\draw[fill=blue!25] (\i,1.5)circle(0.1);}
+                                            \foreach \i in {3,7,11,15}{\draw[fill=green!25] (\i,1.5)circle(0.1);}
+                                            \foreach \i in {5,13}{\draw[fill=red!25] (\i,1.5)circle(0.1);}
+                                            \foreach \i [count=\xi] in {0,-1,-2,-3}{\draw[dashed] (0,\i)--(18,\i) node[right] {$O(\xi)$};}
+                                            \draw[thick] (0,0)--(2,-3)--(3,-2)--(4,-3)--(5,-1)--(6,-3)--(7,-2)--(8,-3)--(9,0)--(10,-3)--(11,-2)--(12,-3)--(13,-1)--(14,-3)--(15,-2)--(16,-3)--(18,0);
+                                            \draw[fill=black] (0,0)circle(0.1);
+                                            \draw[fill=black] (18,0)circle(0.1);
+                                            \foreach \i in {2,4,...,16}{\draw[fill=blue!25] (\i,-3)circle(0.1);}
+                                            \foreach \i in {3,7,11,15}{\draw[fill=green!25] (\i,-2)circle(0.1);}
+                                            \foreach \i in {5,13}{\draw[fill=red!25] (\i,-1)circle(0.1);}
+                                            \draw[fill=white] (9,0)circle(0.1);        
+                                        \end{tikzpicture}
+                                    </script>
+                                </div>
+                            </div>
+                            <p>
+                                A pleasant way to think about this diagram is to think that a chain of specific
+                                Heisenberg
+                                interactions are sufficient to approximate a particular Pauli interaction.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#SVErasure" aria-expanded="false">Erasure</button>
+                    <div id="SVErasure" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                This final gadget is used in the reduction from a sparse lattice to a full 2D lattice.
+                                Adding external fields to certain qubits creates a full lattice of Heisenberg
+                                interactions
+                                with local fields.
+                                We choose,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta_{B}/2(\mathbb{I} - Z)_k \\
+                                V &= \sqrt{\frac{\Delta_{H}}{2}}V_{\text{main}} + \sum_{i \atop l\in\{1,2,3\}}
+                                B^{l}_i\;\sigma^{l}_i\\
+                                V_{\text{main}} &= \sum_{\langle i,j \rangle \atop l\in\{1,2,3\}} \sigma^{l}_i \otimes
+                                \sigma^{l}_j
+                                \end{align}
+                                $$
+                                The effective Hamiltonian here reproduces an approximation to the Heisenberg interaction
+                                on
+                                a sparse lattice.
+                                Since it is not trivial to see the resulting interaction is a sparse one we omit this
+                                analysis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h5>Piddock and Montonaro</h5>
+            <div class="accordion accordion-flush">
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#PMBasic" aria-expanded="false">Basic</button>
+                    <div id="PMBasic" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The gadgets proposed by Piddock and Montonaro are a generalisation of the gadgets shown
+                                above.
+                                For the context of their work, the gadgets of previous literature are not appropriate in
+                                the same manner.
+                                This links to the gadgets of Biamonte and Love where the interaction set of a given
+                                Hamiltonian restricted us from creating any old gadget.
+                                A similar principle applies here.
+                                The work <a href="references.html#PM15">[PM15]</a> is heavily concerned with
+                                interactions of the form: $\alpha XX + \beta YY + \gamma ZZ$ without
+                                the addition of external fields.
+                                This clearly means the set of interactions present differs greatly from what we allowed
+                                previously.
+                                The role of the basic gadget is to identity to further subdivision gadgets, namely the
+                                positive and negative subdivision gadgets.
+                                The basic gadget lays the theoretical foundations.
+                                We do not cover an in&ndash;depth analysis here, just the important points.
+                            </p>
+                            <p>
+                                Consider the interaction $\alpha XX + \beta YY + \gamma ZZ$ subject to the condition
+                                $(\alpha+\beta, \alpha+\gamma, \beta+\gamma)>0$.
+                                The matrix for this is trivially defined as,
+                                $$
+                                \begin{bmatrix}
+                                \gamma&0&0&\alpha-\beta\\0&-\gamma&\alpha+\beta&0\\0&\alpha+\beta&-\gamma&0\\\alpha-\beta&0&0&\gamma
+                                \end{bmatrix}
+                                $$
+                                Since the above condition is required, we find the unique "low&ndash;energy" state to be
+                                given by $\ket{\Psi^-}$.
+                                If the condition $(\alpha+\beta, \alpha+\gamma, \beta+\gamma)>0$ is not met we run into
+                                a degenerate ground space.
+                                As per the general idea, we want a block diagonal unperturbed Hamiltonian term $H$ such
+                                that the low&ndash;energy eigenvalue is $0$ and all other
+                                eigenvalues are greater than $1$.
+                                This gives a split Hilbert space.
+                                To this end, we deinfe the unpertutbed Hamiltonian as,
+                                $$
+                                H = \Delta \big((\alpha+\beta)\ketbra{\Psi^+}{\Psi^+}
+                                +(\alpha+\gamma)\ketbra{\Phi^+}{\Phi^+} +(\beta+\gamma)\ketbra{\Phi^-}{\Phi^-} \big)
+                                $$
+                            </p>
+                            <p>
+                                From the above ideas, the form of the perturbation term $V$ heavily influences the
+                                effective interaction produced.
+                                For the case here, there is a specific way of connecting the mediator qubits to the
+                                original system qubits such that
+                                positive and negative interactions can be simulated.
+                                This is why we have the two generalised gadgets below.
+                                The important thing to notice is that instead of a single mediator qubit, we now have
+                                two!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#PMPositiveSubdivision" aria-expanded="false">Positive Subdivision</button>
+                    <div id="PMPositiveSubdivision" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                Let us denote the interaction between two qubits, $i$ and $j$ or the form $\alpha X_iX_j
+                                + \beta Y_iY_j + \gamma Z_iZ_j$ as $H_{ij}$.
+                                We also have the added condition that $(\alpha+\beta, \alpha+\gamma, \beta+\gamma)>0$.
+                                Consider choosing the following terms,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\big((\alpha+\beta)\ketbra{\Psi^+}{\Psi^+}_{ab}
+                                +(\alpha+\gamma)\ketbra{\Phi^+}{\Phi^+}_{ab} +(\beta+\gamma)\ketbra{\Phi^-}{\Phi^-}_{ab}
+                                \big)\\
+                                V &= \sqrt{\frac{\Delta}{2}}V_{\text{main}} \\
+                                V_{\text{main}} &= H_{ia} + H_{jb} \\
+                                &= \big(\alpha X_iX_a + \beta Y_iY_a + \gamma Z_iZ_a \big) + \big(\alpha X_jX_b + \beta
+                                Y_jY_b + \gamma Z_jZ_b \big)
+                                \end{align}
+                                $$
+                                In this form, the mediator qubits are attached in the following way,
+                            </p>
+                            <div class="column">
+                                <div class="gadget" style="display: flex; justify-content: center;">
+                                    <script type="text/tikz">
+                                        \begin{tikzpicture}[scale=2]
+                                            \draw[thick] (-1,0)--(-4,0);
+                                            \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $j$};
+                                            \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $i$};
+                                    
+                                    
+                                            \draw[thick] (1,0)--(2,0);\draw[thick] (3,0)--(4,0);\draw[thick,dashed] (2,0)--(3,0);
+                                            \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $i$};
+                                            \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $j$};
+                                            \draw[fill=white] (2,0)circle(0.1) node[below,yshift=-5pt] {\large $a$};
+                                            \draw[fill=white] (3,0)circle(0.1) node[below,yshift=-5pt] {\large $b$};
+                                        \end{tikzpicture}
+                                    </script>
+                                </div>
+                            </div>
+                            <p>
+                                To second&ndash;order perturation theory, it can be shown,
+                                $$
+                                H_{\text{eff}} = \left(\frac{\alpha^2}{\beta+\gamma} X_iX_j +
+                                \frac{\beta^2}{\alpha+\gamma} Y_iY_j + \frac{\gamma^2}{\alpha+\beta} Z_iZ_j
+                                \right)\ketbra{\Psi^-}{\Psi^-}_{ab}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
+                        data-bs-target="#PMNegativeSubdivision" aria-expanded="false">Negative Subdivision</button>
+                    <div id="PMNegativeSubdivision" class="accordion-collapse collapse">
+                        <div class="accordion-body pt-0">
+                            <p>
+                                The negative subdivision gadget uses the same basic framework as the positive
+                                subdivision gadget however we now attach the mediator
+                                qubits in a different fashion.
+                                Consider,
+                                $$
+                                \begin{align}
+                                \widetilde{H} &= H+V \\
+                                H &= \Delta\big((\alpha+\beta)\ketbra{\Psi^+}{\Psi^+}_{ab}
+                                +(\alpha+\gamma)\ketbra{\Phi^+}{\Phi^+}_{ab} +(\beta+\gamma)\ketbra{\Phi^-}{\Phi^-}_{ab}
+                                \big)\\
+                                V &= \sqrt{\frac{\Delta}{2}}V_{\text{main}} \\
+                                V_{\text{main}} &= H_{ia} + H_{ja} \\
+                                &= \big(\alpha X_iX_a + \beta Y_iY_a + \gamma Z_iZ_a \big) + \big(\alpha X_jX_a + \beta
+                                Y_jY_a + \gamma Z_jZ_a \big)
+                                \end{align}
+                                $$
+                                We show this example visually as,
+                            </p>
+                            <div class="column">
+                                <div class="gadget" style="display: flex; justify-content: center;">
+                                    <script type="text/tikz">
+                                        \begin{tikzpicture}[scale=2]
+                                            \draw[thick] (-1,0)--(-4,0);
+                                            \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $j$};
+                                            \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $i$};
+                                            \draw[thick] (1,0)--(4,0);\draw[thick,dashed] (2.5,0)--(2.5,1);
+                                            \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $i$};
+                                            \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $j$};
+                                            \draw[fill=white] (2.5,0)circle(0.1) node[below,yshift=-5pt] {\large $a$};
+                                            \draw[fill=white] (2.5,1)circle(0.1) node[above,yshift=5pt] {\large $b$};
+                                        \end{tikzpicture}
+                                    </script>
+                                </div>
+                            </div>
+                            <p>
+                                A similar second&ndash;order analysis reveals,
+                                $$
+                                H_{\text{eff}} = -\left(\frac{\alpha^2}{\beta+\gamma} X_iX_j +
+                                \frac{\beta^2}{\alpha+\gamma} Y_iY_j + \frac{\gamma^2}{\alpha+\beta} Z_iZ_j
+                                \right)\ketbra{\Psi^-}{\Psi^-}_{ab}
+                                $$
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Related Problems</h4>
+            <ul>
+                <li>$N$&ndash;Representibilty.</li>
+                <li>General Local Fermionic Problems.</li>
+                <li>Hartree&ndash;Fock Problem.</li>
+                <li>Universal Functional Problem.</li>
+            </ul>
+        </main>
+    </div>
+</body>
+
+</html>
