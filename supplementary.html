@@ -16,6 +16,15 @@
     <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
     <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MMS1QCMRED');
+    </script>
 </head>
 
 <body>
@@ -307,8 +316,8 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
-                        data-bs-target="#OTCrossing" aria-expanded="false">Fork</button>
-                    <div id="OTCrossing" class="accordion-collapse collapse">
+                        data-bs-target="#OTFork" aria-expanded="false">Fork</button>
+                    <div id="OTFork" class="accordion-collapse collapse">
                         <div class="accordion-body pt-0">
                             <p>
                                 Given a set of qubits interacting as shown below (left), the goal of this gadget is to
@@ -375,8 +384,8 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
-                        data-bs-target="#OTFork" aria-expanded="false">Crossing</button>
-                    <div id="OTFork" class="accordion-collapse collapse">
+                        data-bs-target="#OTCrossing" aria-expanded="false">Crossing</button>
+                    <div id="OTCrossing" class="accordion-collapse collapse">
                         <div class="accordion-body pt-0">
                             <p>
                                 This gadget can be seen as a combination of the previous gadgets.
@@ -397,8 +406,8 @@
                                         <script type="text/tikz">
                                             \begin{tikzpicture}[scale=2]
                                                 \draw[thick] (-1,0)--(-4,-2);
-                                                \draw[fill=white,draw=none] (-2.5,-1)circle(0.1);
-                                                \draw[thick] (-4,0)--(-1,-2);
+                                                \draw[thick] (-4,0)--(-2.57,-0.953);
+                                                \draw[thick] (-2.43,-1.047)--(-1,-2);
                                                 \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
                                                 \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[above,yshift=5pt] {\large $A$};
                                                 \draw[fill=black] (-1,-2)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
@@ -445,19 +454,27 @@
                 </div>
                 <div class="accordion-item">
                     <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
-                        data-bs-target="#OTFork" aria-expanded="false">Triangle</button>
-                    <div id="OTFork" class="accordion-collapse collapse">
+                        data-bs-target="#OTTriangle" aria-expanded="false">Triangle</button>
+                    <div id="OTTriangle" class="accordion-collapse collapse">
                         <div class="accordion-body pt-0">
+                            <p>
+                                The triangle gadget is a combination of both the subdivision and fork gadgets. 
+                                The goal is to reduce the degree of one qubit in a triad and create no additional edges between the system qubits.
+                                The gadget first subdivides the edges then forks the mediator qubits.
+                            </p>
                             <div>
                                 <div class="column">
                                     <div class="gadget" style="display: flex; justify-content: center;">
                                         <script type="text/tikz">
                                             \begin{tikzpicture}[scale=2]
-                                                \draw[thick] (-1,0)--(-2.5,-2);
-                                                \draw[thick] (-2.5,-2)--(-4,0);
-                                                \draw[fill=black] (-1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
-                                                \draw[fill=black] (-4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
-                                                \draw[fill=black] (-2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
+                                                \draw[thick] (0,0)--(1.5,-{3*sqrt(3)}/2)--(3,0); 
+                                                \draw[dashed] (0,0)--(3,0);
+                                                \draw[dashed] (0,0)--(-0.75,0);\draw[dashed] (0,0)--(-0.75,-0.5);\draw[dashed] (0,0)--(-0.75,0.5);
+                                                \draw[dashed] (3,0)--(3.75,0);\draw[dashed] (3,0)--(3.75,-0.5);\draw[dashed] (3,0)--(3.75,0.5);
+                                                \draw[dashed] (1.5,-{3*sqrt(3)}/2)--(1.5,-{3*sqrt(3)}/2-0.75);\draw[dashed] (1.5,-{3*sqrt(3)}/2)--(2,-{3*sqrt(3)}/2-0.75);\draw[dashed] (1.5,-{3*sqrt(3)}/2)--(1,-{3*sqrt(3)}/2-0.75);
+                                                \draw[fill=black, thick] (0,0)circle(0.12) node[above, yshift=5pt] {$A$};
+                                                \draw[fill=black, thick] (3,0)circle(0.12) node[above, yshift=5pt] {$C$};
+                                                \draw[fill=black, thick] (1.5,-{3*sqrt(3)}/2)circle(0.12) node[right, xshift=5pt] {$B$};
                                             \end{tikzpicture}
                                         </script>
                                     </div>
@@ -466,14 +483,37 @@
                                     <div class="gadget" style="display: flex; justify-content: center;">
                                         <script type="text/tikz">
                                             \begin{tikzpicture}[scale=2]
-                                                \draw[thick] (1,0)--(2.5,-1);
-                                                \draw[thick] (2.5,-1)--(4,0);
-                                                \draw[thick] (2.5,-1)--(2.5,-2);
-                                                \draw[fill=black] (1,0)circle(0.1) node[below,yshift=-5pt] {\large $c$} node[above,yshift=5pt] {\large $C$};
-                                                \draw[fill=black] (4,0)circle(0.1) node[below,yshift=-5pt] {\large $b$} node[above,yshift=5pt] {\large $B$};
-                                                \draw[fill=black] (2.5,-2)circle(0.1) node[below,yshift=-5pt] {\large $a$} node[left,xshift=-2.5pt] {\large $A$};
-                                                \draw[fill=white] (2.5,-1)circle(0.1) node[below,yshift=-4pt,xshift=4pt] {\large $d$} node[below,yshift=5pt,xshift=-9pt] {$X$} node[above,yshift=7.5pt,xshift=-7.5pt] {$X$}
-                                                node[above,yshift=7.5pt,xshift=7.5pt] {$X$};
+                                                \draw[thick] (0,0)--(1.5,-{3*sqrt(3)}/2)--(3,0); 
+                                                \draw[dashed] (0,0)--(3,0);
+                                                \draw[dashed] (0,0)--(-0.75,0);\draw[dashed] (0,0)--(-0.75,-0.5);\draw[dashed] (0,0)--(-0.75,0.5);
+                                                \draw[dashed] (3,0)--(3.75,0);\draw[dashed] (3,0)--(3.75,-0.5);\draw[dashed] (3,0)--(3.75,0.5);
+                                                \draw[dashed] (1.5,-{3*sqrt(3)}/2)--(1.5,-{3*sqrt(3)}/2-0.75);\draw[dashed] (1.5,-{3*sqrt(3)}/2)--(2,-{3*sqrt(3)}/2-0.75);\draw[dashed] (1.5,-{3*sqrt(3)}/2)--(1,-{3*sqrt(3)}/2-0.75);
+                                                \draw[fill=black, thick] (0,0)circle(0.12) node[above, yshift=5pt] {$A$};
+                                                \draw[fill=black, thick] (3,0)circle(0.12) node[above, yshift=5pt] {$C$};
+                                                \draw[fill=black, thick] (1.5,-{3*sqrt(3)}/2)circle(0.12) node[right, xshift=5pt] {$B$};
+                                                \draw[fill=white, thick] (0.75,-{3*sqrt(3)}/4)circle(0.12) node[below, yshift=-5pt] {$c_1$};
+                                                \draw[fill=white, thick] (2.25,-{3*sqrt(3)}/4)circle(0.12) node[below, yshift=-5pt] {$c_2$};
+                                            \end{tikzpicture}
+                                        </script>
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <div class="gadget" style="display: flex; justify-content: center;">
+                                        <script type="text/tikz">
+                                            \begin{tikzpicture}[scale=2]
+                                                \draw[thick] (0,0)--(1.5,-{3*sqrt(3)}/2)--(3,0); 
+                                                \draw[dashed] (0,0)--(3,0);
+                                                \draw[dashed] (0,0)--(-0.75,0);\draw[dashed] (0,0)--(-0.75,-0.5);\draw[dashed] (0,0)--(-0.75,0.5);
+                                                \draw[dashed] (3,0)--(3.75,0);\draw[dashed] (3,0)--(3.75,-0.5);\draw[dashed] (3,0)--(3.75,0.5);
+                                                \draw[dashed] (1.5,-{3*sqrt(3)}/2 -1.5)--(1.5,-{3*sqrt(3)}/2-0.75 -1.5);\draw[dashed] (1.5,-{3*sqrt(3)}/2 -1.5)--(2,-{3*sqrt(3)}/2-0.75 -1.5);\draw[dashed] (1.5,-{3*sqrt(3)}/2 -1.5)--(1,-{3*sqrt(3)}/2-0.75 -1.5);
+                                                \draw[thick] (1.5,-{3*sqrt(3)}/2)--(1.5,-{3*sqrt(3)}/2 -1.5);
+                                                \draw[thick] (0.75,-{3*sqrt(3)}/4)--(2.25,-{3*sqrt(3)}/4);
+                                                \draw[fill=black, thick] (0,0)circle(0.12) node[above, yshift=5pt] {$A$};
+                                                \draw[fill=black, thick] (3,0)circle(0.12) node[above, yshift=5pt] {$C$};
+                                                \draw[fill=white, thick] (1.5,-{3*sqrt(3)}/2)circle(0.12) node[above, yshift=5pt] {$c_3$};
+                                                \draw[fill=black, thick] (1.5,-{3*sqrt(3)}/2  -1.5)circle(0.12) node[right, xshift=5pt] {$B$};
+                                                \draw[fill=white, thick] (0.75,-{3*sqrt(3)}/4)circle(0.12) node[below, yshift=-5pt] {$c_1$};
+                                                \draw[fill=white, thick] (2.25,-{3*sqrt(3)}/4)circle(0.12) node[below, yshift=-5pt] {$c_2$};
                                             \end{tikzpicture}
                                         </script>
                                     </div>
