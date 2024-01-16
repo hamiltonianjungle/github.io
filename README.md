@@ -1,1 +1,1 @@
-[to the jungle](https://hamiltonianjungle.xyz)
+[to the jungle](http://hamiltonianjungle.xyz)
