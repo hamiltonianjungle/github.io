@@ -64,6 +64,7 @@
                                 <li><a class="nav-link" href="heisenberg.html" aria-current="true">Heisenberg</a></li>
                                 <li><a class="nav-link" href="ising.html">Ising</a></li>
                                 <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
                             </ul>
                             <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
                             <li><a class="nav-link" href="glossary.html">Glossary</a></li>
@@ -168,6 +169,33 @@
                     </ul>
                 </div>
             </div>
+            <!-- Item HbM108 --><!-- Item HbM108 --><!-- Item HbM108 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM108</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#CM16">[CM16]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$\Lambda$ representing an interaction graph</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>From the weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</li>
+                        <li>To the IaF&ndash;Heisenberg Hamiltonian or the Heisenberg Hamiltonian on a 2D square lattice
+                        </li>
+                    </ul>
+                </div>
+            </div>
             <!-- Item HbM104 --><!-- Item HbM104 --><!-- Item HbM104 -->
             <div class="alert alert-light">
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM104</small>
@@ -220,33 +248,6 @@
                             square lattice</li>
                         <li>To the (<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian on a 2D triangular
                             lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM108 --><!-- Item HbM108 --><!-- Item HbM108 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM108</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#CM16">[CM16]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$\Lambda$ representing an interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</li>
-                        <li>To the IaF&ndash;Heisenberg Hamiltonian or the Heisenberg Hamiltonian on a 2D square lattice
-                        </li>
                     </ul>
                 </div>
             </div>
@@ -363,6 +364,34 @@
                     <strong>Reductions:</strong>
                     <ul>
                         <li>From the IaF weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Item HbM501 --><!-- Item HbM501 --><!-- Item HbM501 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM501</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+                    $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
+                </div>
+                <div><strong>Problem:</strong> Quantum Max&ndash;Cut</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#BP24">[BP24]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>The graph $G$ has egde weights $w_{ij}$</li>
+                        <li>$w_{ij}\geq 0$ and $w_{ij} = O(1/\mathsf{poly}(n))$</li>
+                        <li>$\boldsymbol{S} = (S^1,S^2,S^3)$ denote the spin&ndash;$S$ operators</li>
+                        <li>$S\rightarrow\infty$</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>To the antiferromagnetic Heisenberg model.</li>
                     </ul>
                 </div>
             </div>

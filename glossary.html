@@ -64,6 +64,7 @@
                                 <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
                                 <li><a class="nav-link" href="ising.html">Ising</a></li>
                                 <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
                             </ul>
                             <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
                             <li><a class="nav-link" href="glossary.html" aria-current="true">Glossary</a></li>
@@ -173,6 +174,27 @@
                         <li>The smallest eigenvalue of $H$ is $\leq a$</li>
                         <li>All eigenvalues of $H$ are $\geq b$</li>
                     </ol>
+                </dd>
+                <dt class="col-sm-3">Max&ndash;Cut
+                </dt>
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                    vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
+                    $$H_{MC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - S_i \cdot S_j\right)$$
+                    Subject to $S_i \in \{\pm 1\}$.
+                </dd>
+                <dt class="col-sm-3">Quantum Max&ndash;Cut
+                </dt>
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                    vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
+                    $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
+                    <font color="#b3b8bc">(This is the standard definition where each edge is a singlet state)</font>
+                </dd>
+                <dt class="col-sm-3">Quantum Max&ndash;Cut(EPR)
+                </dt>
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                    vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
+                    $$H_{QMC(EPR)}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} + X_iX_j - Y_iY_j + Z_iZ_j\right)$$
+                    <font color="#b3b8bc">(This is the a vairent on the standard Quantum Max&ndash;Cut where each edge is an EPR state)</font>
                 </dd>
             </dl>
             <hr class="border-top bs-border-color opacity-100" />
