@@ -101,7 +101,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The (<span
                         class="cm-serif-roman-small">$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j} Q_{ij} X_iZ_j + T_{ij} Z_iX_j + \displaystyle\sum_{i\in\Lambda} f_i X_i
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} Q_{ij} X_iZ_j + T_{ij} Z_iX_j + \displaystyle\sum_{i\in V(G)} f_i X_i
                     + h_i Z_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -112,7 +112,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>Real coefficients</li>
-                        <li>$\Lambda$ represents a general interaction graph</li>
+                        <li>$G$ is the interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -138,7 +138,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The (<span
                         class="cm-serif-roman-small">$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j} Q_{ij} X_iZ_j + T_{ij} Z_iX_j + \displaystyle\sum_{i\in\Lambda} f_i X_i
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} Q_{ij} X_iZ_j + T_{ij} Z_iX_j + \displaystyle\sum_{i\in V(\Lambda)} f_i X_i
                     + h_i Z_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -167,8 +167,8 @@
                 <div>
                     <strong>Hamiltonian:</strong> The (<span class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>)
                     Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij} X_iX_j + L_{ij} Z_iZ_j +
-                    \displaystyle\sum_{i\in\Lambda} f_i X_i + h_i Z_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G) } J_{ij} X_iX_j + L_{ij} Z_iZ_j +
+                    \displaystyle\sum_{i\in v(G)} f_i X_i + h_i Z_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -178,7 +178,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>Real coefficients</li>
-                        <li>$\Lambda$ represents a general interaction graph</li>
+                        <li>$G$ is the interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -204,8 +204,8 @@
                 <div>
                     <strong>Hamiltonian:</strong> The (<span class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>)
                     Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij} X_iX_j + L_{ij} Z_iZ_j +
-                    \displaystyle\sum_{i\in\Lambda} f_i X_i + h_i Z_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij} X_iX_j + L_{ij} Z_iZ_j +
+                    \displaystyle\sum_{i\in V(\Lambda)} f_i X_i + h_i Z_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -232,7 +232,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The weighted (<span class="cm-serif-roman-small">xyz/.</span>)
                     Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -243,7 +243,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>$(\alpha+\beta,\alpha+\gamma,\beta+\gamma)>0$</li>
-                        <li>$\Lambda$ representing an interaction graph</li>
+                        <li>$G$ is the interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -274,6 +274,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>Coefficients $\leq \mathsf{poly}(n)$</li>
+                        <li>$G$ is the interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -291,7 +292,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The weighted (<span class="cm-serif-roman-small">xyz/.</span>)
                     Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -303,7 +304,6 @@
                     <ul>
                         <li>$(\alpha+\beta,\alpha+\gamma,\beta+\gamma)>0$</li>
                         <li>$\Lambda$ representing a 2D square lattice</li>
-                        <li>Yes this includes general Heisenberg</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -323,7 +323,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;weighted (<span
                         class="cm-serif-roman-small">xyz/.</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
                     Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -354,7 +354,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;weighted (<span
                         class="cm-serif-roman-small">xyz/.</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
                     Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -386,7 +386,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;weighted (<span
                         class="cm-serif-roman-small">xyz/.</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \beta Y_iY_j + \gamma
                     Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -416,7 +416,7 @@
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;weighted (<span
                         class="cm-serif-roman-small">xyz/.</span>) Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \alpha Y_iY_j -
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq 0)}}\big(\alpha X_iX_j + \alpha Y_iY_j -
                     (|\alpha| + \epsilon) Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
@@ -471,7 +471,49 @@
                     </ul>
                 </div>
             </div>
-
+            <!-- Item 2LPH501 --><!-- Item 2LPH501 --><!-- Item 2LPH501 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH501</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The (<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian
+                    $$H=\displaystyle\sum_{\{i,j\} \in E(G)} J_{ij} \big(X_iX_j + Y_iY_j \big)$$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#CM16">[CM16]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$G$ is an interaction graph</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Item 2LPH502 --><!-- Item 2LPH502 --><!-- Item 2LPH502 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH502</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The IaF&ndash;(<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian
+                    $$H=\displaystyle\sum_{\{i,j\} \in E(G)} J_{ij}^{(\geq 0)} \big(X_iX_j + Y_iY_j \big)$$
+                </div>
+                <div><strong>Problem:</strong> Ground state energy</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$\Lambda$ representing a $2$D triangular lattice</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>From the (<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian</li>
+                    </ul>
+                </div>
+            </div>
         </main>
     </div>
 </body>

@@ -99,8 +99,8 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM01</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=J\displaystyle\sum_{i,j\in\Lambda} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
-                    -\displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
+                    $$H=J\displaystyle\sum_{\{i,j\}\in E(G)} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
+                    -\displaystyle\sum_{i\in V(G)} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -111,8 +111,9 @@
                     <ul>
                         <li>$J>0$ or $J\lt0$</li>
                         <li>$\Lambda$ representing a spatially sparse lattice</li>
-                        <li>External fields of the form: $-\displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot
+                        <li>External fields of the form: $-\displaystyle\sum_{i} \boldsymbol{B}_i \cdot
                             \boldsymbol{\sigma}_i$</li>
+                        <li>$G$ is an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -137,8 +138,8 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM01</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=J\displaystyle\sum_{i,j\in\Lambda} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
-                    -\displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
+                    $$H=J\displaystyle\sum_{\{i,j\}\in E(\Lambda)} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
+                    -\displaystyle\sum_{i\in V(\Lambda)} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -174,7 +175,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM108</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -183,7 +184,7 @@
                 <div>
                     <strong>Conditionals:</strong>
                     <ul>
-                        <li>$\Lambda$ representing an interaction graph</li>
+                        <li>$G$ representing an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -201,11 +202,11 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM104</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
+                <div><strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a></div>
                 <hr class="border-top bs-border-color opacity-100" />
                 <div>
                     <strong>Conditionals:</strong>
@@ -228,11 +229,11 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM105</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
+                <div><strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a></div>
                 <hr class="border-top bs-border-color opacity-100" />
                 <div>
                     <strong>Conditionals:</strong>
@@ -256,7 +257,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM110</small>
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -266,7 +267,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>$J_{ij}\geq 0$</li>
-                        <li>$\Lambda$ representing an interaction graph</li>
+                        <li>$G$ representing an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -283,7 +284,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM113</small>
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong> in <span class="cm-sans-serif">StoqMA</span></div>
@@ -310,7 +311,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM114</small>
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -346,7 +347,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM115</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Ferromagnetic Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} J_{ij}^{^{(\leq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\leq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> P</span></div>

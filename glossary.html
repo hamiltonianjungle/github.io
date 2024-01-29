@@ -196,6 +196,12 @@
                     $$H_{QMC(EPR)}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} + X_iX_j - Y_iY_j + Z_iZ_j\right)$$
                     <font color="#b3b8bc">(This is the a vairent on the standard Quantum Max&ndash;Cut where each edge is an EPR state)</font>
                 </dd>
+                <dt class="col-sm-3">Quantum Partition Function
+                </dt>
+                <dd class="col-sm-9">Given a $k$&ndash;local Hamiltonian $H$ on $n$ qubits, an inverse temperature $\beta = O(\mathsf{poly}(n))$ and a precision parameter $\delta = \Omega(1/\mathsf{poly}(n))$, 
+                    compute an approximation to the partition function $Z(\beta) = \text{Tr}\left[e^{-\beta H}\right]$ such that
+                    $$\big| Z - \widetilde{Z}\big| \leq \delta Z.$$
+                </dd>
             </dl>
             <hr class="border-top bs-border-color opacity-100" />
             <h3>Complexity Theory</h3>

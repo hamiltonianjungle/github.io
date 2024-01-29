@@ -102,9 +102,9 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: FHM01</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Fermi&ndash;Hubbard Model
-                    $$H = \displaystyle\sum_{i,j\in\Lambda}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
-                    c_{j\sigma} + U\displaystyle\sum_{i\in\Lambda}n_{i\uparrow}n_{i\downarrow} +
-                    \displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot \boldsymbol{S}_i $$
+                    $$H = \displaystyle\sum_{\{i,j\}\in E(\Lambda)}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
+                    c_{j\sigma} + U\displaystyle\sum_{i\in V(\Lambda)}n_{i\uparrow}n_{i\downarrow} +
+                    \displaystyle\sum_{i\in V(\Lambda)} \boldsymbol{B}_i \cdot \boldsymbol{S}_i $$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
@@ -135,8 +135,8 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: FHM02</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Fermi&ndash;Hubbard Model
-                    $$H = \displaystyle\sum_{i,j\in\Lambda}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
-                    c_{j\sigma} + U\displaystyle\sum_{i\in\Lambda}n_{i\uparrow}n_{i\downarrow}$$
+                    $$H = \displaystyle\sum_{\{i,j\}\in E(G)}\displaystyle\sum_{\sigma}t_{ij} c_{i\sigma}^\dagger
+                    c_{j\sigma} + U\displaystyle\sum_{i\in V(G)}n_{i\uparrow}n_{i\downarrow}$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>

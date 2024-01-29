@@ -100,7 +100,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM16</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Transverse Ising model
-                    $$H=\displaystyle\sum_{i,j\in\Lambda}L_{ij}Z_iZ_j + \displaystyle\sum_{i\in\Lambda}f_iX_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}Z_iZ_j + \displaystyle\sum_{i\in V(G)}f_iX_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> StoqMA</span>&ndash;complete</div>
@@ -111,6 +111,7 @@
                     <ul>
                         <li>$L_{ij}$ and $f_i$ are real</li>
                         <li>$f_i \geq 0$</li>
+                        <li>$G$ is an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -127,7 +128,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM17</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Classical Ising model
-                    $$H=\displaystyle\sum_{i,j\in\Lambda}L_{ij}S_iS_j$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)}L_{ij}S_iS_j$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
@@ -154,7 +155,7 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM18</small>
                 <div>
                     <strong>Hamiltonian:</strong> The Classical Ising model
-                    $$H=\displaystyle\sum_{i,j\in\Lambda} S_iS_j + \displaystyle\sum_{i\in\Lambda} S_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} S_iS_j + \displaystyle\sum_{i\in V(G)} S_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;hard</div>
@@ -165,7 +166,7 @@
                     <ul>
                         <li>Antiferromagnetic interactions</li>
                         <li>$S_i \in \{-1,1\}$</li>
-                        <li>$\Lambda$ representing a planar graph</li>
+                        <li>$G$ representing a planar graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -181,8 +182,8 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM23</small>
                 <div>
                     <strong>Hamiltonian:</strong> The IaF&ndash;Transverse Ising model
-                    $$H=\displaystyle\sum_{i,j\in\Lambda}L_{ij}^{^{(\geq 0)}}Z_iZ_j +
-                    \displaystyle\sum_{i\in\Lambda}f_iX_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\geq 0)}}Z_iZ_j +
+                    \displaystyle\sum_{i\in V(G)}f_iX_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> StoqMA</span>&ndash;complete</div>
@@ -192,7 +193,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>$L_{ij} \geq 0$</li>
-                        <li>$\Lambda$ representing an interaction graph</li>
+                        <li>$G$ representing an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
@@ -215,8 +216,8 @@
                 <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM24</small>
                 <div>
                     <strong>Hamiltonian:</strong> The IF&ndash;Transverse Ising model
-                    $$H=\displaystyle\sum_{i,j\in\Lambda}L_{ij}^{^{(\leq 0)}}Z_iZ_j +
-                    \displaystyle\sum_{i\in\Lambda}f_iX_i$$
+                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\leq 0)}}Z_iZ_j +
+                    \displaystyle\sum_{i\in V(G)}f_iX_i$$
                 </div>
                 <div><strong>Problem:</strong> Ground state energy</div>
                 <div><strong>Complexity:</strong><span class="cm-sans-serif"> BPP</span></div>
@@ -226,7 +227,7 @@
                     <strong>Conditionals:</strong>
                     <ul>
                         <li>$L_{ij} \leq 0$</li>
-                        <li>$\Lambda$ representing an interaction graph</li>
+                        <li>$G$ representing an interaction graph</li>
                     </ul>
                 </div>
                 <hr class="border-top bs-border-color opacity-100" />
