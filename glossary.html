@@ -182,6 +182,11 @@
                     $$H_{MC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - S_i \cdot S_j\right)$$
                     Subject to $S_i \in \{\pm 1\}$.
                 </dd>
+                <dt class="col-sm-3">$W$&ndash;Linear&ndash;Max&ndash;Cut
+                </dt>
+                <dd class="col-sm-9">Given a graph $G=(V,E)$ and a fixed $d\times d$ matrix $W$, assign unit vectors to maximise the following:
+                    $$MC_W^L(G) = \frac{1}{2} \displaystyle\max_{i\in S^{d-1}} \displaystyle\sum_{\{i,j\}\in E(G)} ||Wi - Wj||$$
+                </dd>
                 <dt class="col-sm-3">Quantum Max&ndash;Cut
                 </dt>
                 <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between

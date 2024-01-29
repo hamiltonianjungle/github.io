@@ -392,7 +392,34 @@
                 <div>
                     <strong>Reductions:</strong>
                     <ul>
-                        <li>To the antiferromagnetic Heisenberg model.</li>
+                        <li>To the antiferromagnetic Heisenberg model</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Item HbM901 --><!-- Item HbM901 --><!-- Item HbM901 -->
+            <div class="alert alert-light">
+                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM901</small>
+                <div>
+                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+                    $$H_{QMC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
+                </div>
+                <div><strong>Problem:</strong> Quantum Max&ndash;Cut product states</div>
+                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
+                <div><strong>Ref:</strong> <a href="references.html#KPT+24">[KPT+24]</a></div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>The graph $G$ has egde weights $w_{ij}$</li>
+                        <li>$w_{ij}\geq 0$ and $w_{ij} = O(1/\mathsf{poly}(n))$</li>
+                        <li>$\boldsymbol{S} = (S^1,S^2,S^3)$ denote the spin&ndash;$\frac{1}{2}$ operators</li>
+                    </ul>
+                </div>
+                <hr class="border-top bs-border-color opacity-100" />
+                <div>
+                    <strong>Reductions:</strong>
+                    <ul>
+                        <li>To the antiferromagnetic Heisenberg model and to <span class="cm-serif-roman-small">Max&ndash;Cut</span>$_3$</li>
                     </ul>
                 </div>
             </div>
