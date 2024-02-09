@@ -1,2 +1,4 @@
 .DS_Store
 .toadd.txt
+data/json_to_html.py
+data/metadata.json
