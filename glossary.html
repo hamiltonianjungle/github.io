@@ -58,6 +58,7 @@
                             <ul class="collapse p-0" id="models">
                                 <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
                                 <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
                                 <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
                                 <li><a class="nav-link" href="general.html">General</a></li>
                                 <li><a class="nav-link" href="general-local.html">General Local</a></li>
@@ -156,13 +157,6 @@
                     The homogeneous labeling refers to the fact that all interaction terms between particles are now
                     some constant non&ndash;negative value.
                     Homogeneous Ferromagnetic is the analogous non&ndash;positive regime.</dd>
-                <dt class="col-sm-3">Ground State Energy Problem</dt>
-                <dd class="col-sm-9">The ground state energy problem, synonymous with the local Hamiltonian problem, is
-                    a promise problem concerned
-                    with determining whether the ground state of a given local Hamiltonian is above or below some
-                    threshold.
-                    See <a href="glossary.html#LHP_glossary">Local Hamiltonian Problem</a> definition for more details.
-                </dd>
                 <dt class="col-sm-3" id="LHP_glossary">Local Hamiltonian Problem</dt>
                 <dd class="col-sm-9">Given a $k=O(1)$ local Hamiltonian, $H$, acting on an $n$&ndash;qubit system, such
                     that,
@@ -174,6 +168,19 @@
                         <li>The smallest eigenvalue of $H$ is $\leq a$</li>
                         <li>All eigenvalues of $H$ are $\geq b$</li>
                     </ol>
+                </dd>
+                <dt class="col-sm-3" id="LHP_glossary">Commuting Local Hamiltonian Problem</dt>
+                <dd class="col-sm-9">Given a $k=O(1)$ local Hamiltonian, $H$, acting on an $n$&ndash;qudit system, such
+                    that,
+                    $$H = \sum_{j=1}^m h_j$$
+                    where $[h_j,h_k]=0$ for all $j,k$ and with $||H_j||\leq\mathsf{poly}(n)$, each element of every $H_j$ can be specified in
+                    $\mathsf{poly}(n)$ bits and $m\leq\mathsf{poly}(n)$,
+                    the problem statement is to determine which of the following is true, promised one is so:
+                    <ol>
+                        <li>The smallest eigenvalue of $H$ is $\leq a$</li>
+                        <li>All eigenvalues of $H$ are $\geq b$</li>
+                    </ol>
+                    <font color="#b3b8bc">(This can be reformulated in terms of a projectors which then asks if the ground space is of positive dimension)</font>
                 </dd>
                 <dt class="col-sm-3">Max&ndash;Cut
                 </dt>
