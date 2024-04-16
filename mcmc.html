@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>The Hamiltonian Jungle | General</title>
+    <title>The Hamiltonian Jungle | MCMC</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +15,8 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
@@ -54,13 +56,13 @@
                     <div class="container p-0">
                         <ul class="nav flex-column">
                             <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
-                                    aria-expanded="true">Models</a></li>
-                            <ul class="collapse show p-0" id="models">
+                                    aria-expanded="false">Models</a></li>
+                            <ul class="collapse p-0" id="models">
                                 <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
                                 <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
                                 <li><a class="nav-link" href="commuting.html">Commuting</a></li>
                                 <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="general.html" aria-current="true">General</a></li>
+                                <li><a class="nav-link" href="general.html">General</a></li>
                                 <li><a class="nav-link" href="general-local.html">General Local</a></li>
                                 <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
                                 <li><a class="nav-link" href="ising.html">Ising</a></li>
@@ -68,11 +70,11 @@
                                 <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
                             </ul>
                             <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="false">Techniques</a></li>
-                            <ul class="collapse p-0" id="techniques">
+                              aria-expanded="true">Techniques</a></li>
+                            <ul class="collapse show p-0" id="techniques">
                               <!-- <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li> -->
                               <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <!-- <li><a class="nav-link" href="mcmc.html">MCMC</a></li> -->
+                              <li><a class="nav-link" href="mcmc.html" aria-current="true">MCMC</a></li>
                           </ul>
                             <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
                             <li><a class="nav-link" href="glossary.html">Glossary</a></li>
@@ -100,67 +102,11 @@
         </div>
         <main class="flex-grow w-100 px-4 pb-4">
             <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-                <h2>General Hamiltonians</h2>
+                <h2>Markov Chain Monte Carlo</h2>
             </div>
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH18</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
-                    $$
-                    H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma} t_{ij} c_{i\sigma}^\dagger c_{j\sigma}
-                    + \frac{1}{2} \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
-                    u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma} c_{l\sigma}
-                    $$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>Fixed&ndash;basis set</li>
-                        <li>Fixed particle number, $n$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the Fermi&ndash;Hubbard Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH18</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
-                    $$
-                    H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma} t_{ij} c_{i\sigma}^\dagger c_{j\sigma}
-                    + \frac{1}{2} \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
-                    u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma} c_{l\sigma}
-                    $$
-                </div>
-                <div><strong>Problem:</strong> Lowest&ndash;energy Slater Determinant</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>Fixed&ndash;basis set</li>
-                        <li>Fixed particle number, $n$</li>
-                        <li>Inverse polynomial precision</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>To a diagonal Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
+            <p>
+                ...
+            </p>
         </main>
     </div>
 </body>
