@@ -181,7 +181,7 @@
             <p>
                 The structure lemma is at the heart of studying the complexity of the commuting local Hamiltonian problem. 
                 A high&ndash;level overview of the lemma is to say that it is possible to perform a fine&ndash;grained partition of the local Hilbert space.
-                The partition (as the name suggestes) decomposes the Hilbert space into smaller, independent Hilbert spaces.
+                The partition (as the name suggests) decomposes the Hilbert space into smaller, independent Hilbert spaces.
                 Studying these independent spaces allows us to solve the whole problem. 
                 Of course, this partition is not always possible and even when it is, it can be a difficult process.
                 Due to the nature of commuting local Hamiltonians in certain circumstances and on particular geometries, the structure lemma can be applied.
@@ -193,7 +193,12 @@
                 $$
                     \mathcal{H} = \bigotimes_{p} \mathcal{H}_p.
                 $$
-                Let $\mathcal{H}_p$ be a local Hilbert space on a particle $p$ where the dimension of $\mathcal{H}_p$ is $d$. Said particle interacts non&ndash;trivially with an arbitrary non&ndash;zero number of other particles; we label other particles as $q,r,s,\dots$. All interactions in this system are $2$&ndash;local, i.e. the interaction between particle $p$ and particle $q$ is described by a Hamiltonians operator $h_{pq} \in \mathbf{L}(\mathcal{H}_p \otimes \mathcal{H}_q)$. The full local Hamiltonian admits an interaction graph $G = (V,E)$ where $V = [p,q,r,\dots]$ is the set of particles and $E = \{(p,q) : h_{pq} \neq \mathbb{I}\}$ is the set of non&ndash;trivial interactions between particles. The goal is to find a fine&ndash;grained partition of the local Hilbert space $\mathcal{H}_p$. This analysis closely follows the ideas of <a href="references.html#BV03">[BV03]</a>.
+                Let $\mathcal{H}_p$ be a local Hilbert space on a particle $p$ where the dimension of $\mathcal{H}_p$ is $d$. 
+                Said particle interacts non&ndash;trivially with an arbitrary non&ndash;zero number of other particles; we label other particles as $q,r,s,\dots$. 
+                All interactions in this system are $2$&ndash;local, i.e. the interaction between particle $p$ and particle $q$ is described by a Hamiltonians operator 
+                $h_{pq} \in \mathbf{L}(\mathcal{H}_p \otimes \mathcal{H}_q)$. The full local Hamiltonian admits an interaction graph $G = (V,E)$ where $V = [p,q,r,\dots]$ 
+                is the set of particles and $E = \{(p,q) : h_{pq} \neq \mathbb{I}\}$ is the set of non&ndash;trivial interactions between particles. 
+                The goal is to find a fine&ndash;grained partition of the local Hilbert space $\mathcal{H}_p$. This analysis closely follows the ideas of <a href="references.html#BV03">[BV03]</a>.
             </p>
             <p>
                 Define a set of operator for a local Hilbert space $\mathcal{H}_p$ as
@@ -213,7 +218,8 @@
             </div>
             <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
                 <b>Lemma (Direct sum decomposition) </b>
-                For any <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices, there exists a direct sum decomposition into smaller algebras $\mathfrak{A}_j$ such that each $\mathfrak{A}_j$ has a trivial center, i.e.
+                For any <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices, there exists a direct sum decomposition into 
+                smaller algebras $\mathfrak{A}_j$ such that each $\mathfrak{A}_j$ has a trivial center, i.e.
                 $$
                     \mathfrak{A} = \bigoplus_j \mathfrak{A}_j.
                 $$
@@ -238,7 +244,7 @@
                     \mathfrak{A}_{p.p} &= \bigoplus_\alpha \mathfrak{A}_{p.p}^{(\alpha)}.
                 \end{align}
                 $$
-                It is common to refer to each $\mathcal{H}_{p}^{(\alpha)}$ as a \emph{slice}. 
+                It is common to refer to each $\mathcal{H}_{p}^{(\alpha)}$ as a <i>slice</i>. 
                 Recall from the Lemma that each $\mathfrak{A}_{p.p}^{(\alpha)}$ has a trivial center. 
                 We can then use the tensor product decomposition Lemma to find a decomposition of the form
                 $$
@@ -248,11 +254,13 @@
                 \end{align}
                 $$
                 The Hilbert spaces $\mathcal{V}_p^{(\alpha)}$ are left undefined for the moment. 
-                So each subalgebra $\mathfrak{A}_{p.p}^{(\alpha)}$ acts non&ndash;trivially on the Hilbert space slice $\mathcal{H}_{p.p}^{(\alpha)}$ and trivially on the Hilbert space slice $\mathcal{V}_p^{(\alpha)}$. 
+                So each subalgebra $\mathfrak{A}_{p.p}^{(\alpha)}$ acts non&ndash;trivially on the Hilbert space slice $\mathcal{H}_{p.p}^{(\alpha)}$ and trivially on the 
+                Hilbert space slice $\mathcal{V}_p^{(\alpha)}$. 
                 To investiagte further we now look at the non&ndash;trivial $2$&ndash;local interactions.
             </p>
             <p>
-                Consider a pair $(p,q)$, i.e. a non&ndash;trivial interaction between particle $p$ and particle $q$; there exists an operator $h_{pq}$ acting over such particles. We want to construct two <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;subalgebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{q.p}$ where 
+                Consider a pair $(p,q)$, i.e. a non&ndash;trivial interaction between particle $p$ and particle $q$; there exists an operator $h_{pq}$ acting over such particles. 
+                We want to construct two <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;subalgebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{q.p}$ where 
                 <ol>
                     <li>$\mathfrak{A}_{p.q} \subseteq \mathbf{L}(\mathcal{H}_p)$ and $\mathfrak{A}_{q.p} \subseteq \mathbf{L}(\mathcal{H}_q)$,</li>
                     <li>$h_{pq} \in \mathfrak{A}_{p.q} \otimes \mathfrak{A}_{q.p}$.</li>
@@ -260,7 +268,7 @@
                 This allows for the independent study of the components of a local system. 
                 Moreover, we decompose particle $p$ into a set of subparticles $\{p.q\}$ such that the local interaction between $p$ and $q$ only affects the 
                 subparticle $p.q$ (and $q.p$ in the respective $q$ Hilbert space). 
-                In this way we can understand the possible strucutre of the eigenstates of the Hamiltonian. 
+                In this way we can understand the possible structure of the eigenstates of the Hamiltonian. 
             </p>
             <p>
                 Decompose the operator $h_{pq}$ into a sum of tensor products of operators acting on the local Hilbert spaces of $p$ and $q$, 
@@ -275,7 +283,7 @@
                 <div class="text-body-secondary">
                     A helpful way to think about this is to notice our restricted view of the pair $(p,q)$.
                     We are interested in the algebra of this interaction. 
-                    Since we decompose the non&ndash;trivial operator $h_{pq}$ into two parts, think of the space $\mathcal{S}_{p.q}$ as the set of operators \emph{required} to describe $h_{pq}$. 
+                    Since we decompose the non&ndash;trivial operator $h_{pq}$ into two parts, think of the space $\mathcal{S}_{p.q}$ as the set of operators <i>required</i> to describe $h_{pq}$. 
                     Moreover, $\text{span}\{A_j\}$ are the operators linked to the interaction of $p$ with $q$.
                 </div>
                 A simple observation shows that $\mathcal{S}_{p.q}$ and $\mathcal{S}_{q.p}$ are closed under Hermitian conjugation. 
@@ -286,7 +294,8 @@
                     \mathfrak{A}_{q.p} \subseteq \mathbf{L}(\mathcal{H}_q),
                 \end{align*}
                 $$          
-                as the minimal <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras such that $\mathcal{S}_{p.q} \subseteq \mathfrak{A}_{p.q}$ and $\mathcal{S}_{q.p} \subseteq \mathfrak{A}_{q.p}$. Hence it can be seen 
+                as the minimal <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras such that $\mathcal{S}_{p.q} \subseteq \mathfrak{A}_{p.q}$ and 
+                $\mathcal{S}_{q.p} \subseteq \mathfrak{A}_{q.p}$. Hence it can be seen 
                 $$          
                 \begin{align*}
                     \mathfrak{A}_{p.q} \subseteq \text{Gen}(\{A_j\} \cup \mathbb{I}),\\
@@ -300,14 +309,15 @@
                 This becomes clear from the following analysis. 
             </p>
             <p>
-                The triplet of particles $p,q,r$ form a Hilbert space $\mathcal{H}_p \otimes \mathcal{H}_q \otimes \mathcal{H}_r$. Non&ndash;trivial operators that act over $(p,q)$ and $(p,r)$ can be expressed as $h_{pq} \otimes \mathbb{I}_r$ and $\mathbb{I}_q \otimes h_{pr}$. We decompose them as,
+                The triplet of particles $p,q,r$ form a Hilbert space $\mathcal{H}_p \otimes \mathcal{H}_q \otimes \mathcal{H}_r$. Non&ndash;trivial operators that act 
+                over $(p,q)$ and $(p,r)$ can be expressed as $h_{pq} \otimes \mathbb{I}_r$ and $\mathbb{I}_q \otimes h_{pr}$. We decompose them as,
                 $$
                 \begin{align*}
                     h_{pq} \otimes \mathbb{I}_r &= \sum_{j} A_j^{(p)} \otimes B_j^{(q)} \otimes \mathbb{I}_r,\\
                     \mathbb{I}_q \otimes h_{pr} &= \sum_{k} \mathbb{I}_q \otimes C_k^{(p)} \otimes D_k^{(r)}.
                 \end{align*}
                 $$
-                The commutivative property dictates that $[{O_{pq} \otimes \mathbb{I}_r },{\mathbb{I}_q \otimes O_{pr}}] = 0$, hence
+                The commutative property dictates that $[{O_{pq} \otimes \mathbb{I}_r },{\mathbb{I}_q \otimes O_{pr}}] = 0$, hence
                 $$
                     \sum_{j,k} \big( A_j^{(p)}C_k^{(p)} - C_k^{(p)}A_j^{(p)}\big) \otimes B_j^{(q)} \otimes D_k^{(r)} = 0.
                 $$
@@ -316,7 +326,7 @@
                 Therefore the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.r}$ commute. 
             </p>
             <p>
-                Let us investiagte the relationship between the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.p}$. 
+                Let us investigate the relationship between the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.p}$. 
                 A simple observation shows that $[{\mathfrak{A}_{p.q}},{\mathfrak{A}_{p.p}}] = 0$ for any $(p,q)\in E$. 
                 Recall that the definition of $\mathfrak{A}_{p.p}$ is the set of operators that commute with all non&ndash;trivial interactions for particle $p$. 
                 It is also straightforward to see that any operator in $\mathfrak{A}_{p.q}$ preserves $\mathcal{H}_p^{(\alpha)}$.
@@ -343,7 +353,7 @@
                 Since we make no assumptions on the centers of the algebras we must go one layer further and turn to the subalgebra slices. 
                 Recall that each $\mathfrak{A}_{p.q}$ is decomposed as a direct sum of subalgebra slices where the subalgebras have trivial centers. 
                 The commutation between algebras will hold for the subalgebra slices.
-                Hence we can itteratively apply the tensor product decomposition to the Hilbert space $\mathcal{V}_p^{(\alpha)}$ to form a tensor product partition into component subparticle Hilbert spaces. 
+                Hence we can iteratively apply the tensor product decomposition to the Hilbert space $\mathcal{V}_p^{(\alpha)}$ to form a tensor product partition into component subparticle Hilbert spaces. 
             </p>
             <p>
                 To elaborate consider two pairs of particles $(p,q)$ and $(p,r)$. 
@@ -395,11 +405,13 @@
                 $$
                     \mathcal{H} = \mathcal{H}_p \otimes \mathcal{H}_q \otimes \mathcal{H}_r \otimes \cdots = \bigotimes_{p} \mathcal{H}_p.
                 $$
-                The strucutre Lemmas then follows as:
+                The structure Lemmas then follows as:
             </p>
             <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
                 <b>Lemma (Structure Lemma of Finite Dimensional <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras) </b>
-                Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra on a finite dimensional Hilbert space $\mathcal{H}$. Then there exists a direct sum decomposition of $\mathcal{H}$ and a local tensor product decomposition of $\mathcal{H}^{(\alpha)} = \mathcal{H}_{1}^{(\alpha)} \otimes \mathcal{H}_{2}^{(\alpha)}$ such that
+                Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra on a finite dimensional Hilbert space $\mathcal{H}$. 
+                Then there exists a direct sum decomposition of $\mathcal{H}$ and a local tensor product decomposition of 
+                $\mathcal{H}^{(\alpha)} = \mathcal{H}_{1}^{(\alpha)} \otimes \mathcal{H}_{2}^{(\alpha)}$ such that
                 $$
                 \begin{align}
                     \mathcal{H} &= \bigoplus_{\alpha} \mathcal{H}_{1}^{(\alpha)} \otimes \mathcal{H}_{2}^{(\alpha)},\\
@@ -408,7 +420,10 @@
                 $$
             </div>
             <p>
-                Note that this lemma cannot be used in all circumstances. We showed a fine&ndash;grained partition of a local Hilbert space for a specific example. Using this prescirption can fail for $3$&ndash;local commuting Hamiltonians over qubits. The reason we showed this application was to demonstrate the power of the <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra language and provided some intuitive contenxt for these abstract ideas.
+                Note that this lemma cannot be used in all circumstances. We showed a fine&ndash;grained partition of a local Hilbert space for a specific example. 
+                Using this prescription can fail for $3$&ndash;local commuting Hamiltonians over qubits. 
+                The reason we showed this application was to demonstrate the power of the <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra language and provided some intuitive 
+                context for these abstract ideas.
             </p>
             <p>
                 Technically this Lemma can be gleaned from the tensor product decomposition Lemma and the direct sum decomposition Lemma.
@@ -453,7 +468,10 @@
                     </script>
                 </div>
                 <div style="padding-left: 20%; padding-right: 20%;">
-                    <p><b>Figure: </b> A diagram showing the structure of the local Hilbert space $\mathcal{H}_p$ and the Hilbert space $\mathcal{H}$ for a particle $p$ that interacts with a set of other particles $\{q,r,s\}$. The local Hilbert space $\mathcal{H}_p$ can be decomposed into a direct sum of tensor products of subparticle Hilbert spaces. Note that in this example $\alpha = 1$.</p>
+                    <p><b>Figure: </b> A diagram showing the structure of the local Hilbert space $\mathcal{H}_p$ and the Hilbert space $\mathcal{H}$ for a particle $p$ that 
+                        interacts with a set of other particles $\{q,r,s\}$. 
+                        The local Hilbert space $\mathcal{H}_p$ can be decomposed into a direct sum of tensor products of subparticle Hilbert spaces. 
+                        Note that in this example $\alpha = 1$.</p>
                 </div>
             </div>
         </main>
