@@ -264,6 +264,70 @@
                     </ul>
                 </div>
             </div>
+            <!-- Item PFP-IM-001 --><!-- Item PFP-IM-001 --><!-- Item PFP-IM-001 -->
+            <div class='alert alert-light'>
+                <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-IM-001</small>
+                    <div>
+                    <strong>Hamiltonian:</strong> Ferromagnetic Ising model
+                    $$H = -\sum_{\{i,j\}\in E(G)} L_{ij}Z_iZ_j - B\sum_{i \in V(G)}Z_i$$
+                    </div>
+                        <div><strong>Problem:</strong> Partition function</div>
+                        <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPRAS</span></div>
+                        <div><strong>Ref:</strong> <a href='references.html#[JS93]'>[[JS93]]</a></div>
+                    <hr class='border-top bs-border-color opacity-100' />
+                    <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$J_{ij} \in \mathbb{R}\backslash \{0\}$</li>
+                        <li>$B \in \mathbb{R}$</li>
+                        <li>$\beta \in \mathbb{R}^+$</li>
+                        <li>$G$ represents a graph</li>
+                    </ul>
+                    </div>
+                </div>
+                <!-- Item PFP-IM-101 --><!-- Item PFP-IM-101 --><!-- Item PFP-IM-101 -->
+            <div class='alert alert-light'>
+                <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-IM-101</small>
+                    <div>
+                    <strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian
+                    $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i Z_i$$
+                    </div>
+                    <div><strong>Problem:</strong> Partition function</div>
+                    <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPTAS</span></div>
+                    <div><strong>Ref:</strong> <a href='references.html#[SST14]'>[[SST14]]</a></div>
+                    <hr class='border-top bs-border-color opacity-100' />
+                    <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$J_{ij} \in \mathbb{R}^+$</li>
+                        <li>$G$ has maximum degree $\Delta$</li>
+                        <li>Parameters in the interior of the uniqueness region of the infinite $(\Delta &ndash; 1)$&ndash;regular tree</li>
+                        <li>$\beta \in \mathbb{R}^+$</li>
+                    </ul>
+                    </div>
+                </div>
+                <!-- Item PFP-IM-102 --><!-- Item PFP-IM-102 --><!-- Item PFP-IM-102 -->
+                <div class='alert alert-light'>
+                    <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-IM-102</small>
+                    <div>
+                    <strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian
+                    $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i Z_i$$
+                    </div>
+                    <div><strong>Problem:</strong> Partition function</div>
+                    <div><strong>Complexity:</strong>No FRPAS</div>
+                    <div><strong>Ref:</strong> <a href='references.html#[SS14], [GSV16]'>[[SS14], [GSV16]]</a></div>
+                    <hr class='border-top bs-border-color opacity-100' />
+                    <div>
+                    <strong>Conditionals:</strong>
+                    <ul>
+                        <li>$J_{ij} \in \mathbb{R}^+$</li>
+                        <li>$G$ has maximum degree $\Delta$</li>
+                        <li>Parameters in the interior of the non&ndash;uniqueness region of the infinite $(\Delta &ndash; 1)$&ndash;regular tree</li>
+                        <li>$\beta \in \mathbb{R}^+$</li>
+                        <li>No FPRAS unless RP=NP.</li>
+                    </ul>
+                    </div>
+                    </div>
         </main>
     </div>
 </body>
