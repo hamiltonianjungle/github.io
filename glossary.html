@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="icon" href="media/graphics/favicon.ico"/>
+    <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -18,11 +18,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    gtag('config', 'G-MMS1QCMRED');
+        gtag('config', 'G-MMS1QCMRED');
     </script>
 </head>
 
@@ -68,13 +68,14 @@
                                 <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
                             </ul>
                             <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="false">Techniques</a></li>
+                                    aria-expanded="false">Techniques</a></li>
                             <ul class="collapse p-0" id="techniques">
-                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
-                              <li><a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
-                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                          </ul>
+                                <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
+                                <li><a class="nav-link" href="cstar-algebras.html"><span
+                                            class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
+                                <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                                <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                            </ul>
                             <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
                             <li><a class="nav-link" href="glossary.html" aria-current="true">Glossary</a></li>
                             <li><a class="nav-link" href="references.html">References</a></li>
@@ -181,63 +182,78 @@
                 <dd class="col-sm-9">Given a $k=O(1)$ local Hamiltonian, $H$, acting on an $n$&ndash;qudit system, such
                     that,
                     $$H = \sum_{j=1}^m h_j$$
-                    where $[h_j,h_k]=0$ for all $j,k$ and with $||H_j||\leq\mathsf{poly}(n)$, each element of every $H_j$ can be specified in
+                    where $[h_j,h_k]=0$ for all $j,k$ and with $||H_j||\leq\mathsf{poly}(n)$, each element of every
+                    $H_j$ can be specified in
                     $\mathsf{poly}(n)$ bits and $m\leq\mathsf{poly}(n)$,
                     the problem statement is to determine which of the following is true, promised one is so:
                     <ol>
                         <li>The smallest eigenvalue of $H$ is $\leq a$</li>
                         <li>All eigenvalues of $H$ are $\geq b$</li>
                     </ol>
-                    (This can be reformulated in terms of a projectors which then asks if the ground space is of positive dimension)
+                    (This can be reformulated in terms of a projectors which then asks if the ground space is of
+                    positive dimension)
                 </dd>
                 <dt class="col-sm-3">Max&ndash;Cut
                 </dt>
-                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge
+                    between
                     vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
                     $$H_{MC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - S_i \cdot S_j\right)$$
                     Subject to $S_i \in \{\pm 1\}$.
                 </dd>
                 <dt class="col-sm-3">$W$&ndash;Linear&ndash;Max&ndash;Cut
                 </dt>
-                <dd class="col-sm-9">Given a graph $G=(V,E)$ and a fixed $d\times d$ matrix $W$, assign unit vectors to maximise the following:
-                    $$MC_W^L(G) = \frac{1}{2} \displaystyle\max_{i\in S^{d-1}} \displaystyle\sum_{\{i,j\}\in E(G)} ||Wi - Wj||$$
+                <dd class="col-sm-9">Given a graph $G=(V,E)$ and a fixed $d\times d$ matrix $W$, assign unit vectors to
+                    maximise the following:
+                    $$MC_W^L(G) = \frac{1}{2} \displaystyle\max_{i\in S^{d-1}} \displaystyle\sum_{\{i,j\}\in E(G)} ||Wi
+                    - Wj||$$
                 </dd>
                 <dt class="col-sm-3">Quantum Max&ndash;Cut
                 </dt>
-                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge
+                    between
                     vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
-                    $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
+                    $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} -
+                    \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
                     (This is the standard definition where each edge is a singlet state)
                 </dd>
                 <dt class="col-sm-3">Quantum Max&ndash;Cut(EPR)
                 </dt>
-                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge between
+                <dd class="col-sm-9">Given a graph $G=(V,E,w_{ij})$, where $w_{ij} \geq 0$ is the weight of the edge
+                    between
                     vertices $i$ and $j$, compute the maximum eigenvalue of the Hamiltonian
-                    $$H_{QMC(EPR)}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} + X_iX_j - Y_iY_j + Z_iZ_j\right)$$
+                    $$H_{QMC(EPR)}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} + X_iX_j - Y_iY_j +
+                    Z_iZ_j\right)$$
                     (This is the a variant on the standard Quantum Max&ndash;Cut where each edge is an EPR state)
                 </dd>
                 <dt class="col-sm-3">Quantum Partition Function
                 </dt>
-                <dd class="col-sm-9">Given a $k$&ndash;local Hamiltonian $H$ on $n$ qubits, an inverse temperature $\beta = O(\mathsf{poly}(n))$ and a precision parameter $\delta = \Omega(1/\mathsf{poly}(n))$, 
-                    compute an approximation to the partition function $Z(\beta) = \text{Tr}\left[e^{-\beta H}\right]$ such that
+                <dd class="col-sm-9">Given a $k$&ndash;local Hamiltonian $H$ on $n$ qubits, an inverse temperature
+                    $\beta = O(\mathsf{poly}(n))$ and a precision parameter $\delta = \Omega(1/\mathsf{poly}(n))$,
+                    compute an approximation to the partition function $Z(\beta) = \text{Tr}\left[e^{-\beta H}\right]$
+                    such that
                     $$\big| Z - \widetilde{Z}\big| \leq \delta Z.$$
                 </dd>
                 <dt class="col-sm-3">Additive $\varepsilon$&ndash;Approximation
                 </dt>
-                <dd class="col-sm-9">Let $a$, $\hat{a}$ and $\varepsilon$ be positive real numbers. We say that $\hat{a}$ is the 
+                <dd class="col-sm-9">Let $a$, $\hat{a}$ and $\varepsilon$ be positive real numbers. We say that
+                    $\hat{a}$ is the
                     additive $\varepsilon$-approximation of $a$ if
                     $$ |{a - \hat{a}}| \leq \varepsilon.$$
                 </dd>
                 <dt class="col-sm-3">Multiplicative $\varepsilon$&ndash;Approximation
                 </dt>
-                <dd class="col-sm-9">Let $a$, $\hat{a}$ and $\varepsilon$ be positive real numbers. We say that $\hat{a}$ is the 
+                <dd class="col-sm-9">Let $a$, $\hat{a}$ and $\varepsilon$ be positive real numbers. We say that
+                    $\hat{a}$ is the
                     multiplicative $\varepsilon$-approximation of $a$ if
                     $$ |{a - \hat{a}}| \leq \varepsilon a.$$
                 </dd>
                 <dt class="col-sm-3">Complex Multiplicative $\varepsilon$&ndash;Approximation
                 </dt>
-                <dd class="col-sm-9">Let $z = re^{i\theta}$ and $\hat{z} = \hat{r}e^{i\hat{\theta}}$. We say that $\hat{z}$ is the multiplicative $\varepsilon$-approximation of $z$ if
-                    $$ |{r - \hat{r}}| \leq \varepsilon r \quad \text{and} \quad |{\theta - \hat{\theta}}| \leq \varepsilon.$$ 
+                <dd class="col-sm-9">Let $z = re^{i\theta}$ and $\hat{z} = \hat{r}e^{i\hat{\theta}}$. We say that
+                    $\hat{z}$ is the multiplicative $\varepsilon$-approximation of $z$ if
+                    $$ |{r - \hat{r}}| \leq \varepsilon r \quad \text{and} \quad |{\theta - \hat{\theta}}| \leq
+                    \varepsilon.$$
                 </dd>
             </dl>
             <hr class="border-top bs-border-color opacity-100" />
@@ -256,6 +272,15 @@
                         <li>For all $x\notin L$, $M$ outputs $\mathtt{0}$.</li>
                     </ol>
                 </dd>
+                <dt class="col-sm-3">Nondeterministic Polynomial &mdash; <span class="cm-sans-serif">NP</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span class="cm-sans-serif">NP</span> if there exists:
+                    a <i>deterministic</i> verification Turing Machine, $M$, and a polynomial, $\mathsf{poly}(|x|)$,
+                    such that
+                    <ol>
+                        <li>For all $x\in L$, $M(x,\mathsf{poly}(|x|))=\mathtt{1}$.</li>
+                        <li>For all $x\notin L$, $M(x,\mathsf{poly}(|x|))=\mathtt{0}$.</li>
+                    </ol>
+                </dd>
                 <dt class="col-sm-3">Bounded&ndash;Error Probabilistic Polynomial &mdash; <span
                         class="cm-sans-serif">BPP($\mathsf{a}$,$\mathsf{b}$)</span></dt>
                 <dd class="col-sm-9">A decision problem $L$ is in <span
@@ -267,13 +292,13 @@
                         <li>For all $x\notin L$, $\text{Pr}\left[M(x)=\mathtt{1} \right] \leq b$.</li>
                     </ol>
                 </dd>
-                <dt class="col-sm-3">Nondeterministic Polynomial &mdash; <span class="cm-sans-serif">NP</span></dt>
-                <dd class="col-sm-9">A decision problem $L$ is in <span class="cm-sans-serif">NP</span> if there exists:
-                    a <i>deterministic</i> verification Turing Machine, $M$, and a polynomial, $\mathsf{poly}(|x|)$,
-                    such that
+                <dt class="col-sm-3">Randomised Polynomial &mdash; <span class="cm-sans-serif">RP</span></dt>
+                <dd class="col-sm-9">A decision problem $L$ is in <span class="cm-sans-serif">RP</span> if there exists:
+                    a <i>probabilistic</i> Turing Machine, $M$, such that
                     <ol>
-                        <li>For all $x\in L$, $M(x,\mathsf{poly}(|x|))=\mathtt{1}$.</li>
-                        <li>For all $x\notin L$, $M(x,\mathsf{poly}(|x|))=\mathtt{0}$.</li>
+                        <li>For any input $x$, $M$ runs for a time $O(\mathsf{poly}(|x|))$.</li>
+                        <li>For all $x \in L$, $\text{Pr}[M(x) = \mathtt{1}] \geq \frac{1}{2}$.</li>
+                        <li>For all $x \notin L$, $\text{Pr}[M(x) = \mathtt{1}] = 0$.</li>
                     </ol>
                 </dd>
                 <dt class="col-sm-3">Merlin&ndash;Arthur &mdash; <span
@@ -289,19 +314,18 @@
                             $\text{Pr}\left[M(x,\mathsf{poly}(|x|))=\mathtt{1} \right] \leq b$.</li>
                     </ol>
                 </dd>
-                <dt class="col-sm-3">Sharp P &mdash; <span
-                    class="cm-sans-serif">&#35;P</span></dt>
-                <dd class="col-sm-9">The class <span class="cm-sans-serif">&#35;P</span> consists of all functions 
-                    $f:\Sigma^* \rightarrow \mathbb{N}$ for which there exists a polynomial $p:\mathbb{N} \rightarrow \mathbb{N}$ 
+                <dt class="col-sm-3">Sharp P &mdash; <span class="cm-sans-serif">&#35;P</span></dt>
+                <dd class="col-sm-9">The class <span class="cm-sans-serif">&#35;P</span> consists of all functions
+                    $f:\Sigma^* \rightarrow \mathbb{N}$ for which there exists a polynomial $p:\mathbb{N} \rightarrow
+                    \mathbb{N}$
                     and a polynomial-time algorithm $A$ such that:
-                        <ol>
-                            <li>for all $x \in \Sigma^*$ $f(x) = |\{y \in \Sigma^{p(x)} : A(x,y)\;\text{accepts} \}|$</li>
-                        </ol>
+                    <ol>
+                        <li>for all $x \in \Sigma^*$ $f(x) = |\{y \in \Sigma^{p(x)} : A(x,y)\;\text{accepts} \}|$</li>
+                    </ol>
                 </dd>
-                <dt class="col-sm-3">GapP &mdash; <span
-                    class="cm-sans-serif">GapP</span></dt>
-                <dd class="col-sm-9">The class <span class="cm-sans-serif">GapP</span> consists of all functions 
-                    $f:\Sigma^* \rightarrow \mathbb{Z}$ for which there exists a polynomial 
+                <dt class="col-sm-3">GapP &mdash; <span class="cm-sans-serif">GapP</span></dt>
+                <dd class="col-sm-9">The class <span class="cm-sans-serif">GapP</span> consists of all functions
+                    $f:\Sigma^* \rightarrow \mathbb{Z}$ for which there exists a polynomial
                     <i>nondeterministic</i> Turing machine $M$ such that
                     <ol>
                         <li>for all $x \in \Sigma^*$ $f(x) = \#M(x) - \# \bar{M}(x)$</li>
@@ -309,17 +333,19 @@
                     where $\#M(x)$ and $\# \bar{M}(x)$ are the number of accepting and rejector paths of $M$ on $x$.
                 </dd>
                 <dt class="col-sm-3">Fully Polynomial&ndash;time Approximation Scheme &mdash; <span
-                    class="cm-sans-serif">FPTAS</span></dt>
-                <dd class="col-sm-9">A <i>fully polynomial-time approximation scheme</i> for a counting problem 
-                    $f:\Sigma^* \rightarrow \mathbb{N}$ is an algorithm $A$ that takes as input an instance 
-                    $x \in \Sigma^*$ and a number $\epsilon > 0$ and outputs a multiplicative 
+                        class="cm-sans-serif">FPTAS</span></dt>
+                <dd class="col-sm-9">A <i>fully polynomial-time approximation scheme</i> for a counting problem
+                    $f:\Sigma^* \rightarrow \mathbb{N}$ is an algorithm $A$ that takes as input an instance
+                    $x \in \Sigma^*$ and a number $\epsilon > 0$ and outputs a multiplicative
                     $\epsilon$-approximation to $f(x)$ in polynomial time in $|x|$ and $1/\epsilon$.
                 </dd>
                 <dt class="col-sm-3">Fully Polynomial&ndash;time Randomised Approximation Scheme &mdash; <span
-                    class="cm-sans-serif">FPRAS</span></dt>
-                <dd class="col-sm-9">A <i>fully polynomial-time randomised approximation scheme</i> for a counting problem 
-                    $f:\Sigma^* \rightarrow \mathbb{N}$ is an algorithm $A$ that takes as input an instance $x \in \Sigma^*$ 
-                    and a number $\epsilon > 0$ and outputs a multiplicative $\epsilon$-approximation to $f(x)$ with 
+                        class="cm-sans-serif">FPRAS</span></dt>
+                <dd class="col-sm-9">A <i>fully polynomial-time randomised approximation scheme</i> for a counting
+                    problem
+                    $f:\Sigma^* \rightarrow \mathbb{N}$ is an algorithm $A$ that takes as input an instance $x \in
+                    \Sigma^*$
+                    and a number $\epsilon > 0$ and outputs a multiplicative $\epsilon$-approximation to $f(x)$ with
                     probability at least $2/3$ in polynomial time in $|x|$ and $1/\epsilon$.
                 </dd>
                 <dt class="col-sm-3">Bounded&ndash;Error Quantum Polynomial &mdash; <span
