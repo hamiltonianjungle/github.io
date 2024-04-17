@@ -105,9 +105,9 @@
                 <h2>Gadgets</h2>
             </div>
             <p>
-                The rationale behind the use of perturbation techniques becomes evident through a straightforward illustration.
-                At the heart of all subsequent gadget constructions lies the concept of a <i>mediator gadget</i>.
-                As the name implies, a mediator gadget serves as an intermediary, facilitating a specific interaction between two particles.
+                The idea of perturbation gadgets is to introduce a mediator qubit in a system with the effect of simulating the low&ndash;energy spectrum of a target Hamiltonian 
+                via local interactions between the mediator qubit and the system qubits. 
+                A prototypical example is the simulation of ferromagnetic spin interactions using antiferromagnetic ones. 
                 To elaborate, consider a rudimentary example involving a two&ndash;particle ferromagnetic interaction, where spins tend to align.
                 Here, we introduce a mediator gadget that engages in an antiferromagnetic interaction with each of the original particles.
                 Assuming, without loss of generality, that the original spins are vertically aligned, the net outcome of the mediator particle being in a downward spin state is an effective ferromagnetic interaction between the original particles.
@@ -126,6 +126,11 @@
                             \end{tikzpicture}
                         </script>
                     </div>
+                    <div style="display: flex; justify-content: center; padding-left: 20%; padding-right: 20%;">
+                        <p>
+                            <b>Figure (a): </b> A ferromagnetic interaction between two spin particles.
+                        </p>
+                    </div>
                 </div>
                 <div class="column">
                     <div class="gadget" style="display: flex; justify-content: center;">
@@ -142,8 +147,99 @@
                             \end{tikzpicture}
                         </script>
                     </div>
+                    <div style="display: flex; justify-content: center; padding-left: 20%; padding-right: 20%;">
+                        <p>
+                            <b>Figure (b): </b> A system of three spins with the top particle local interacting
+                            antiferromagnetically with the others. The local antiferromagnetic interactions simulate a
+                            ferromagnetic interaction between the two bottom particles. The solid lines represent proper
+                            interactions and the dashed line represents a simulated interaction (as in these particles do not directly interact).
+                        </p>
+                    </div>
                 </div>
             </div>
+            <p>
+                The two main methods used in the literature to study this effect are the self&ndash;energy method and the Schrieffer&ndash;Wolff transformation. 
+                The self&ndash;energy method is a perturbative method that uses the Dyson equation to calculate the effective Hamiltonian. The Schrieffer&ndash;Wolff transformation 
+                uses a unitary transformation to calculate the effective Hamiltonian. The unitary transformation decouples the low&ndash;energy subspace from the high&ndash;energy subspace. 
+            </p>
+            <p>
+                The usual format of reduction proofs is to start from a known problem that is complete for some complexity class. 
+                We commonly refer to this as the \emph{target} Hamiltonian, $H_{\text{targ.}}$, which acts on an $2^n$&ndash;dimensional Hilbert space 
+                $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$; $\mathcal{L}_-$ refers to the low&ndash;energy eigenspace and $\mathcal{L}_+$ the high&ndash;energy eigenspace. 
+                The reduction aims to show that a Hamiltonian, $H_{\text{sim}}$ that acts on a larger Hilbert space 
+                $\widetilde {\mathcal{H}} = \widetilde {\mathcal{L}}_- \oplus \widetilde {\mathcal{L}}_+$, can be constructed to have a low&ndash;energy subspace that approximates that of the target Hamiltonian. 
+                To formalise this, we say there exists an isometry $\widetilde {\mathcal{E}}: \mathcal{H} \rightarrow \mathcal{H}_{\text{sim}}$ such that 
+                $\text{Im}(\widetilde {\mathcal{E}}) := \mathcal{L}_-(H_{\text{targ.}})$ and 
+                $||\widetilde {\mathcal{E}}^\dagger H_{\text{sim}} \widetilde {\mathcal{E}}|| \approx ||H_{\text{targ.}}||$.
+            </p>
+            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
+                <b>Definition (<a href="references.html#PM17">[PM17]</a>) </b>
+                Let $H$ be a Hamiltonian acting on a $2^n$&ndash;dimensional Hilbert space $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$. Let $H_{\text{sim}}$ be a Hamiltonian 
+                acting on a $2^m$&ndash;dimensional Hilbert space, with $m>n$ and where $\widetilde {\mathcal{H}} = \widetilde {\mathcal{L}}_- \oplus \widetilde {\mathcal{L}}_+$. 
+                Let $\mathcal{E}: \mathcal{H}\rightarrow \widetilde {\mathcal{H}}$ be an isometry. We say that $H_{\text{sim}}$ is an effective Hamiltonian, or a $(\eta, \epsilon)$ simulator, 
+                for $H$ if these exists an isometry $\widetilde {\mathcal{E}}: \mathcal{H} \rightarrow \mathcal{H}_{\text{sim}}$ such that
+                <ol>
+                    <li>$\text{Im}(\widetilde {\mathcal{E}}) := \mathcal{L}_-(H)$.</li>
+                    <li>$||H - \widetilde {\mathcal{E}}^\dagger H_{\text{sim}} \widetilde {\mathcal{E}}|| \leq \epsilon$.</li>
+                    <li>$||\mathcal{E} - \widetilde {\mathcal{E}}|| \leq \eta$.</li>
+                </ol>
+            </div>
+            <p>
+                To understand what this definition is saying we can again turn to the ferromagnetic example above. 
+                Here we can envision the intial system of two spins having a Hamiltonian of the form $H = -\frac{\Delta}{2} ZZ$.
+                Clearly this has a low&ndash;energy subspace of $\mathcal{L}_- = \{\ket{00}, \ket{11}\}$ (aligned spins) and a high&ndash;energy subspace of $\mathcal{L}_+ = \{\ket{01}, \ket{10}\}$ (anti&ndash;aligned spins).
+                The spectral gap is $\Delta$.
+                We can now discuss the form of the three spin situation (where particles interact antiferromagnetically); the Hamiltonian for this system is over three spins rather than two.
+                Its exact form is inferred from the ideas below but we can still describe certain pieces of it.
+                Recall that the two non&ndash;mediator spins do not interact directly.
+                The antiferromagnetic interaction is one that tends to anti&ndash;align the spins; an antiferromagnetic interaction can be described by the Hamiltonian $H = \alpha ZZ$ where $\alpha > 0$.
+                Notice that we also wanted the simulator Hilbert space to be split. 
+                One way to achieve this is to split energy levels of the mediator spin.
+                For example, consider the Hamiltonian $H = \beta (\mathbb{I} - Z)$ where $\beta > 0$; this Hamiltonian has a low&ndash;energy subspace of $\mathcal{L}_- = \{\ket{0}\}$ and a high&ndash;energy subspace of $\mathcal{L}_+ = \{\ket{1}\}$.
+                If we are then able to find an approximate isometry that has the properties of the above definition, we can say that the three spin system is a $(\eta, \epsilon)$ simulator for the two spin system.
+            </p>
+            <p>
+                We will denote a perturbed operator using the tilde hat, $\widetilde{O}$. 
+                A perturbated Hamiltonian $\widetilde {H}$ is comprised of two key components: an unperturbed Hamiltonian $H$ and a perturbation term $V$. 
+                The unperturbed Hamiltonian has a <i>split</i> Hilbert space, $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$. 
+                By split, we mean that there is a significantly sized spectral gap, $\Delta\gg 1$, between the two subspaces. 
+                The perturbation term is chosen such that $||V||\leq \Delta/2$ to avoid mixing the low&ndash;energy subspace with the high&ndash;energy subspace. 
+                Define the projector onto the low&ndash;energy subspace as $\Pi_-$ and the projector onto the high&ndash;energy subspace as $\Pi_+$. 
+                Then, $O_{\pm\pm} = \Pi_\pm O \Pi_\pm$.
+            </p>
+            <p>
+                The Schrieffer&ndash;Wolff transformation is a unitary transformation on the simulator Hilbert space defined as $e^S$ where $S$ is an anti&ndash;Hermitian operator. 
+                The operator requires the transformed Hamiltonian to be block diagonal with respect to the projectors $\Pi_\pm$. 
+                The effective Hamiltonian is then defined as $H_{\text{eff.}} = (e^{-S} H_{\text{sim}} e^S)_{--}$ which can be approximated using a truncated series. 
+                For the purposes of this work we need only go to second&ndash;order in the series. 
+                There are Lemmas that completely specify the form of the effective Hamiltonian for first&ndash;, second&ndash; and third&ndash;order terms <a href="references.html#BH14">[BH14]</a>. 
+                A simplified version of the second&ndash;order Lemma is 
+            </p>
+            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
+                <b>Lemma (Second&ndash;order Reduction <a href="references.html#BH14">[BH14]</a>) </b>
+                Let $H_{\text{sim}} = H + \sqrt{\Delta}\;V_{\text{main}} + V_{\text{extra}}$ be chosen such that $\lambda(H_{++})\geq \Delta$, $H_{--}, H_{-+} = 0$, $(V_{\text{extra}})_{-+}, (V_{\text{main}})_{--} = 0$ and
+                $$
+                    ||\bar{H}_{\text{targ.}} - (V_{\text{extra}})_{--} + (V_{\text{main}})_{-+}H^{-1}(V_{\text{main}})_{+-}|| \leq \epsilon/2.
+                $$
+                For appropriate choices of $||V_{\text{main}}||, ||V_{\text{extra}}||$ and $\Delta$, $H_{\text{sim}}$ is an $(\eta, \epsilon)$ simulator for $H_{\text{targ.}}$.
+            </div>
+            <p>
+                The term $\bar{H}_{\text{targ.}} = \mathcal{E}^\dagger H_{\text{targ.}}\mathcal{E}$ is commonly called the logical encoding of the target Hamiltonian. 
+                Using the above Lemma, the general recipe for finding the effective Hamiltonian of the perturbative reductions, up to second&ndash;order, is
+                $$
+                    H_{\text{eff.}} = V_{--} - V_{-+}H^{-1}V_{+-}.
+                $$
+            </p>
+            <!-- <p>
+                The rationale behind the use of perturbation techniques becomes evident through a straightforward illustration.
+                At the heart of all subsequent gadget constructions lies the concept of a <i>mediator gadget</i>.
+                As the name implies, a mediator gadget serves as an intermediary, facilitating a specific interaction between two particles.
+                To elaborate, consider a rudimentary example involving a two&ndash;particle ferromagnetic interaction, where spins tend to align.
+                Here, we introduce a mediator gadget that engages in an antiferromagnetic interaction with each of the original particles.
+                Assuming, without loss of generality, that the original spins are vertically aligned, the net outcome of the mediator particle being in a downward spin state is an effective ferromagnetic interaction between the original particles.
+                Moreover, this interaction indirectly connects the two original particles.
+            </p>
+            
             <p>
                 The intricacies of perturbation gadgets involve complex mathematics. However, a somewhat informal yet
                 instructive overview can be provided as follows: When faced with a pre&ndash;existing interaction between
@@ -164,7 +260,7 @@
                     order to define the effective Hamiltonian,
                     $H_{\text{eff.}} \approx \widetilde{H}_{-}$</li>
             </ol>
-            </p>
+            </p> -->
             <p>
                 One subtle condition that influences the construction of the gadgets is the allowed interaction terms of the Hamiltonian in question.
 
@@ -175,12 +271,11 @@
                 This restriction underscores the importance of aligning the chosen mediator interactions with the permissible terms dictated by the Hamiltonian.
             </p>
             <p>
-                It should be noted that there are certain conditions that must be in place in order for the proper use
-                of
-                the perturbation gadgets.
+                It should be noted that there are certain conditions that must be in place in order for the proper use of the perturbation gadgets. 
+                For example, requiring the interaction strengths to be particular large is a common condition.
                 These ideas are not developed here, rather we provide an overview of a <i>use case</i> for each gadget.
             </p>
-            <p>
+            <!-- <p>
                 Now we introduce a more formal, mathematical definition to perturbation gadgets. 
                 Note that this is not a full treatment but provides an overview of the equations used and the rationale behind the justification at each step.
 
@@ -220,13 +315,14 @@
                 By analysing the low&ndash;energy spectrum of $\widetilde{H}$ and truncating the series expansion of its self&ndash;energy operator, we establish an effective Hamiltonian, $H_{\text{eff.}}$.                
                 Conducting spectral analysis and considering the overlap between $H_{\text{eff.}}$ and $\Sigma_{-}(z)$, we observe the low&ndash;energy eigenvalues of each are close. 
                 Consequently, we identify an alternate Hamiltonian possessing the desired characteristics, effectively approximating the original Hamiltonian.
-            </p>
+            </p> -->
             <p>
                 As a concluding remark, one can conceptualize perturbation gadget reductions as follows: 
-                    "The complexity of determining the ground state energy of Hamiltonian $A$ is known. 
-                    If I can utilise Hamiltonian $A$ to emulate Hamiltonian $B$," ensuring their low&ndash;energy sectors are $\epsilon$&ndash;close, "then deducing the ground state energy of Hamiltonian $B$ becomes, at the very least, as challenging as solving the same problem for Hamiltonian $A."
+                    "<i>The complexity of determining the ground state energy of Hamiltonian $A$ is known. 
+                    If I can utilise Hamiltonian $A$ to emulate Hamiltonian $B$</i>", ensuring their low&ndash;energy sectors are $\epsilon$&ndash;close, 
+                    "<i>then, deducing the ground state energy of Hamiltonian $B$ becomes, at the very least, as challenging as solving the same problem for Hamiltonian $A$.</i>"
                 To illustrate this concept with a straightforward example from the initial discussion, consider the scenario where an antiferromagnetic system has the capacity to simulate the general system. 
-                Consequently, the antiferromagnetic system is positioned within the same complexity class. 
+                Consequently, the antiferromagnetic system is at least as hard as the general system. 
                 This serves as a highlight as to the potential for perturbation gadgets to establish connections between the complexity of different Hamiltonian systems.
             </p>
             <h5>Oliveira and Terhal Gadgets</h5>
@@ -1011,7 +1107,7 @@
                 </div>
             </div>
             <hr class="border-top bs-border-color opacity-100" />
-            <h5>Piddock and Montonaro</h5>
+            <h5>Piddock and Montonaro Gadgets</h5>
             <div class="accordion accordion-flush">
                 <div class="accordion-item">
                     <button class="accordion-button collapsed shadow-none fw-medium" data-bs-toggle="collapse"
@@ -1176,6 +1272,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h5>Bravyi, DiVincenzo, Oliveira and Terhal Gadgets</h5>
+            <div class="accordion accordion-flush">
+                Coming soon!
             </div>
         </main>
     </div>

@@ -105,7 +105,145 @@
                 <h2>Markov Chain Monte Carlo</h2>
             </div>
             <p>
-                ...
+                Markov chain Monte Carlo (MCMC) can be used as an algorithm for calculating the partition function of a Hamiltonian. 
+                The obvious way to breakdown this concept is to describe both Monte Carlo and Markov chains. 
+
+                The rough idea is to generate a Markov chain that has a stationary distribution $\pi$ that is the distribution of interest. 
+                By sampling the stationary distribution using the Monte Carlo method we can obtain an approximation of the distribution of interest. 
+                Each element of the stationary distribution is of the form 
+                $$
+                    \pi(x) = \frac{w(x)}{\displaystyle\sum_{x\in \Omega} w(x)}.
+                $$
+                Notice that the denominator is the partition function of the system. 
+                Therefore, framing the problem in terms of statistical mechanics we define 
+                $$
+                    w(x) = e^{-\beta H(x)}.
+                $$
+                We are interested in approximating the partition function. 
+                By desgingin an ergodic Markov chain with the state space $\Omega$ and the stationary distribution $\pi$ we can sample from the stationary distribution and estimate the partition function. 
+                The big problem with this method comes from knowing the mixing time of the Markov chain. 
+                It is known via the convergence to equilibrium theorem of Markov chains that any initial distribution will approach the stationary distribution as time tends to infinity. 
+                To make the algorithm efficient we require the mixing time to be small. 
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Monte Carlo</h3>
+            <p>
+                Monte Carlo methods are a class of computational algorithms that rely on repeated random sampling to obtain numerical results. 
+                Consider some quantity that is defined over a domain $D$, instead of evaluating a quantity directly we can instead sample from the domain according to a probability distribution. 
+                Such a probability distribution might be chosen to be the uniform distribution or more catered to the specific problem. 
+                For example, it may be appropriate to have the distribution be defined such that certain points in the domain are more likely than others, reflecting an underlying property of the problem. 
+                Using the sampled points we can then estimate the quantity of interest. 
+                By the law of large numbers the quantity estimated will tend to the true value as the number of samples tends to infinity.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Markov Chains</h3>
+            <p>
+                A Markov chain is a stochastic process that satisfies the Markov property. 
+                The Markov property states that the probability of the next state of the system depends only on the current state and not on the sequence of events that preceded it. 
+                A Markov chain is a sequence of random variables $X_1, X_2, \dots$ with the Markov property. 
+                The state space of a Markov chain is the set of all possible values that the random variables can take. 
+                The transition probabilities of a Markov chain are the probabilities of moving from one state to another. 
+                The transition probabilities are usually represented by a matrix called the transition matrix. 
+                The transition matrix is a square matrix where the $(i,j)$-th entry is the probability of moving from state $i$ to state $j$ in one step. 
+                The transition matrix is usually denoted by $P$. 
+                Transition matrices for Markov chains exhibit the stochastic property, i.e. the sum of the entries in each row is equal to $1$,
+                $$
+                    \sum_{j} P_{ij} = 1.
+                $$
+                Important properties of Markov chains include the stationary distribution and the convergence to the stationary distribution. 
+                The stationary distribution of a Markov chain is a probability distribution that remains unchanged by the transition matrix. 
+                The stationary distribution is often denoted by $\pi$ and satisfies the equation (Left and right multiplication variants of the equation exist. They describe the same thing).
+                $$
+                    \pi = \pi P.
+                $$
+                The stationary distribution is the distribution that the Markov chain converges to as the number of steps tends to infinity. 
+                The convergence to the stationary distribution is a property of the Markov chain and is often characterised by the mixing time. 
+                The mixing time is the number of steps required for the Markov chain to converge to the stationary distribution. 
+                We denote the mixing time by $\tau$ and it is often the case that $\tau$ is a function of the size of the state space of the Markov chain. 
+                A formal definition of the mixing time is given by
+                $$
+                    \tau(\epsilon) = \min\{t : ||\pi P^t - \pi||_{\text{TV}} \leq \epsilon\},
+                $$
+                where $||\cdot||_{\text{TV}}$ is the total variation distance. 
+            </p>
+            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
+                <b>Theorem (Convergence to equilibrium) </b>
+                Let $P$ be an irreducible and aperiodic transition matrix on a finite state space with stationary distribution $\pi$. Then for any initial distribution $\mu$ the distribution of the Markov chain at time $t$ converges to the stationary distribution as $t\to\infty$,
+                    $$
+                        ||\mu P^t - \pi||_{\text{TV}} \to 0 \quad \text{as} \quad t\to\infty.
+                    $$
+            </div>
+            <p>
+                Notice that one the number of steps is equivalent to the mixing time, all subsequent steps keep the Markov chain at the stationary distribution.
+                Therefore, iif there was some way to give the Markov chain a kickstart to the stationary distribution then the mixing time could be reduced.
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h3>Glauber Dynamics</h3>
+            <p>
+                Glauber dynamics <a href="references.html#Gla63">[Gla63]</a> is a type of MCMC that was originally used to measure the statistics of the Ising model. 
+                Following the original ides of Glauber, we too consider the MCMC for the Ising model. 
+                We introduced the Ising model in the Statistical Mechanics section but recall some details here. 
+                We consider the ferromagnetic variant of the Ising model on a graph $G=(V,E)$ with vertex set $V$ and edge set $E$. 
+                The Ising model is defined by the Hamiltonian
+                $$
+                    H(\sigma) = \sum_{(u,v)\in E(G)} J(\sigma_u,\sigma_v).
+                $$
+                The Gibbs distribution of the Ising model is given by
+                $$
+                    P(\sigma) = \frac{e^{-\beta H(\sigma)}}{\mathcal{Z}}.
+                $$
+                We denote a single vertex spin as $\sigma_v$ and $N(\sigma_v)$ as the neighbourhood of spins that are adjacent to $\sigma_v$. 
+                Define the ''neighbourhood Hamiltonian'' of a vertex $v$ as 
+                $$
+                    S_{\sigma_v}(\sigma) = \sum_{u : (u,v)\in E} J(\sigma_u,\sigma_v).
+                $$
+
+                Glauber dynamics operating as a Markov chain mimics the systems evolution towards thermal equilibrium at the given temperature. 
+                The transition probabilities of the Markov chain are related to the Maxwell-Boltzmann distribution of the chosen vertex and its neighbours. 
+                Running the dynamics for sufficient time allows the system to tend to equilibrium where in which the spin distribution is stabelised. 
+                Then at this equilibrium, the probability of a particular spin configuration is given by the Gibbs distribution. 
+                Sampleing states from this system after equilibrium is reached means we then sample from the Gibbs distribution.
+            </p>
+            <p>
+                Given some underlying graph $G = (V,E)$ and inverse temperature $\beta$ and an initial configuration of spins $\sigma$, 
+                the Glauber dynamics describe a reversible Markov chain that obtains the next configuration $\sigma'$ by flipping a single spin in $\sigma$. 
+                The algorithm follows as <a href="references.html#Gla63">[Gla63]</a>,<a href="references.html#HS07">[HS07]</a>,<a href="references.html#MS13">[MS13]</a>,<a href="references.html#CHK21">[CHK21]</a>:
+                <ol>
+                    <li>Pick a vertex $v$ uniformly at random.</li>
+                    <li>Let $\sigma'(u) = \sigma(u)$ for all $u\neq v$.</li>
+                    <li>Define $\sigma'(v) = +1$ with probability $\mathbb{P}(\sigma_v = +1 | N(\sigma_v))$.</li>
+                </ol>
+                The dynamics here are often referred to as <i>heat-bath dynamics</i> and are a special case of the Metropolis-Hastings algorithm. 
+                We define the transition probability of the Glauber dynamics as
+                $$
+                    \mathbb{P}(\sigma_v = +1 | N(\sigma_v)) = \frac{\exp(-\beta S_{+1}(\sigma))}{\exp(-\beta S_{+1}(\sigma)) + \exp(-\beta S_{-1}(\sigma))},
+                $$
+                which are local in that they only depend on the neighbourhood of the chosen vertex. 
+                Additionally, they are reversible with respect to a distribution and hence satisfy the Metropolis detailed balance condition 
+                $$
+                    \pi(\sigma) \mathbb{P}(\sigma \to \sigma') = \pi(\sigma') \mathbb{P}(\sigma' \to \sigma).
+                $$
+                It is therefore very natural to see why the transition probabilities of the Glauber dynamics are related to the Gibbs distribution of the neighbourhood of the chosen vertex.
+            </p>
+            <p>
+                A neat way to simplify the transition probability is to define $J(u,v) = 1 - \delta_{u,v}$ then notice that $J(u,v) = 1$ if and only if $\sigma_u = -\sigma_v$;
+                Think of this as an energy <i>penalty</i> for the spins being anti-aligned. 
+                Denoting the number of neighbours of $v$ that are $+1$ as $p$ and the number of neighbours of $v$ that are $-1$ as $m$ we can write
+                $$
+                    S_{+1}(\sigma) = m, \quad S_{-1}(\sigma) = p.
+                $$
+                Let $\lambda = e^{-\beta}$ then the transition probability becomes
+                $$
+                    \mathbb{P}(\sigma_v = +1 | N(\sigma_v)) = \frac{\lambda^m}{\lambda^m + \lambda^p}.
+                $$
+                The quantity of interest here is the mixing time $\tau$ which is the number of steps needed to get close to the distribution of \cref{eq:ising_gibbs}. 
+                It is common to define an error bound $\epsilon$ and then find the number of steps needed to get within $\epsilon$ of the stationary distribution. 
+                Typically it is chosen that $\epsilon = 1/2e$ then for times $\eta \tau$ then total variation distance is less than $\epsilon^{-\eta}$ <a href="references.html#HS07">[HS07]</a>,<a href="references.html#MS13">[MS13]</a>,<a href="references.html#AS17">[AS17]</a>. 
+                While the analysis in bounding the mixing time is fairly involved we are still able to quote some results regarding Glauber dynamics.
+            </p>
+            <p>
+                It was shown by Hayes and Sinclair that the mixing time for discrete Glauber dynamics on the ferromagnetic Ising model is lower bounded by $\Omega(n\log n / (\Delta \log^2 \Delta))$ when the underlying graph $G$ is of bounded degree $\Delta \geq 2$. 
+                This bound was improved by Ding and Peres for an graph with $n$ vertices giving a lower bound of $(1/4 + o(1))n\log n$ <a href="references.html#DP13">[DP13]</a> (This bound is specifically for the ferromagnetic Ising model). 
             </p>
         </main>
     </div>
