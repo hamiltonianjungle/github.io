@@ -330,10 +330,9 @@
                 $$
                 Again, we define $\Gamma_S$ as the set of maximally connected components for a given subset $S \subseteq E(G)$. For each $\gamma \in \Gamma_S$ we define an edge set $E(\gamma) \subseteq E(G)$ and recall that $||\gamma||$ represents the size of the corresponding subgraph $\gamma$ is associated with. Factorising over $\Gamma_S$ we find
                 $$
-                    \begin{split}
-                        \mathcal{Z}(G) &= \sum_{S\subseteq E(G)} \prod_{\gamma \in \Gamma_S}(-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)} (-1)^{|T|} \\
-                        &\qquad\times \text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right).
-                    \end{split}
+                    \begin{equation}
+                        \mathcal{Z}(G) = \sum_{S\subseteq E(G)} \prod_{\gamma \in \Gamma_S}(-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)} (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right).
+                    \end{equation}
                 $$
                 Defining the weight of a polymer $\gamma$ as
                 $$
