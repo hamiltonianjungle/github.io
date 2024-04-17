@@ -1,166 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>The Hamiltonian Jungle | General</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta
+      name="description"
+      content="A comprehensive list of known Hamiltonian complexity results."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="icon" href="media/graphics/favicon.ico"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-MMS1QCMRED');
+      MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<body>
+      gtag("config", "G-MMS1QCMRED");
+    </script>
+  </head>
+
+  <body>
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-                    class="d-inline-block align-text-top">
-                    <path
-                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
-                </svg>
-                <span>The Hamiltonian Jungle</span>
-            </a>
-            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            class="d-inline-block align-text-top"
+          >
+            <path
+              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
+            />
+          </svg>
+          <span>The Hamiltonian Jungle</span>
+        </a>
+        <button
+          class="navbar-toggler p-0 border-0 shadow-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </nav>
     <div class="d-flex">
-        <div class="sidebar bg-body-tertiary border-end">
-            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
-                aria-labelledby="sidebar">
-                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
-                    <div class="container p-0">
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
-                                    aria-expanded="true">Models</a></li>
-                            <ul class="collapse show p-0" id="models">
-                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
-                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
-                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="general.html" aria-current="true">General</a></li>
-                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
-                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
-                                <li><a class="nav-link" href="ising.html">Ising</a></li>
-                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
-                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
-                            </ul>
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="false">Techniques</a></li>
-                            <ul class="collapse p-0" id="techniques">
-                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
-                              <li><a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
-                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                          </ul>
-                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
-                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
-                            <li><a class="nav-link" href="references.html">References</a></li>
-                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="about.html">About</a></li>
-                            <li><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
-                                    aria-expanded="false">Theme</a></li>
-                            <ul class="collapse p-0" id="themes">
-                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
+      <div class="sidebar bg-body-tertiary border-end">
+        <div
+          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
+          id="sidebar"
+          data-bs-scroll="true"
+          aria-labelledby="sidebar"
+        >
+          <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+            <div class="container p-0">
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#models"
+                    aria-expanded="true"
+                    >Models</a
+                  >
+                </li>
+                <ul class="collapse show p-0" id="models">
+                  <li>
+                    <a class="nav-link" href="2-local-pauli.html"
+                      >2&ndash;Local Pauli</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="bose-hubbard.html"
+                      >Bose&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="commuting.html">Commuting</a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="fermi-hubbard.html"
+                      >Fermi&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="general.html" aria-current="true"
+                      >General</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="general-local.html"
+                      >General Local</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="heisenberg.html">Heisenberg</a>
+                  </li>
+                  <li><a class="nav-link" href="ising.html">Ising</a></li>
+                  <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                  <li>
+                    <a class="nav-link" href="stoquastic.html">Stoquastic</a>
+                  </li>
+                </ul>
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#techniques"
+                    aria-expanded="false"
+                    >Techniques</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="techniques">
+                  <li>
+                    <a class="nav-link" href="cluster-expansions.html"
+                      >Cluster Expansions</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="cstar-algebras.html"
+                      ><span class="cm-sans-serif">C</span
+                      ><sup>&#42;</sup>&ndash;Algebras</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                  <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                </ul>
+                <li>
+                  <a class="nav-link" href="supplementary.html"
+                    >Supplementary</a
+                  >
+                </li>
+                <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                <li>
+                  <a class="nav-link" href="references.html">References</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="open-problems.html"
+                    >Open Problems</a
+                  >
+                </li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#themes"
+                    aria-expanded="false"
+                    >Theme</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="themes">
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="auto"
+                      >Auto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="light"
+                      >Light</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="dark"
+                      >Dark</a
+                    >
+                  </li>
+                </ul>
+              </ul>
             </div>
+          </div>
         </div>
-        <main class="flex-grow w-100 px-4 pb-4">
-            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-                <h2>General Hamiltonians</h2>
-            </div>
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH18</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
-                    $$
-                    H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma} t_{ij} c_{i\sigma}^\dagger c_{j\sigma}
-                    + \frac{1}{2} \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
-                    u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma} c_{l\sigma}
-                    $$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>Fixed&ndash;basis set</li>
-                        <li>Fixed particle number, $n$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the Fermi&ndash;Hubbard Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LPH18</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
-                    $$
-                    H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma} t_{ij} c_{i\sigma}^\dagger c_{j\sigma}
-                    + \frac{1}{2} \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
-                    u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma} c_{l\sigma}
-                    $$
-                </div>
-                <div><strong>Problem:</strong> Lowest&ndash;energy Slater Determinant</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>Fixed&ndash;basis set</li>
-                        <li>Fixed particle number, $n$</li>
-                        <li>Inverse polynomial precision</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>To a diagonal Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-        </main>
+      </div>
+      <main class="flex-grow w-100 px-4 pb-4">
+        <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+          <h2>General Hamiltonians</h2>
+        </div>
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LPH18</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
+            $$ H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma}
+            t_{ij} c_{i\sigma}^\dagger c_{j\sigma} + \frac{1}{2}
+            \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
+            u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma}
+            c_{l\sigma} $$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>Fixed&ndash;basis set</li>
+              <li>Fixed particle number, $n$</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the Fermi&ndash;Hubbard Hamiltonian</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LPH18</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Electronic Structure Hamiltonian
+            $$ H = \displaystyle\sum_{i,j \in [n]}\displaystyle\sum_{\sigma}
+            t_{ij} c_{i\sigma}^\dagger c_{j\sigma} + \frac{1}{2}
+            \displaystyle\sum_{i,j,k,l \in [n]}\displaystyle\sum_{\sigma,\tau}
+            u_{ijkl}c_{i\sigma}^\dagger c_{j\tau}^\dagger c_{k\sigma}
+            c_{l\sigma} $$
+          </div>
+          <div>
+            <strong>Problem:</strong> Lowest&ndash;energy Slater Determinant
+          </div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> NP</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OIWF21">[OIWF21]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>Fixed&ndash;basis set</li>
+              <li>Fixed particle number, $n$</li>
+              <li>Inverse polynomial precision</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>To a diagonal Hamiltonian</li>
+            </ul>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>

@@ -1,478 +1,764 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>The Hamiltonian Jungle | C&#42;&ndash;Algebras</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta
+      name="description"
+      content="A comprehensive list of known Hamiltonian complexity results."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="icon" href="media/graphics/favicon.ico"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
-    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script>
+      MathJax = { tex: { inlineMath: [["$", "$"]] } };
+    </script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://tikzjax.com/v1/fonts.css"
+    />
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-MMS1QCMRED');
+      gtag("config", "G-MMS1QCMRED");
     </script>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-                    class="d-inline-block align-text-top">
-                    <path
-                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
-                </svg>
-                <span>The Hamiltonian Jungle</span>
-            </a>
-            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            class="d-inline-block align-text-top"
+          >
+            <path
+              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
+            />
+          </svg>
+          <span>The Hamiltonian Jungle</span>
+        </a>
+        <button
+          class="navbar-toggler p-0 border-0 shadow-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </nav>
     <div class="d-flex">
-        <div class="sidebar bg-body-tertiary border-end">
-            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
-                aria-labelledby="sidebar">
-                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
-                    <div class="container p-0">
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
-                                    aria-expanded="false">Models</a></li>
-                            <ul class="collapse p-0" id="models">
-                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
-                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
-                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="general.html">General</a></li>
-                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
-                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
-                                <li><a class="nav-link" href="ising.html">Ising</a></li>
-                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
-                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
-                            </ul>
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="true">Techniques</a></li>
-                            <ul class="collapse show p-0" id="techniques">
-                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
-                              <li><a class="nav-link" href="cstar-algebras.html" aria-current="true"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
-                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                          </ul>
-                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
-                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
-                            <li><a class="nav-link" href="references.html">References</a></li>
-                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="about.html">About</a></li>
-                            <li><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
-                                    aria-expanded="false">Theme</a></li>
-                            <ul class="collapse p-0" id="themes">
-                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <main class="flex-grow w-100 px-4 pb-4">
-            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-                <h2><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</h2>
-            </div>
-            <p>
-                The general idea behind using <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra is to find a succinct way of studying commuting systems. 
-                One way to do this is to find a description of a system in terms of its Hilbert space. 
-                Properties of commuting <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras allow for a fine&ndash;grained partition of local Hilbert space. 
-                This partitions allow for the independent study of the components of said local system.
-            <p>
-                A local Hilbert space $\mathcal{H}_j$ (in certain circumstances) admits a partition into several smaller Hilbert spaces that are independent. For example
-                $$
-                    \mathcal{H}_j = \bigotimes_{k} \mathcal{H}_{j,k},
-                $$
-                where each $\mathcal{H}_{j,k}$ is independent of the others and where the algebra $\mathfrak{A}_{j,k} = \mathbf{L}(\mathcal{H}_{j,k})\otimes\mathbb{I}$. It is possible to find a set of operators $\{A_\alpha^{({j,k})}\}$ that generates the algebra $\mathfrak{A}_{j,k}$ meaning any operator in $\mathbf{L}(\mathcal{H}_j)$ admits a decomposition of the form
-                $$
-                    A = \sum_{\alpha} \bigotimes_k  A_\alpha^{({j,k})}.
-                $$
-            </p>
-                For commuting operators $A$ and $B$, it is well known that both share a common eigenbasis hence each operator can be simultaneously diagonalised. For a set of operators $\{A_i\}$ that pairwise commute, an eigenvalue $\ket{\lambda}$ hosts an eigenvalue set $\{\lambda_i : A_i\ket{\lambda} = \lambda_i \ket{\lambda}\}$. The energy for such a state in then $\bra{\lambda}{H}\ket{\lambda} = \sum_i \lambda_i$. 
-            </p>
-            <hr class="border-top bs-border-color opacity-100" />
-            <h3>Definitions</h3>
-            <p>
-                The main focus of this section is the study of Hilbert spaces and their associated operators.
-                We restrict our attention to the study of operators that are bounded and linear; 
-                we denote the set of all such operators as $\mathbf{L}(\mathcal{H})$ where $\mathcal{H}$ is the Hilbert space.
-                An important idea central to the use of <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras is the notion of a <em>commutant</em>.
-                For example, two operators $A$ and $B$ are said to <i>commute</i> if $AB = BA$. 
-                The <i>commutator</i> of two operators $A$ and $B$ is defined as $[A,B] := AB - BA$. 
-                Within all sets of bounded linear operators lies the identity operator $\mathbb{I}$. 
-                The identity is such that $\mathbb{I}^2 = \mathbb{I}$, $AA^{-1} = A^{-1}A = \mathbb{I}$ and $[\mathbb{I},A]=0$ for any $A \in \mathbf{L}(\mathcal{H})$. 
-                A common transformation on operators on a Hilbert space include the Hermitian adjoint $\dagger : A \rightarrow A^\dagger$, which maps an operator to its conjugate transpose. 
-                Those operators that satisfy $A = A^\dagger$ are called <i>Hermitian</i> (or self&ndash;adjoint). 
-                Note that the Hermitian adjoint is a linear transformation that is an involution, i.e. $(A^\dagger)^\dagger = A$. 
-                Another interesting operation is the <i>direct sum</i> which takes two operations $A$ and $B$ to a block diagonal matrix $A\oplus B$. 
-                We can ''combine'' operators from two different Hilbert spaces to form new operators. The <i>tensor product</i> is a bilinear map $V \times W \rightarrow V \otimes W$ that maps a pair $(v,w)$ for $v\in V$ and $w\in W$ to an element $v\otimes w \in V\otimes W$. 
-            <p>
-                Within the algebra of quantum theory lies <sup>&#42;</sup>&ndash;algebras, particularly <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras. 
-                These are complex Banach algebras with an involution operation $^*$. 
-                The formal definition of a <sup>&#42;</sup>&ndash;algebra is:
-            </p>
-            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-                <b>Definition (<sup>&#42;</sup>&ndash;algebra) </b>
-                A <sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ is an associated algebra over $\mathbb{C}$ with a norm $||\cdot||$ and an involution $^*:\mathfrak{A}\to\mathfrak{A}$ such that the operation $^*$ is:
-                <ol>
-                    <li>conjugate&ndash;linear,</li>
-                    <li>anti&ndash;homomorphism.</li>
-                </ol>
-            </div>
-            <p>
-                A <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra is a <sup>&#42;</sup>&ndash;algebra that satisfies the <span class="cm-sans-serif">C</span><sup>&#42;</sup> condition:
-                $$
-                    ||a^*a|| = ||a||^2 \quad \text{for all}\;\, a\in\mathfrak{A}.
-                $$
-            </p>
-            <p>
-                The <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra can be seen as a way to generalise the set of complex numbers. Moreover, the set of bounded linear operators on a Hilbert space coupled with the Hermitian adjoint operation is a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra. Note that an algebra may not necessarily contain an identity element. Those that do are called <i>unital</i> algebras.
-            </p>
-            <p>
-                A subalgebra $\mathfrak{B}$ of an algebra $\mathfrak{A}$ is a subset of $\mathfrak{A}$ that is closed under the operations of $\mathfrak{A}$. Within the framework of algebraic structures we can discuss a particular subalgebra &mdash; the center of an algebra $Z(\mathfrak{A})$. Essentially the center of an algebra is the set of all elements that commute with every element in the algebra. This is clearly an algebra in itself. 
-                $$
-                    Z(\mathfrak{A}) := \{A\in\mathfrak{A} : [A,B]=0 \;\text{for all}\; B\in\mathfrak{A}\}.
-                $$
-                If the center of an algebra is trivial, i.e. $Z(\mathfrak{A}) = \mathbb{I}$, then the algebra is said to be <i>irreducible</i>.
-            </p>
-            <p>
-                These tools are crucial for understanding the structure of commuting Hilbert spaces in problems such as the local commuting Hamiltonian problem.
-                Finally, when we say an algebra $\mathfrak{A}$ is <i>generated</i> by a set of operators $\{A_\alpha\}$, we mean
-                $$
-                    \mathfrak{A} = \text{Gen}(\{A_\alpha\}) = \text{span}\{A_{1}^{i}A_{2}^{j}\cdots A_{n}^{l} : i,j,\dots,l \in \mathbb{Z}\}.
-                $$
-                A <i>commutative</i> <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra is one such that the underlying associative algebra is a commutative algebra. 
-                It is known that a commutative <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ is isomorphic to the algebra of continuous complex&ndash;valued functions on a compact Hausdorff space $X$. This is known as the <i>Gelfand&ndash;Naimark theorem</i>.
-            </p>
-            <hr class="border-top bs-border-color opacity-100" />
-            <h3>The Structure Lemma</h3>
-            <p>
-                The structure lemma is at the heart of studying the complexity of the commuting local Hamiltonian problem. 
-                A high&ndash;level overview of the lemma is to say that it is possible to perform a fine&ndash;grained partition of the local Hilbert space.
-                The partition (as the name suggests) decomposes the Hilbert space into smaller, independent Hilbert spaces.
-                Studying these independent spaces allows us to solve the whole problem. 
-                Of course, this partition is not always possible and even when it is, it can be a difficult process.
-                Due to the nature of commuting local Hamiltonians in certain circumstances and on particular geometries, the structure lemma can be applied.
-            </p>
-            <p>
-                To see how a local Hilbert space on a given particle can be decomposed into smaller Hilbert spaces, consider the following scenario. 
-                Let a system be composed of a set of particles. 
-                The full Hilbert space of the system is then the tensor product of the local Hilbert spaces of each particle, i.e.
-                $$
-                    \mathcal{H} = \bigotimes_{p} \mathcal{H}_p.
-                $$
-                Let $\mathcal{H}_p$ be a local Hilbert space on a particle $p$ where the dimension of $\mathcal{H}_p$ is $d$. 
-                Said particle interacts non&ndash;trivially with an arbitrary non&ndash;zero number of other particles; we label other particles as $q,r,s,\dots$. 
-                All interactions in this system are $2$&ndash;local, i.e. the interaction between particle $p$ and particle $q$ is described by a Hamiltonians operator 
-                $h_{pq} \in \mathbf{L}(\mathcal{H}_p \otimes \mathcal{H}_q)$. The full local Hamiltonian admits an interaction graph $G = (V,E)$ where $V = [p,q,r,\dots]$ 
-                is the set of particles and $E = \{(p,q) : h_{pq} \neq \mathbb{I}\}$ is the set of non&ndash;trivial interactions between particles. 
-                The goal is to find a fine&ndash;grained partition of the local Hilbert space $\mathcal{H}_p$. This analysis closely follows the ideas of <a href="references.html#BV03">[BV03]</a>.
-            </p>
-            <p>
-                Define a set of operator for a local Hilbert space $\mathcal{H}_p$ as
-                $$
-                    \mathcal{S}_p := \{O_p \in \mathbf{L}(\mathcal{H}_p) : [{O_p},{h_{pq}}]=0 \quad \forall (p,q)\in E\},
-                $$
-                i.e. the set of local operators on a particle that commute with all non&ndash;trivial interactions for that given particle. 
-                Before proceeding we state key lemmas in showing the structure lemma.
-            </p>
-            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-                <b>Lemma (Span of projectors) </b>
-                Any commuting <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices is of the form
-                $$
-                    \mathfrak{A} = \text{span}(\Pi_1, \dots, \Pi_n),
-                $$
-                where $\Pi_i$ are mutually orthogonal projections and $n$ is the dimension of $\mathfrak{A}$.
-            </div>
-            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-                <b>Lemma (Direct sum decomposition) </b>
-                For any <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices, there exists a direct sum decomposition into 
-                smaller algebras $\mathfrak{A}_j$ such that each $\mathfrak{A}_j$ has a trivial center, i.e.
-                $$
-                    \mathfrak{A} = \bigoplus_j \mathfrak{A}_j.
-                $$
-            </div>
-            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-                <b>Lemma (Tensor product decomposition) </b>
-                Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra with a trivial center. 
-                There exists a tensor product decomposition of the form $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ such that 
-                $$
-                    \mathfrak{A} = \mathbf{L}(\mathcal{H}_1) \otimes \mathbb{I}_2,
-                $$
-                i.e. $\mathfrak{A}$ is the subalgebra of $\mathbf{L}(\mathcal{H})$.
-            </div>
-            <p>
-                We can define a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;subalgebra $\mathfrak{A}_{p.p} = \mathcal{S}_p \subseteq \mathbf{L}(\mathcal{H}_p)$. 
-                By the first Lemma above we know that $\mathfrak{A}_{p.p}$ is equivalent to a span of mutually orthogonal projections. 
-                Let $\alpha$ index said projectors.
-                We can employ the direct sum decomposition Lemma, using $\mathcal{H}_p$ and $\mathfrak{A}_{p.p}$ to find
-                $$
-                \begin{align}
-                    \mathcal{H}_p &= \bigoplus_\alpha \mathcal{H}_{p}^{(\alpha)}, \\
-                    \mathfrak{A}_{p.p} &= \bigoplus_\alpha \mathfrak{A}_{p.p}^{(\alpha)}.
-                \end{align}
-                $$
-                It is common to refer to each $\mathcal{H}_{p}^{(\alpha)}$ as a <i>slice</i>. 
-                Recall from the Lemma that each $\mathfrak{A}_{p.p}^{(\alpha)}$ has a trivial center. 
-                We can then use the tensor product decomposition Lemma to find a decomposition of the form
-                $$
-                \begin{align}
-                    \mathcal{H}_p &= \bigoplus_\alpha \left( \mathcal{H}_{p.p}^{(\alpha)} \otimes \mathcal{V}_p^{(\alpha)} \right), \\
-                    \mathfrak{A}_{p.p} &= \bigoplus_\alpha \left( \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)}) \otimes \mathbb{I}\right).
-                \end{align}
-                $$
-                The Hilbert spaces $\mathcal{V}_p^{(\alpha)}$ are left undefined for the moment. 
-                So each subalgebra $\mathfrak{A}_{p.p}^{(\alpha)}$ acts non&ndash;trivially on the Hilbert space slice $\mathcal{H}_{p.p}^{(\alpha)}$ and trivially on the 
-                Hilbert space slice $\mathcal{V}_p^{(\alpha)}$. 
-                To investigate further we now look at the non&ndash;trivial $2$&ndash;local interactions.
-            </p>
-            <p>
-                Consider a pair $(p,q)$, i.e. a non&ndash;trivial interaction between particle $p$ and particle $q$; there exists an operator $h_{pq}$ acting over such particles. 
-                We want to construct two <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;subalgebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{q.p}$ where 
-                <ol>
-                    <li>$\mathfrak{A}_{p.q} \subseteq \mathbf{L}(\mathcal{H}_p)$ and $\mathfrak{A}_{q.p} \subseteq \mathbf{L}(\mathcal{H}_q)$,</li>
-                    <li>$h_{pq} \in \mathfrak{A}_{p.q} \otimes \mathfrak{A}_{q.p}$.</li>
-                </ol>
-                This allows for the independent study of the components of a local system. 
-                Moreover, we decompose particle $p$ into a set of subparticles $\{p.q\}$ such that the local interaction between $p$ and $q$ only affects the 
-                subparticle $p.q$ (and $q.p$ in the respective $q$ Hilbert space). 
-                In this way we can understand the possible structure of the eigenstates of the Hamiltonian. 
-            </p>
-            <p>
-                Decompose the operator $h_{pq}$ into a sum of tensor products of operators acting on the local Hilbert spaces of $p$ and $q$, 
-                $$
-                    h_{pq} := \sum_{j} A_j^{(p)} \otimes B_j^{(q)}.
-                $$
-                Let the family of operators $\{A_j^{(p)}\}$ belong to $\mathbf{L}(\mathcal{H}_p)$ and the family of operators $\{B_j^{(q)}\}$ belong to $\mathbf{L}(\mathcal{H}_q)$. 
-                For brevity we drop the superscript. 
-                We can define spaces that are spanned by $\{A_j\}$ and $\{B_j\}$. 
-                Since this particular case in considering the interaction between $p$ and $q$, we define the spaces $\mathcal{S}_{p.q}$ and $\mathcal{S}_{q.p}$ as the linear spaces 
-                spanned by $\{A_j\}$ and $\{B_j\}$ respectively.
-                <div class="text-body-secondary">
-                    A helpful way to think about this is to notice our restricted view of the pair $(p,q)$.
-                    We are interested in the algebra of this interaction. 
-                    Since we decompose the non&ndash;trivial operator $h_{pq}$ into two parts, think of the space $\mathcal{S}_{p.q}$ as the set of operators <i>required</i> to describe $h_{pq}$. 
-                    Moreover, $\text{span}\{A_j\}$ are the operators linked to the interaction of $p$ with $q$.
-                </div>
-                A simple observation shows that $\mathcal{S}_{p.q}$ and $\mathcal{S}_{q.p}$ are closed under Hermitian conjugation. 
-                We can define two algebras,  
-                $$          
-                \begin{align*}
-                    \mathfrak{A}_{p.q} \subseteq \mathbf{L}(\mathcal{H}_p),\\
-                    \mathfrak{A}_{q.p} \subseteq \mathbf{L}(\mathcal{H}_q),
-                \end{align*}
-                $$          
-                as the minimal <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras such that $\mathcal{S}_{p.q} \subseteq \mathfrak{A}_{p.q}$ and 
-                $\mathcal{S}_{q.p} \subseteq \mathfrak{A}_{q.p}$. Hence it can be seen 
-                $$          
-                \begin{align*}
-                    \mathfrak{A}_{p.q} \subseteq \text{Gen}(\{A_j\} \cup \mathbb{I}),\\
-                    \mathfrak{A}_{q.p} \subseteq \text{Gen}(\mathbb{I} \cup \{B_j\}).
-                \end{align*}
-                $$          
-                Consider now another non&ndash;trivial interaction between particle $p$ and particle $r$. 
-                Given the pieces above, we can consider how the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.r}$ interact. 
-                Recall that the goal of this analysis was to find algebras allowing us to partition and isolate the Hilbert space local to particle $p$. 
-                It turns out the two algebras commute, i.e. $[\mathfrak{A}_{p.q},\mathfrak{A}_{p.r}] = 0$. 
-                This becomes clear from the following analysis. 
-            </p>
-            <p>
-                The triplet of particles $p,q,r$ form a Hilbert space $\mathcal{H}_p \otimes \mathcal{H}_q \otimes \mathcal{H}_r$. Non&ndash;trivial operators that act 
-                over $(p,q)$ and $(p,r)$ can be expressed as $h_{pq} \otimes \mathbb{I}_r$ and $\mathbb{I}_q \otimes h_{pr}$. We decompose them as,
-                $$
-                \begin{align*}
-                    h_{pq} \otimes \mathbb{I}_r &= \sum_{j} A_j^{(p)} \otimes B_j^{(q)} \otimes \mathbb{I}_r,\\
-                    \mathbb{I}_q \otimes h_{pr} &= \sum_{k} \mathbb{I}_q \otimes C_k^{(p)} \otimes D_k^{(r)}.
-                \end{align*}
-                $$
-                The commutative property dictates that $[{O_{pq} \otimes \mathbb{I}_r },{\mathbb{I}_q \otimes O_{pr}}] = 0$, hence
-                $$
-                    \sum_{j,k} \big( A_j^{(p)}C_k^{(p)} - C_k^{(p)}A_j^{(p)}\big) \otimes B_j^{(q)} \otimes D_k^{(r)} = 0.
-                $$
-                This is only true if $[{A_j^{(p)}},{C_k^{(p)}}] = 0$ for all $j,k$. 
-                Recall that the algebras $\mathfrak{A}_{p.q}$ is generated by $\{A_j\}$ and $\mathfrak{A}_{p.r}$ will be generated by $\{C_k\}$ by analogy. 
-                Therefore the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.r}$ commute. 
-            </p>
-            <p>
-                Let us investigate the relationship between the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.p}$. 
-                A simple observation shows that $[{\mathfrak{A}_{p.q}},{\mathfrak{A}_{p.p}}] = 0$ for any $(p,q)\in E$. 
-                Recall that the definition of $\mathfrak{A}_{p.p}$ is the set of operators that commute with all non&ndash;trivial interactions for particle $p$. 
-                It is also straightforward to see that any operator in $\mathfrak{A}_{p.q}$ preserves $\mathcal{H}_p^{(\alpha)}$.
-                This means each algebra $\mathfrak{A}_{p.q}$ can be decomposed as
-                $$
-                    \mathfrak{A}_{p.q} = \bigoplus_\alpha \mathfrak{A}_{p.q}^{(\alpha)},
-                $$
-                such that $\mathfrak{A}_{p.q}^{(\alpha)} \subseteq \mathbf{L}(\mathcal{H}_p^{(\alpha)})$ and $Z(\mathfrak{A}_{p.q}^{(\alpha)}) = \mathbb{C}\mathbb{I}$. 
-                Hence $\mathfrak{A}_{p.q}^{(\alpha)} \subseteq \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)} \otimes \mathcal{V}_p^{(\alpha)})$. 
-                Recall that any operator $A \in \mathfrak{A}_{p.p}^{(\alpha)}$ is of the form $A = P \otimes \mathbb{I}$ for some $P \in \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)})$. 
-                Let $B \in \mathfrak{A}_{p.q}^{(\alpha)}$ be an operator of the form $B = X \otimes Q$ such that $X \in \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)})$ is non&ndash;trivial, 
-                and $Q \in \mathbf{L}(\mathcal{V}_p^{(\alpha)})$. 
-                Then it is clear that $[{A},{B}] = 0$ for any $A,B \in \mathfrak{A}_{p.p}^{(\alpha)}, \mathfrak{A}_{p.q}^{(\alpha)}$, thus, 
-                $$
-                    [{A},{B}] = [{P},{X}] \otimes Q = 0.
-                $$
-                By contradiction we conclude that any operator $B \in \mathfrak{A}_{p.q}^{(\alpha)}$ acts trivially on $\mathcal{H}_{p.p}^{(\alpha)}$. This means the operators $B$ are of the form 
-                $$
-                    B = \mathbb{I} \otimes Q,
-                $$
-                where $Q \in \mathbf{L}(\mathcal{V}_p^{(\alpha)})$. 
-                Before we make the final conclusions on this decomposition we consider how the Hilbert spaces for the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.r}$ relate. 
-                In the event that the centers of each $\mathfrak{A}_{p.q}$ are trivial, we can use the contradiction argument to show derive how operators from algebra should look. 
-                Since we make no assumptions on the centers of the algebras we must go one layer further and turn to the subalgebra slices. 
-                Recall that each $\mathfrak{A}_{p.q}$ is decomposed as a direct sum of subalgebra slices where the subalgebras have trivial centers. 
-                The commutation between algebras will hold for the subalgebra slices.
-                Hence we can iteratively apply the tensor product decomposition to the Hilbert space $\mathcal{V}_p^{(\alpha)}$ to form a tensor product partition into component subparticle Hilbert spaces. 
-            </p>
-            <p>
-                To elaborate consider two pairs of particles $(p,q)$ and $(p,r)$. 
-                We know that any operator from $\mathfrak{A}_{p.q}^{(\alpha)}$ acts only non&ndash;trivially on $\mathcal{V}_p^{(\alpha)}$. 
-                Use the tensor product decomposition with $\mathcal{V}_p^{(\alpha)}$ and $\mathfrak{A}_{p.q}^{(\alpha)}$ to find 
-                $$
-                \begin{align}
-                    \mathcal{V}_p^{(\alpha)} &= \mathcal{H}_{p.q}^{(\alpha)} \otimes \mathcal{V}_p'^{(\alpha)},\\
-                    \mathfrak{A}_{p.q}^{(\alpha)} &= \textbf{L}(\mathcal{H}_{p.q}^{(\alpha)}) \otimes \mathbb{I}.
-                \end{align}
-                $$
-                Then since an operator from $\mathfrak{A}_{p.r}^{(\alpha)}$ must be of the form $C = \mathbb{I} \otimes R$ for some $R \in \mathbf{L}(\mathcal{V}_p'^{(\alpha)})$, 
-                we again employ the tensor product Lemma to find the Hilbert space becomes
-                $$
-                    \mathcal{V}_p^{(\alpha)} = \mathcal{H}_{p.q}^{(\alpha)} \otimes \mathcal{H}_{p.r}^{(\alpha)} \otimes \mathcal{V}_p''^{(\alpha)}.
-                $$
-                Iteratively applying this idea we find that the Hilbert space $\mathcal{V}_p^{(\alpha)}$ can be decomposed into a tensor product of subparticle Hilbert spaces. 
-                We can now put all the pieces together to find the final decomposition of the local Hilbert space $\mathcal{H}_p$.
-            </p>
-            <hr class="border-top bs-border-color opacity-100" />
-            <h3>Recap!</h3>
-            <p>
-                Let us take a quick recap of the ideas above.
-                The abstract&ndash;ness of the mathematics can be daunting, but the ideas are relatively straightforward.
-                <ul>
-                    <li>We defined an algebra based on commuting operators local to some particle $p$. </li>
-                    <li>This in turn allowed for a direct sum decomposition of the local Hilbert space $\mathcal{H}_p$ into slices. </li>
-                    <li>A consequence of this decomposition was a subsequent tensor product decomposition of each slice. </li>
-                    <li>We then studied the algebras generated by the non&ndash;trivial $2$&ndash;local interaction between particles centered at $p$. </li>
-                    <li>Demanding a certain tensor product decomposition of the operators over disjoint edges, motivated by a goal of finding a fine&ndash;grained partition of the local Hilbert space, we found that commuting algebras over subparticles. </li>
-                    <li>The subalgebras of the subparticles admitted a similar direct sum decomposition. </li>
-                    <li>It was then possible to iteratively apply the tensor product decomposition to the subparticle Hilbert spaces. </li>
-                    <li>This allowed for a fine&ndash;grained partition of the local Hilbert space.</li>
+      <div class="sidebar bg-body-tertiary border-end">
+        <div
+          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
+          id="sidebar"
+          data-bs-scroll="true"
+          aria-labelledby="sidebar"
+        >
+          <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+            <div class="container p-0">
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#models"
+                    aria-expanded="false"
+                    >Models</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="models">
+                  <li>
+                    <a class="nav-link" href="2-local-pauli.html"
+                      >2&ndash;Local Pauli</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="bose-hubbard.html"
+                      >Bose&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="commuting.html">Commuting</a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="fermi-hubbard.html"
+                      >Fermi&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="general.html">General</a></li>
+                  <li>
+                    <a class="nav-link" href="general-local.html"
+                      >General Local</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="heisenberg.html">Heisenberg</a>
+                  </li>
+                  <li><a class="nav-link" href="ising.html">Ising</a></li>
+                  <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                  <li>
+                    <a class="nav-link" href="stoquastic.html">Stoquastic</a>
+                  </li>
                 </ul>
-                Let's carry on!
-            </p>
-            <hr class="border-top bs-border-color opacity-100" />
-            <h3>Completing the Puzzle</h3>
-            <p>
-                The local Hilbert space $\mathcal{H}_p$ can be partitioned in the following way,
-                $$
-                    \mathcal{H}_p = \bigoplus_{\alpha} \left( \bigotimes_q \mathcal{H}_{p.q}^{(\alpha)}\right) \otimes \mathcal{H}_{p.p}^{(\alpha)}.
-                $$
-                $$
-                    \mathfrak{A}_p = \bigoplus_{\alpha} \left( \bigotimes_q \mathfrak{A}_{p.q}^{(\alpha)}\right) \otimes \mathfrak{A}_{p.p}^{(\alpha)}.
-                $$
-                The total Hilbert space for a system of particles is then the tensor product of the local Hilbert spaces of each particle.
-                Moreover
-                $$
-                    \mathcal{H} = \mathcal{H}_p \otimes \mathcal{H}_q \otimes \mathcal{H}_r \otimes \cdots = \bigotimes_{p} \mathcal{H}_p.
-                $$
-                The structure Lemmas then follows as:
-            </p>
-            <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
-                <b>Lemma (Structure Lemma of Finite Dimensional <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras) </b>
-                Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra on a finite dimensional Hilbert space $\mathcal{H}$. 
-                Then there exists a direct sum decomposition of $\mathcal{H}$ and a local tensor product decomposition of 
-                $\mathcal{H}^{(\alpha)} = \mathcal{H}_{1}^{(\alpha)} \otimes \mathcal{H}_{2}^{(\alpha)}$ such that
-                $$
-                \begin{align}
-                    \mathcal{H} &= \bigoplus_{\alpha} \mathcal{H}_{1}^{(\alpha)} \otimes \mathcal{H}_{2}^{(\alpha)},\\
-                    \mathfrak{A} &= \bigoplus_{\alpha} \mathbf{L}(\mathcal{H}_{1}^{(\alpha)}) \otimes \mathbb{I}_{2}^{(\alpha)}.
-                \end{align}
-                $$
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#techniques"
+                    aria-expanded="true"
+                    >Techniques</a
+                  >
+                </li>
+                <ul class="collapse show p-0" id="techniques">
+                  <li>
+                    <a class="nav-link" href="cluster-expansions.html"
+                      >Cluster Expansions</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="nav-link"
+                      href="cstar-algebras.html"
+                      aria-current="true"
+                      ><span class="cm-sans-serif">C</span
+                      ><sup>&#42;</sup>&ndash;Algebras</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                  <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                </ul>
+                <li>
+                  <a class="nav-link" href="supplementary.html"
+                    >Supplementary</a
+                  >
+                </li>
+                <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                <li>
+                  <a class="nav-link" href="references.html">References</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="open-problems.html"
+                    >Open Problems</a
+                  >
+                </li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#themes"
+                    aria-expanded="false"
+                    >Theme</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="themes">
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="auto"
+                      >Auto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="light"
+                      >Light</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="dark"
+                      >Dark</a
+                    >
+                  </li>
+                </ul>
+              </ul>
             </div>
+          </div>
+        </div>
+      </div>
+      <main class="flex-grow w-100 px-4 pb-4">
+        <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+          <h2>
+            <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras
+          </h2>
+        </div>
+        <p>
+          The general idea behind using <span class="cm-sans-serif">C</span
+          ><sup>&#42;</sup>&ndash;algebra is to find a succinct way of studying
+          commuting systems. One way to do this is to find a description of a
+          system in terms of its Hilbert space. Properties of commuting
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras
+          allow for a fine&ndash;grained partition of local Hilbert space. This
+          partitions allow for the independent study of the components of said
+          local system.
+        </p>
+
+        <p>
+          A local Hilbert space $\mathcal{H}_j$ (in certain circumstances)
+          admits a partition into several smaller Hilbert spaces that are
+          independent. For example $$ \mathcal{H}_j = \bigotimes_{k}
+          \mathcal{H}_{j,k}, $$ where each $\mathcal{H}_{j,k}$ is independent of
+          the others and where the algebra $\mathfrak{A}_{j,k} =
+          \mathbf{L}(\mathcal{H}_{j,k})\otimes\mathbb{I}$. It is possible to
+          find a set of operators $\{A_\alpha^{({j,k})}\}$ that generates the
+          algebra $\mathfrak{A}_{j,k}$ meaning any operator in
+          $\mathbf{L}(\mathcal{H}_j)$ admits a decomposition of the form $$ A =
+          \sum_{\alpha} \bigotimes_k A_\alpha^{({j,k})}. $$
+        </p>
+        <p>
+          For commuting operators $A$ and $B$, it is well known that both share
+          a common eigenbasis hence each operator can be simultaneously
+          diagonalised. For a set of operators $\{A_i\}$ that pairwise commute,
+          an eigenvalue $\ket{\lambda}$ hosts an eigenvalue set $\{\lambda_i :
+          A_i\ket{\lambda} = \lambda_i \ket{\lambda}\}$. The energy for such a
+          state in then $\bra{\lambda}{H}\ket{\lambda} = \sum_i \lambda_i$.
+        </p>
+        <hr class="border-top bs-border-color opacity-100" />
+        <h3>Definitions</h3>
+        <p>
+          The main focus of this section is the study of Hilbert spaces and
+          their associated operators. We restrict our attention to the study of
+          operators that are bounded and linear; we denote the set of all such
+          operators as $\mathbf{L}(\mathcal{H})$ where $\mathcal{H}$ is the
+          Hilbert space. An important idea central to the use of
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras is
+          the notion of a <em>commutant</em>. For example, two operators $A$ and
+          $B$ are said to <i>commute</i> if $AB = BA$. The <i>commutator</i> of
+          two operators $A$ and $B$ is defined as $[A,B] := AB - BA$. Within all
+          sets of bounded linear operators lies the identity operator
+          $\mathbb{I}$. The identity is such that $\mathbb{I}^2 = \mathbb{I}$,
+          $AA^{-1} = A^{-1}A = \mathbb{I}$ and $[\mathbb{I},A]=0$ for any $A \in
+          \mathbf{L}(\mathcal{H})$. A common transformation on operators on a
+          Hilbert space include the Hermitian adjoint $\dagger : A \rightarrow
+          A^\dagger$, which maps an operator to its conjugate transpose. Those
+          operators that satisfy $A = A^\dagger$ are called <i>Hermitian</i> (or
+          self&ndash;adjoint). Note that the Hermitian adjoint is a linear
+          transformation that is an involution, i.e. $(A^\dagger)^\dagger = A$.
+          Another interesting operation is the <i>direct sum</i> which takes two
+          operations $A$ and $B$ to a block diagonal matrix $A\oplus B$. We can
+          ''combine'' operators from two different Hilbert spaces to form new
+          operators. The <i>tensor product</i> is a bilinear map $V \times W
+          \rightarrow V \otimes W$ that maps a pair $(v,w)$ for $v\in V$ and
+          $w\in W$ to an element $v\otimes w \in V\otimes W$.
+        </p>
+
+        <p>
+          Within the algebra of quantum theory lies
+          <sup>&#42;</sup>&ndash;algebras, particularly
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras.
+          These are complex Banach algebras with an involution operation $^*$.
+          The formal definition of a <sup>&#42;</sup>&ndash;algebra is:
+        </p>
+        <div
+          style="
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          "
+        >
+          <b>Definition (<sup>&#42;</sup>&ndash;algebra) </b>
+          A <sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ is an associated
+          algebra over $\mathbb{C}$ with a norm $||\cdot||$ and an involution
+          $^*:\mathfrak{A}\to\mathfrak{A}$ such that the operation $^*$ is:
+          <ol>
+            <li>conjugate&ndash;linear,</li>
+            <li>anti&ndash;homomorphism.</li>
+          </ol>
+        </div>
+        <p>
+          A <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra
+          is a <sup>&#42;</sup>&ndash;algebra that satisfies the
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup> condition: $$
+          ||a^*a|| = ||a||^2 \quad \text{for all}\;\, a\in\mathfrak{A}. $$
+        </p>
+        <p>
+          The <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra
+          can be seen as a way to generalise the set of complex numbers.
+          Moreover, the set of bounded linear operators on a Hilbert space
+          coupled with the Hermitian adjoint operation is a
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra.
+          Note that an algebra may not necessarily contain an identity element.
+          Those that do are called <i>unital</i> algebras.
+        </p>
+        <p>
+          A subalgebra $\mathfrak{B}$ of an algebra $\mathfrak{A}$ is a subset
+          of $\mathfrak{A}$ that is closed under the operations of
+          $\mathfrak{A}$. Within the framework of algebraic structures we can
+          discuss a particular subalgebra &mdash; the center of an algebra
+          $Z(\mathfrak{A})$. Essentially the center of an algebra is the set of
+          all elements that commute with every element in the algebra. This is
+          clearly an algebra in itself. $$ Z(\mathfrak{A}) := \{A\in\mathfrak{A}
+          : [A,B]=0 \;\text{for all}\; B\in\mathfrak{A}\}. $$ If the center of
+          an algebra is trivial, i.e. $Z(\mathfrak{A}) = \mathbb{I}$, then the
+          algebra is said to be <i>irreducible</i>.
+        </p>
+        <p>
+          These tools are crucial for understanding the structure of commuting
+          Hilbert spaces in problems such as the local commuting Hamiltonian
+          problem. Finally, when we say an algebra $\mathfrak{A}$ is
+          <i>generated</i> by a set of operators $\{A_\alpha\}$, we mean $$
+          \mathfrak{A} = \text{Gen}(\{A_\alpha\}) =
+          \text{span}\{A_{1}^{i}A_{2}^{j}\cdots A_{n}^{l} : i,j,\dots,l \in
+          \mathbb{Z}\}. $$ A <i>commutative</i>
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra is
+          one such that the underlying associative algebra is a commutative
+          algebra. It is known that a commutative
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra
+          $\mathfrak{A}$ is isomorphic to the algebra of continuous
+          complex&ndash;valued functions on a compact Hausdorff space $X$. This
+          is known as the <i>Gelfand&ndash;Naimark theorem</i>.
+        </p>
+        <hr class="border-top bs-border-color opacity-100" />
+        <h3>The Structure Lemma</h3>
+        <p>
+          The structure lemma is at the heart of studying the complexity of the
+          commuting local Hamiltonian problem. A high&ndash;level overview of
+          the lemma is to say that it is possible to perform a
+          fine&ndash;grained partition of the local Hilbert space. The partition
+          (as the name suggests) decomposes the Hilbert space into smaller,
+          independent Hilbert spaces. Studying these independent spaces allows
+          us to solve the whole problem. Of course, this partition is not always
+          possible and even when it is, it can be a difficult process. Due to
+          the nature of commuting local Hamiltonians in certain circumstances
+          and on particular geometries, the structure lemma can be applied.
+        </p>
+        <p>
+          To see how a local Hilbert space on a given particle can be decomposed
+          into smaller Hilbert spaces, consider the following scenario. Let a
+          system be composed of a set of particles. The full Hilbert space of
+          the system is then the tensor product of the local Hilbert spaces of
+          each particle, i.e. $$ \mathcal{H} = \bigotimes_{p} \mathcal{H}_p. $$
+          Let $\mathcal{H}_p$ be a local Hilbert space on a particle $p$ where
+          the dimension of $\mathcal{H}_p$ is $d$. Said particle interacts
+          non&ndash;trivially with an arbitrary non&ndash;zero number of other
+          particles; we label other particles as $q,r,s,\dots$. All interactions
+          in this system are $2$&ndash;local, i.e. the interaction between
+          particle $p$ and particle $q$ is described by a Hamiltonians operator
+          $h_{pq} \in \mathbf{L}(\mathcal{H}_p \otimes \mathcal{H}_q)$. The full
+          local Hamiltonian admits an interaction graph $G = (V,E)$ where $V =
+          [p,q,r,\dots]$ is the set of particles and $E = \{(p,q) : h_{pq} \neq
+          \mathbb{I}\}$ is the set of non&ndash;trivial interactions between
+          particles. The goal is to find a fine&ndash;grained partition of the
+          local Hilbert space $\mathcal{H}_p$. This analysis closely follows the
+          ideas of <a href="references.html#BV03">[BV03]</a>.
+        </p>
+        <p>
+          Define a set of operator for a local Hilbert space $\mathcal{H}_p$ as
+          $$ \mathcal{S}_p := \{O_p \in \mathbf{L}(\mathcal{H}_p) :
+          [{O_p},{h_{pq}}]=0 \quad \forall (p,q)\in E\}, $$ i.e. the set of
+          local operators on a particle that commute with all non&ndash;trivial
+          interactions for that given particle. Before proceeding we state key
+          lemmas in showing the structure lemma.
+        </p>
+        <div
+          style="
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          "
+        >
+          <b>Lemma (Span of projectors) </b>
+          Any commuting <span class="cm-sans-serif">C</span
+          ><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices is
+          of the form $$ \mathfrak{A} = \text{span}(\Pi_1, \dots, \Pi_n), $$
+          where $\Pi_i$ are mutually orthogonal projections and $n$ is the
+          dimension of $\mathfrak{A}$.
+        </div>
+        <div
+          style="
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          "
+        >
+          <b>Lemma (Direct sum decomposition) </b>
+          For any <span class="cm-sans-serif">C</span
+          ><sup>&#42;</sup>&ndash;algebra $\mathfrak{A}$ of complex matrices,
+          there exists a direct sum decomposition into smaller algebras
+          $\mathfrak{A}_j$ such that each $\mathfrak{A}_j$ has a trivial center,
+          i.e. $$ \mathfrak{A} = \bigoplus_j \mathfrak{A}_j. $$
+        </div>
+        <div
+          style="
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          "
+        >
+          <b>Lemma (Tensor product decomposition) </b>
+          Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra
+          with a trivial center. There exists a tensor product decomposition of
+          the form $\mathcal{H} = \mathcal{H}_1 \otimes \mathcal{H}_2$ such that
+          $$ \mathfrak{A} = \mathbf{L}(\mathcal{H}_1) \otimes \mathbb{I}_2, $$
+          i.e. $\mathfrak{A}$ is the subalgebra of $\mathbf{L}(\mathcal{H})$.
+        </div>
+        <p>
+          We can define a <span class="cm-sans-serif">C</span
+          ><sup>&#42;</sup>&ndash;subalgebra $\mathfrak{A}_{p.p} = \mathcal{S}_p
+          \subseteq \mathbf{L}(\mathcal{H}_p)$. By the first Lemma above we know
+          that $\mathfrak{A}_{p.p}$ is equivalent to a span of mutually
+          orthogonal projections. Let $\alpha$ index said projectors. We can
+          employ the direct sum decomposition Lemma, using $\mathcal{H}_p$ and
+          $\mathfrak{A}_{p.p}$ to find $$ \begin{align} \mathcal{H}_p &=
+          \bigoplus_\alpha \mathcal{H}_{p}^{(\alpha)}, \\ \mathfrak{A}_{p.p} &=
+          \bigoplus_\alpha \mathfrak{A}_{p.p}^{(\alpha)}. \end{align} $$ It is
+          common to refer to each $\mathcal{H}_{p}^{(\alpha)}$ as a
+          <i>slice</i>. Recall from the Lemma that each
+          $\mathfrak{A}_{p.p}^{(\alpha)}$ has a trivial center. We can then use
+          the tensor product decomposition Lemma to find a decomposition of the
+          form $$ \begin{align} \mathcal{H}_p &= \bigoplus_\alpha \left(
+          \mathcal{H}_{p.p}^{(\alpha)} \otimes \mathcal{V}_p^{(\alpha)} \right),
+          \\ \mathfrak{A}_{p.p} &= \bigoplus_\alpha \left(
+          \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)}) \otimes \mathbb{I}\right).
+          \end{align} $$ The Hilbert spaces $\mathcal{V}_p^{(\alpha)}$ are left
+          undefined for the moment. So each subalgebra
+          $\mathfrak{A}_{p.p}^{(\alpha)}$ acts non&ndash;trivially on the
+          Hilbert space slice $\mathcal{H}_{p.p}^{(\alpha)}$ and trivially on
+          the Hilbert space slice $\mathcal{V}_p^{(\alpha)}$. To investigate
+          further we now look at the non&ndash;trivial $2$&ndash;local
+          interactions.
+        </p>
+        <p>
+          Consider a pair $(p,q)$, i.e. a non&ndash;trivial interaction between
+          particle $p$ and particle $q$; there exists an operator $h_{pq}$
+          acting over such particles. We want to construct two
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;subalgebras
+          $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{q.p}$ where
+        </p>
+        <ol>
+          <li>
+            $\mathfrak{A}_{p.q} \subseteq \mathbf{L}(\mathcal{H}_p)$ and
+            $\mathfrak{A}_{q.p} \subseteq \mathbf{L}(\mathcal{H}_q)$,
+          </li>
+          <li>$h_{pq} \in \mathfrak{A}_{p.q} \otimes \mathfrak{A}_{q.p}$.</li>
+        </ol>
+        <p>
+          This allows for the independent study of the components of a local
+          system. Moreover, we decompose particle $p$ into a set of subparticles
+          $\{p.q\}$ such that the local interaction between $p$ and $q$ only
+          affects the subparticle $p.q$ (and $q.p$ in the respective $q$ Hilbert
+          space). In this way we can understand the possible structure of the
+          eigenstates of the Hamiltonian.
+        </p>
+        <p>
+          Decompose the operator $h_{pq}$ into a sum of tensor products of
+          operators acting on the local Hilbert spaces of $p$ and $q$, $$ h_{pq}
+          := \sum_{j} A_j^{(p)} \otimes B_j^{(q)}. $$ Let the family of
+          operators $\{A_j^{(p)}\}$ belong to $\mathbf{L}(\mathcal{H}_p)$ and
+          the family of operators $\{B_j^{(q)}\}$ belong to
+          $\mathbf{L}(\mathcal{H}_q)$. For brevity we drop the superscript. We
+          can define spaces that are spanned by $\{A_j\}$ and $\{B_j\}$. Since
+          this particular case in considering the interaction between $p$ and
+          $q$, we define the spaces $\mathcal{S}_{p.q}$ and $\mathcal{S}_{q.p}$
+          as the linear spaces spanned by $\{A_j\}$ and $\{B_j\}$ respectively.
+        </p>
+        <div class="text-body-secondary">
+          A helpful way to think about this is to notice our restricted view of
+          the pair $(p,q)$. We are interested in the algebra of this
+          interaction. Since we decompose the non&ndash;trivial operator
+          $h_{pq}$ into two parts, think of the space $\mathcal{S}_{p.q}$ as the
+          set of operators <i>required</i> to describe $h_{pq}$. Moreover,
+          $\text{span}\{A_j\}$ are the operators linked to the interaction of
+          $p$ with $q$.
+        </div>
+        <p>
+          A simple observation shows that $\mathcal{S}_{p.q}$ and
+          $\mathcal{S}_{q.p}$ are closed under Hermitian conjugation. We can
+          define two algebras, $$ \begin{align*} \mathfrak{A}_{p.q} \subseteq
+          \mathbf{L}(\mathcal{H}_p),\\ \mathfrak{A}_{q.p} \subseteq
+          \mathbf{L}(\mathcal{H}_q), \end{align*} $$ as the minimal
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebras
+          such that $\mathcal{S}_{p.q} \subseteq \mathfrak{A}_{p.q}$ and
+          $\mathcal{S}_{q.p} \subseteq \mathfrak{A}_{q.p}$. Hence it can be seen
+          $$ \begin{align*} \mathfrak{A}_{p.q} \subseteq \text{Gen}(\{A_j\} \cup
+          \mathbb{I}),\\ \mathfrak{A}_{q.p} \subseteq \text{Gen}(\mathbb{I} \cup
+          \{B_j\}). \end{align*} $$ Consider now another non&ndash;trivial
+          interaction between particle $p$ and particle $r$. Given the pieces
+          above, we can consider how the algebras $\mathfrak{A}_{p.q}$ and
+          $\mathfrak{A}_{p.r}$ interact. Recall that the goal of this analysis
+          was to find algebras allowing us to partition and isolate the Hilbert
+          space local to particle $p$. It turns out the two algebras commute,
+          i.e. $[\mathfrak{A}_{p.q},\mathfrak{A}_{p.r}] = 0$. This becomes clear
+          from the following analysis.
+        </p>
+        <p>
+          The triplet of particles $p,q,r$ form a Hilbert space $\mathcal{H}_p
+          \otimes \mathcal{H}_q \otimes \mathcal{H}_r$. Non&ndash;trivial
+          operators that act over $(p,q)$ and $(p,r)$ can be expressed as
+          $h_{pq} \otimes \mathbb{I}_r$ and $\mathbb{I}_q \otimes h_{pr}$. We
+          decompose them as, $$ \begin{align*} h_{pq} \otimes \mathbb{I}_r &=
+          \sum_{j} A_j^{(p)} \otimes B_j^{(q)} \otimes \mathbb{I}_r,\\
+          \mathbb{I}_q \otimes h_{pr} &= \sum_{k} \mathbb{I}_q \otimes C_k^{(p)}
+          \otimes D_k^{(r)}. \end{align*} $$ The commutative property dictates
+          that $[{O_{pq} \otimes \mathbb{I}_r },{\mathbb{I}_q \otimes O_{pr}}] =
+          0$, hence $$ \sum_{j,k} \big( A_j^{(p)}C_k^{(p)} -
+          C_k^{(p)}A_j^{(p)}\big) \otimes B_j^{(q)} \otimes D_k^{(r)} = 0. $$
+          This is only true if $[{A_j^{(p)}},{C_k^{(p)}}] = 0$ for all $j,k$.
+          Recall that the algebras $\mathfrak{A}_{p.q}$ is generated by
+          $\{A_j\}$ and $\mathfrak{A}_{p.r}$ will be generated by $\{C_k\}$ by
+          analogy. Therefore the algebras $\mathfrak{A}_{p.q}$ and
+          $\mathfrak{A}_{p.r}$ commute.
+        </p>
+        <p>
+          Let us investigate the relationship between the algebras
+          $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.p}$. A simple observation
+          shows that $[{\mathfrak{A}_{p.q}},{\mathfrak{A}_{p.p}}] = 0$ for any
+          $(p,q)\in E$. Recall that the definition of $\mathfrak{A}_{p.p}$ is
+          the set of operators that commute with all non&ndash;trivial
+          interactions for particle $p$. It is also straightforward to see that
+          any operator in $\mathfrak{A}_{p.q}$ preserves
+          $\mathcal{H}_p^{(\alpha)}$. This means each algebra
+          $\mathfrak{A}_{p.q}$ can be decomposed as $$ \mathfrak{A}_{p.q} =
+          \bigoplus_\alpha \mathfrak{A}_{p.q}^{(\alpha)}, $$ such that
+          $\mathfrak{A}_{p.q}^{(\alpha)} \subseteq
+          \mathbf{L}(\mathcal{H}_p^{(\alpha)})$ and
+          $Z(\mathfrak{A}_{p.q}^{(\alpha)}) = \mathbb{C}\mathbb{I}$. Hence
+          $\mathfrak{A}_{p.q}^{(\alpha)} \subseteq
+          \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)} \otimes
+          \mathcal{V}_p^{(\alpha)})$. Recall that any operator $A \in
+          \mathfrak{A}_{p.p}^{(\alpha)}$ is of the form $A = P \otimes
+          \mathbb{I}$ for some $P \in \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)})$.
+          Let $B \in \mathfrak{A}_{p.q}^{(\alpha)}$ be an operator of the form
+          $B = X \otimes Q$ such that $X \in
+          \mathbf{L}(\mathcal{H}_{p.p}^{(\alpha)})$ is non&ndash;trivial, and $Q
+          \in \mathbf{L}(\mathcal{V}_p^{(\alpha)})$. Then it is clear that
+          $[{A},{B}] = 0$ for any $A,B \in \mathfrak{A}_{p.p}^{(\alpha)},
+          \mathfrak{A}_{p.q}^{(\alpha)}$, thus, $$ [{A},{B}] = [{P},{X}] \otimes
+          Q = 0. $$ By contradiction we conclude that any operator $B \in
+          \mathfrak{A}_{p.q}^{(\alpha)}$ acts trivially on
+          $\mathcal{H}_{p.p}^{(\alpha)}$. This means the operators $B$ are of
+          the form $$ B = \mathbb{I} \otimes Q, $$ where $Q \in
+          \mathbf{L}(\mathcal{V}_p^{(\alpha)})$. Before we make the final
+          conclusions on this decomposition we consider how the Hilbert spaces
+          for the algebras $\mathfrak{A}_{p.q}$ and $\mathfrak{A}_{p.r}$ relate.
+          In the event that the centers of each $\mathfrak{A}_{p.q}$ are
+          trivial, we can use the contradiction argument to show derive how
+          operators from algebra should look. Since we make no assumptions on
+          the centers of the algebras we must go one layer further and turn to
+          the subalgebra slices. Recall that each $\mathfrak{A}_{p.q}$ is
+          decomposed as a direct sum of subalgebra slices where the subalgebras
+          have trivial centers. The commutation between algebras will hold for
+          the subalgebra slices. Hence we can iteratively apply the tensor
+          product decomposition to the Hilbert space $\mathcal{V}_p^{(\alpha)}$
+          to form a tensor product partition into component subparticle Hilbert
+          spaces.
+        </p>
+        <p>
+          To elaborate consider two pairs of particles $(p,q)$ and $(p,r)$. We
+          know that any operator from $\mathfrak{A}_{p.q}^{(\alpha)}$ acts only
+          non&ndash;trivially on $\mathcal{V}_p^{(\alpha)}$. Use the tensor
+          product decomposition with $\mathcal{V}_p^{(\alpha)}$ and
+          $\mathfrak{A}_{p.q}^{(\alpha)}$ to find $$ \begin{align}
+          \mathcal{V}_p^{(\alpha)} &= \mathcal{H}_{p.q}^{(\alpha)} \otimes
+          \mathcal{V}_p'^{(\alpha)},\\ \mathfrak{A}_{p.q}^{(\alpha)} &=
+          \textbf{L}(\mathcal{H}_{p.q}^{(\alpha)}) \otimes \mathbb{I}.
+          \end{align} $$ Then since an operator from
+          $\mathfrak{A}_{p.r}^{(\alpha)}$ must be of the form $C = \mathbb{I}
+          \otimes R$ for some $R \in \mathbf{L}(\mathcal{V}_p'^{(\alpha)})$, we
+          again employ the tensor product Lemma to find the Hilbert space
+          becomes $$ \mathcal{V}_p^{(\alpha)} = \mathcal{H}_{p.q}^{(\alpha)}
+          \otimes \mathcal{H}_{p.r}^{(\alpha)} \otimes
+          \mathcal{V}_p''^{(\alpha)}. $$ Iteratively applying this idea we find
+          that the Hilbert space $\mathcal{V}_p^{(\alpha)}$ can be decomposed
+          into a tensor product of subparticle Hilbert spaces. We can now put
+          all the pieces together to find the final decomposition of the local
+          Hilbert space $\mathcal{H}_p$.
+        </p>
+        <hr class="border-top bs-border-color opacity-100" />
+        <h3>Recap!</h3>
+        <p>
+          Let us take a quick recap of the ideas above. The abstract&ndash;ness
+          of the mathematics can be daunting, but the ideas are relatively
+          straightforward.
+        </p>
+        <ul>
+          <li>
+            We defined an algebra based on commuting operators local to some
+            particle $p$.
+          </li>
+          <li>
+            This in turn allowed for a direct sum decomposition of the local
+            Hilbert space $\mathcal{H}_p$ into slices.
+          </li>
+          <li>
+            A consequence of this decomposition was a subsequent tensor product
+            decomposition of each slice.
+          </li>
+          <li>
+            We then studied the algebras generated by the non&ndash;trivial
+            $2$&ndash;local interaction between particles centered at $p$.
+          </li>
+          <li>
+            Demanding a certain tensor product decomposition of the operators
+            over disjoint edges, motivated by a goal of finding a
+            fine&ndash;grained partition of the local Hilbert space, we found
+            that commuting algebras over subparticles.
+          </li>
+          <li>
+            The subalgebras of the subparticles admitted a similar direct sum
+            decomposition.
+          </li>
+          <li>
+            It was then possible to iteratively apply the tensor product
+            decomposition to the subparticle Hilbert spaces.
+          </li>
+          <li>
+            This allowed for a fine&ndash;grained partition of the local Hilbert
+            space.
+          </li>
+        </ul>
+        <hr class="border-top bs-border-color opacity-100" />
+        <h3>Completing the Puzzle</h3>
+        <p>
+          The local Hilbert space $\mathcal{H}_p$ can be partitioned in the
+          following way, $$ \mathcal{H}_p = \bigoplus_{\alpha} \left(
+          \bigotimes_q \mathcal{H}_{p.q}^{(\alpha)}\right) \otimes
+          \mathcal{H}_{p.p}^{(\alpha)}. $$ $$ \mathfrak{A}_p =
+          \bigoplus_{\alpha} \left( \bigotimes_q
+          \mathfrak{A}_{p.q}^{(\alpha)}\right) \otimes
+          \mathfrak{A}_{p.p}^{(\alpha)}. $$ The total Hilbert space for a system
+          of particles is then the tensor product of the local Hilbert spaces of
+          each particle. Moreover $$ \mathcal{H} = \mathcal{H}_p \otimes
+          \mathcal{H}_q \otimes \mathcal{H}_r \otimes \cdots = \bigotimes_{p}
+          \mathcal{H}_p. $$ The structure Lemmas then follows as:
+        </p>
+        <div
+          style="
+            padding-left: 40px;
+            padding-right: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+          "
+        >
+          <b
+            >Lemma (Structure Lemma of Finite Dimensional
+            <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras)
+          </b>
+          Let $\mathfrak{A} \subseteq \mathbf{L}(\mathcal{H})$ be a
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra on
+          a finite dimensional Hilbert space $\mathcal{H}$. Then there exists a
+          direct sum decomposition of $\mathcal{H}$ and a local tensor product
+          decomposition of $\mathcal{H}^{(\alpha)} = \mathcal{H}_{1}^{(\alpha)}
+          \otimes \mathcal{H}_{2}^{(\alpha)}$ such that $$ \begin{align}
+          \mathcal{H} &= \bigoplus_{\alpha} \mathcal{H}_{1}^{(\alpha)} \otimes
+          \mathcal{H}_{2}^{(\alpha)},\\ \mathfrak{A} &= \bigoplus_{\alpha}
+          \mathbf{L}(\mathcal{H}_{1}^{(\alpha)}) \otimes
+          \mathbb{I}_{2}^{(\alpha)}. \end{align} $$
+        </div>
+        <p>
+          Note that this lemma cannot be used in all circumstances. We showed a
+          fine&ndash;grained partition of a local Hilbert space for a specific
+          example. Using this prescription can fail for $3$&ndash;local
+          commuting Hamiltonians over qubits. The reason we showed this
+          application was to demonstrate the power of the
+          <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra
+          language and provided some intuitive context for these abstract ideas.
+        </p>
+        <p>
+          Technically this Lemma can be gleaned from the tensor product
+          decomposition Lemma and the direct sum decomposition Lemma. The figure
+          below gives a pictorial representation of the structure Lemma and the
+          underlying mechanics of the partitioning of the local Hilbert space.
+        </p>
+        <div id="cstar_fig_1">
+          <div class="gadget" style="display: flex; justify-content: center">
+            <script type="text/tikz">
+              \begin{tikzpicture}[scale=2]
+                  \draw[thick] (0,0)--(2,1); \draw[thick] (0,0)--(1.5,-1); \draw[thick] (0,0)--(-2,0.5);
+                  \draw[thick, fill=gray!80!white] (0,0)circle(0.2) node[below, yshift=-10pt] {\large $p$};
+                  \draw[thick, fill=white] (2,1)circle(0.2) node[above, yshift=10pt] {\large $q$};
+                  \draw[thick, fill=white] (1.5,-1)circle(0.2) node[above, yshift=10pt] {\large $r$};
+                  \draw[thick, fill=white] (-2,0.5)circle(0.2) node[above, yshift=10pt] {\large $s$};
+                  \begin{scope}[yshift=-3cm]
+                      \draw[dashed, fill=gray!80!white] (0,-{sqrt(0.75/6)})circle(0.6) node[right, xshift=20pt] {\large $p$};
+                      \draw[very thick] (0,0)--(-0.25+2,-{sqrt(0.75/2)}+1); \draw[very thick] (0.25,-{sqrt(0.75/2)})--(1.5,-1); \draw[very thick] (-0.25,-{sqrt(0.75/2)})--(-2+0.25,0.5);
+                      \draw[fill=red, draw=red] (0,0) circle (0.1) node[above, yshift=15pt, red] {$p.q$};
+                      \draw[fill=blue, draw=blue] (0.25,-{sqrt(0.75/2)}) circle (0.1) node[below, yshift=-10pt, xshift=10pt, blue] {$p.r$};
+                      \draw[fill=green!80!black, draw=green!80!black] (-0.25,-{sqrt(0.75/2)}) circle (0.1) node[below, yshift=-10pt, xshift=-10pt, green!80!black] {$p.s$};
+
+                      \draw[dashed] (2,-{sqrt(0.75/6)}+1)circle(0.6) node[below, yshift=-20pt] {\large $q$};
+                      \draw[fill=gray!20!white, draw=gray!20!white] (2,1) circle (0.1);
+                      \draw[fill=gray!20!white, draw=gray!20!white] (0.25+2,-{sqrt(0.75/2)}+1) circle (0.1);
+                      \draw[fill=black] (-0.25+2,-{sqrt(0.75/2)}+1) circle (0.1);
+
+                      \draw[dashed] (1.5,-{sqrt(0.75/6)}-1)circle(0.6) node[below, yshift=-40pt] {\large $r$};
+                      \draw[fill=black] (1.5,-1) circle (0.1);
+                      \draw[fill=gray!20!white, draw=gray!20!white] (1.5,-{sqrt(0.75/1.5)}-1) circle (0.1);
+
+                      \draw[dashed] (-2,-{sqrt(0.75/6)}+0.5)circle(0.6) node[below, yshift=-20pt] {\large $s$};
+                      \draw[fill=black] (-2+0.25,0.5) circle (0.1);
+                      \draw[fill=gray!20!white, draw=gray!20!white] (-2-0.25,0.5) circle (0.1);
+                      \draw[fill=gray!20!white, draw=gray!20!white] (-2+0.25,-{sqrt(0.75/1.5)}+0.5) circle (0.1);
+                      \draw[fill=gray!20!white, draw=gray!20!white] (-2-0.25,-{sqrt(0.75/1.5)}+0.5) circle (0.1);
+                  \end{scope}
+                  \begin{scope}[yshift=-6cm, xshift=-2cm]
+                  \draw[draw=none] (0,0)rectangle(2,1) node[midway] {\LARGE $\mathcal{H}_p = \bigotimes_{a \in \{p,q,r,s\}} \mathcal{H}_{p.a}$};
+                  \draw[draw=none] (0,-0.75)rectangle(2,0.25) node[midway] {\LARGE $\mathcal{H} = \bigotimes_{a \in \{p,q,r,s,\dots\}} \mathcal{H}_a$};
+              \end{scope}
+              \end{tikzpicture}
+            </script>
+          </div>
+          <div style="padding-left: 20%; padding-right: 20%">
             <p>
-                Note that this lemma cannot be used in all circumstances. We showed a fine&ndash;grained partition of a local Hilbert space for a specific example. 
-                Using this prescription can fail for $3$&ndash;local commuting Hamiltonians over qubits. 
-                The reason we showed this application was to demonstrate the power of the <span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;algebra language and provided some intuitive 
-                context for these abstract ideas.
+              <b>Figure: </b> A diagram showing the structure of the local
+              Hilbert space $\mathcal{H}_p$ and the Hilbert space $\mathcal{H}$
+              for a particle $p$ that interacts with a set of other particles
+              $\{q,r,s\}$. The local Hilbert space $\mathcal{H}_p$ can be
+              decomposed into a direct sum of tensor products of subparticle
+              Hilbert spaces. Note that in this example $\alpha = 1$.
             </p>
-            <p>
-                Technically this Lemma can be gleaned from the tensor product decomposition Lemma and the direct sum decomposition Lemma.
-                The figure below gives a pictorial representation of the structure Lemma and the underlying mechanics of the partitioning of the local Hilbert space.
-            </p>
-            <div id="cstar_fig_1">
-                <div class="gadget" style="display: flex; justify-content: center;">
-                    <script type="text/tikz">
-                        \begin{tikzpicture}[scale=2]
-                            \draw[thick] (0,0)--(2,1); \draw[thick] (0,0)--(1.5,-1); \draw[thick] (0,0)--(-2,0.5);
-                            \draw[thick, fill=gray!80!white] (0,0)circle(0.2) node[below, yshift=-10pt] {\large $p$};
-                            \draw[thick, fill=white] (2,1)circle(0.2) node[above, yshift=10pt] {\large $q$};
-                            \draw[thick, fill=white] (1.5,-1)circle(0.2) node[above, yshift=10pt] {\large $r$};
-                            \draw[thick, fill=white] (-2,0.5)circle(0.2) node[above, yshift=10pt] {\large $s$};
-                            \begin{scope}[yshift=-3cm]
-                                \draw[dashed, fill=gray!80!white] (0,-{sqrt(0.75/6)})circle(0.6) node[right, xshift=20pt] {\large $p$};
-                                \draw[very thick] (0,0)--(-0.25+2,-{sqrt(0.75/2)}+1); \draw[very thick] (0.25,-{sqrt(0.75/2)})--(1.5,-1); \draw[very thick] (-0.25,-{sqrt(0.75/2)})--(-2+0.25,0.5);
-                                \draw[fill=red, draw=red] (0,0) circle (0.1) node[above, yshift=15pt, red] {$p.q$};
-                                \draw[fill=blue, draw=blue] (0.25,-{sqrt(0.75/2)}) circle (0.1) node[below, yshift=-10pt, xshift=10pt, blue] {$p.r$};
-                                \draw[fill=green!80!black, draw=green!80!black] (-0.25,-{sqrt(0.75/2)}) circle (0.1) node[below, yshift=-10pt, xshift=-10pt, green!80!black] {$p.s$};
-
-                                \draw[dashed] (2,-{sqrt(0.75/6)}+1)circle(0.6) node[below, yshift=-20pt] {\large $q$};
-                                \draw[fill=gray!20!white, draw=gray!20!white] (2,1) circle (0.1);
-                                \draw[fill=gray!20!white, draw=gray!20!white] (0.25+2,-{sqrt(0.75/2)}+1) circle (0.1);
-                                \draw[fill=black] (-0.25+2,-{sqrt(0.75/2)}+1) circle (0.1);
-
-                                \draw[dashed] (1.5,-{sqrt(0.75/6)}-1)circle(0.6) node[below, yshift=-40pt] {\large $r$};
-                                \draw[fill=black] (1.5,-1) circle (0.1);
-                                \draw[fill=gray!20!white, draw=gray!20!white] (1.5,-{sqrt(0.75/1.5)}-1) circle (0.1);
-
-                                \draw[dashed] (-2,-{sqrt(0.75/6)}+0.5)circle(0.6) node[below, yshift=-20pt] {\large $s$};
-                                \draw[fill=black] (-2+0.25,0.5) circle (0.1);
-                                \draw[fill=gray!20!white, draw=gray!20!white] (-2-0.25,0.5) circle (0.1);
-                                \draw[fill=gray!20!white, draw=gray!20!white] (-2+0.25,-{sqrt(0.75/1.5)}+0.5) circle (0.1);
-                                \draw[fill=gray!20!white, draw=gray!20!white] (-2-0.25,-{sqrt(0.75/1.5)}+0.5) circle (0.1);
-                            \end{scope}
-                            \begin{scope}[yshift=-6cm, xshift=-2cm]
-                            \draw[draw=none] (0,0)rectangle(2,1) node[midway] {\LARGE $\mathcal{H}_p = \bigotimes_{a \in \{p,q,r,s\}} \mathcal{H}_{p.a}$}; 
-                            \draw[draw=none] (0,-0.75)rectangle(2,0.25) node[midway] {\LARGE $\mathcal{H} = \bigotimes_{a \in \{p,q,r,s,\dots\}} \mathcal{H}_a$}; 
-                        \end{scope}
-                        \end{tikzpicture}
-                    </script>
-                </div>
-                <div style="padding-left: 20%; padding-right: 20%;">
-                    <p><b>Figure: </b> A diagram showing the structure of the local Hilbert space $\mathcal{H}_p$ and the Hilbert space $\mathcal{H}$ for a particle $p$ that 
-                        interacts with a set of other particles $\{q,r,s\}$. 
-                        The local Hilbert space $\mathcal{H}_p$ can be decomposed into a direct sum of tensor products of subparticle Hilbert spaces. 
-                        Note that in this example $\alpha = 1$.</p>
-                </div>
-            </div>
-        </main>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>

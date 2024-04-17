@@ -2,3 +2,7 @@
 .toadd.txt
 data/json_to_html.py
 data/metadata.json
+node_modules
+.vscode
+package-lock.json
+package.json

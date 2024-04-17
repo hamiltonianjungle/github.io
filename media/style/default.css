@@ -21,7 +21,7 @@ nav {
 }
 
 .sidebar-menu {
-  font-size: .875rem;
+  font-size: 0.875rem;
   font-weight: 500;
   width: 280px !important;
 }
@@ -39,11 +39,11 @@ nav {
 .sidebar-menu ul ul {
   list-style-type: none;
   padding-left: 16px !important;
-} 
+}
 
 .sidebar-menu a {
   color: var(--bs-body-color);
-} 
+}
 
 .sidebar-menu a:active {
   background-color: var(--bs-secondary-bg-subtle);
@@ -119,9 +119,9 @@ main a:hover {
 }
 
 .anchor {
-  position: relative; 
-  top: -58px;  
-  visibility: hidden; 
+  position: relative;
+  top: -58px;
+  visibility: hidden;
 }
 
 pre {
@@ -135,24 +135,24 @@ pre {
 /* Complexity Classifications Fonts */
 
 @font-face {
-  font-family: 'ComputerModernSans';
-  src: url('media/fonts/cmu.sans-serif-medium.ttf') format('truetype');
+  font-family: "ComputerModernSans";
+  src: url("media/fonts/cmu.sans-serif-medium.ttf") format("truetype");
 }
 
 .cm-sans-serif {
-  font-family: 'ComputerModernSans', sans-serif;
+  font-family: "ComputerModernSans", sans-serif;
 }
 
 @font-face {
-  font-family: 'ComputerModernRoman';
-  src: url('media/fonts/cmu.serif-roman.ttf') format('truetype');
+  font-family: "ComputerModernRoman";
+  src: url("media/fonts/cmu.serif-roman.ttf") format("truetype");
 }
 
 .cm-serif-roman {
-  font-family: 'ComputerModernRoman', serif;
+  font-family: "ComputerModernRoman", serif;
 }
 
 .cm-serif-roman-small {
-  font-family: 'ComputerModernRoman', serif;
+  font-family: "ComputerModernRoman", serif;
   font-variant: small-caps;
 }

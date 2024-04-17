@@ -1,575 +1,862 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>The Hamiltonian Jungle | General Local</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta
+      name="description"
+      content="A comprehensive list of known Hamiltonian complexity results."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="icon" href="media/graphics/favicon.ico"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-MMS1QCMRED');
+      MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<body>
+      gtag("config", "G-MMS1QCMRED");
+    </script>
+  </head>
+
+  <body>
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-                    class="d-inline-block align-text-top">
-                    <path
-                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
-                </svg>
-                <span>The Hamiltonian Jungle</span>
-            </a>
-            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            class="d-inline-block align-text-top"
+          >
+            <path
+              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
+            />
+          </svg>
+          <span>The Hamiltonian Jungle</span>
+        </a>
+        <button
+          class="navbar-toggler p-0 border-0 shadow-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </nav>
     <div class="d-flex">
-        <div class="sidebar bg-body-tertiary border-end">
-            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
-                aria-labelledby="sidebar">
-                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
-                    <div class="container p-0">
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
-                                    aria-expanded="true">Models</a></li>
-                            <ul class="collapse show p-0" id="models">
-                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
-                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
-                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="general.html">General</a></li>
-                                <li><a class="nav-link" href="general-local.html" aria-current="true">General Local</a>
-                                </li>
-                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
-                                <li><a class="nav-link" href="ising.html">Ising</a></li>
-                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
-                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
-                            </ul>
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="false">Techniques</a></li>
-                            <ul class="collapse p-0" id="techniques">
-                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
-                              <li><a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
-                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                          </ul>
-                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
-                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
-                            <li><a class="nav-link" href="references.html">References</a></li>
-                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="about.html">About</a></li>
-                            <li><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
-                                    aria-expanded="false">Theme</a></li>
-                            <ul class="collapse p-0" id="themes">
-                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
+      <div class="sidebar bg-body-tertiary border-end">
+        <div
+          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
+          id="sidebar"
+          data-bs-scroll="true"
+          aria-labelledby="sidebar"
+        >
+          <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+            <div class="container p-0">
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#models"
+                    aria-expanded="true"
+                    >Models</a
+                  >
+                </li>
+                <ul class="collapse show p-0" id="models">
+                  <li>
+                    <a class="nav-link" href="2-local-pauli.html"
+                      >2&ndash;Local Pauli</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="bose-hubbard.html"
+                      >Bose&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="commuting.html">Commuting</a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="fermi-hubbard.html"
+                      >Fermi&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="general.html">General</a></li>
+                  <li>
+                    <a
+                      class="nav-link"
+                      href="general-local.html"
+                      aria-current="true"
+                      >General Local</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="heisenberg.html">Heisenberg</a>
+                  </li>
+                  <li><a class="nav-link" href="ising.html">Ising</a></li>
+                  <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                  <li>
+                    <a class="nav-link" href="stoquastic.html">Stoquastic</a>
+                  </li>
+                </ul>
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#techniques"
+                    aria-expanded="false"
+                    >Techniques</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="techniques">
+                  <li>
+                    <a class="nav-link" href="cluster-expansions.html"
+                      >Cluster Expansions</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="cstar-algebras.html"
+                      ><span class="cm-sans-serif">C</span
+                      ><sup>&#42;</sup>&ndash;Algebras</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                  <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                </ul>
+                <li>
+                  <a class="nav-link" href="supplementary.html"
+                    >Supplementary</a
+                  >
+                </li>
+                <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                <li>
+                  <a class="nav-link" href="references.html">References</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="open-problems.html"
+                    >Open Problems</a
+                  >
+                </li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#themes"
+                    aria-expanded="false"
+                    >Theme</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="themes">
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="auto"
+                      >Auto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="light"
+                      >Light</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="dark"
+                      >Dark</a
+                    >
+                  </li>
+                </ul>
+              </ul>
             </div>
+          </div>
         </div>
-        <main class="flex-grow w-100 px-4 pb-4">
-            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-                <h2>General Local Models</h2>
-            </div>
-            <!-- Item 2LH901 --><!-- Item 2LH901 --><!-- Item 2LH901 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH901</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in V(G)}H_v$$
-                </div>
-                <div><strong>Problem:</strong> Extremal product state</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KPT+24">[KPT+24]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>$G$ representing an interaction graph</li>
-                        <li>Constant magnitude interaction strengths</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From <span class="cm-serif-roman-small">Max&ndash;Cut</span>$^L_W(G)$</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Item 2LH04 --><!-- Item 2LH04 --><!-- Item 2LH04 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH04</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in V(G)}H_v$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>$G$ representing a spatially sparse graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From 5&ndash;local Hamiltonian on a spatially sparse graph</li>
-                        <li>To 2&ndash;local Hamiltonian on planar graph</li>
-                    </ul>
-                </div>
-                <div>
-                    <hr class="border-top bs-border-color opacity-100" />
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>3&ndash;to&ndash;2 local</li>
-                    </ul>
-                </div>
-
-            </div>
-            <!-- Item 2LH05 --><!-- Item 2LH05 --><!-- Item 2LH05 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH05</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in V(G)}H_v$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>$G$ represents a planar graph</li>
-                        <li>Pauli degree $\leq 3$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From 2&ndash;local Hamiltonian on a spatially sparse graph</li>
-                        <li>To 2&ndash;local Hamiltonian on 2D square lattice</li>
-                    </ul>
-                </div>
-                <div>
-                    <hr class="border-top bs-border-color opacity-100" />
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>Subdivision, Fork, Cross</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item 2LH06 --><!-- Item 2LH06 --><!-- Item 2LH06 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH06</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{e\in E(\Lambda)} H_e + \displaystyle\sum_{v\in V(\Lambda)}H_v$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>$\Lambda$ represents a 2D square lattice</li>
-                        <li>Pauli degree $\leq 3$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From 2&ndash;local Hamiltonian on planar graph via embedding on a square lattice of
-                            sufficient granularity</li>
-                        <li>To Heisenberg Hamiltonian with external field on spatially sparse graph</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item 2LH07 --><!-- Item 2LH07 --><!-- Item 2LH07 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH07</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Real Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#BL08">[BL08]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>Real coefficients and gates</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From 2&ndash;local Hamiltonian</li>
-                        <li>To an instance of the (<span
-                                class="cm-serif-roman-small">x&ndash;z/x&ndash;z</span>)&ndash;Hamiltonian on some
-                            interaction graph and an instance of the (<span
-                                class="cm-serif-roman-small">$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span>)&ndash;Hamiltonian
-                            on some interaction graph</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item 2LH15 --><!-- Item 2LH15 --><!-- Item 2LH15 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 2LH15</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in V(G)}H_v$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KKR05">[KKR05]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>2&ndash;local interactions</li>
-                        <li>$G$ representing an interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the 3&ndash;local Hamiltonian</li>
-                        <li>To the 2&ndash;local Hamiltonian on a spatially sparse lattice and the 2&ndash;local real
-                            Hamiltonians</li>
-                    </ul>
-                </div>
-                <div>
-                    <hr class="border-top bs-border-color opacity-100" />
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>3&ndash;to&ndash;2 local</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item 3LH13 --><!-- Item 3LH13 --><!-- Item 3LH13 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 3LH13</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 3&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KR03">[KR03]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
-                        <li>Each $H_j$ acts on at most 3 of the $n$ qubits</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the 5&ndash;local Hamiltonian</li>
-                        <li>To the 3&ndash;local Hamiltonian on a spatially sparse lattice and the 3&ndash;local real
-                            Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item 3LH14 --><!-- Item 3LH14 --><!-- Item 3LH14 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: 3LH14</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 3&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#Wai23">[W23]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>3&ndash;local interactions</li>
-                        <li>A spatially sparse interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the 3&ndash;local Hamiltonian or the 5&ndash;local Hamiltonian on a spatially sparse
-                            graph</li>
-                        <li>To the 2&ndash;local Hamiltonian on a spatially sparse lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item kLH10 --><!-- Item kLH10 --><!-- Item kLH10 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: kLH10</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>5&ndash;local interactions</li>
-                        <li>A spatially sparse interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From 5&ndash;local Hamiltonian on a generic graph</li>
-                        <li>To 2&ndash;local Hamiltonian on a spatially sparse graph</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item kLH11 --><!-- Item kLH11 --><!-- Item kLH11 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: kLH11</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The $O(\log n)$&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KSV02">[KSV02]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
-                        <li>Each $H_j$ acts on at most $O(\log n)$ of the $n$ qubits</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>To the 5&ndash;local Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item kLH12 --><!-- Item kLH12 --><!-- Item kLH12 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: kLH12</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KSV02">[KSV02]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
-                        <li>Each $H_j$ acts on at most 5 of the $n$ qubits</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the $O(\log n)$&ndash;local Hamiltonian</li>
-                        <li>To the 5&ndash;local Hamiltonian on a spatially sparse lattice and the 3&ndash;local
-                            Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item GLH01 --><!-- Item GLH01 --><!-- Item GLH01 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: GLH01</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy (Guided)</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> BQP</span>&ndash;hard</div>
-                <div><strong>Ref:</strong> <a href="references.html#CFG+23">[CFG+23]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>A (semi&ndash;classical) guiding state such that $||\Pi_- \ket{s}|| \geq \delta^2$</li>
-                        <li>$\delta \in (0, 1 - \Omega(1/\mathsf{poly}(n)))$</li>
-                        <li>$a,b \in [0,1]$ such that $b-a \in \Omega(1/\mathsf{poly}(n))$</li>
-                        <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item GLH02 --><!-- Item GLH02 --><!-- Item GLH02 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: GLH02</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian
-                    $$H = \displaystyle\sum_{j=1}^m H_j$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy (Guided)</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> BQP</span>&ndash;hard</div>
-                <div><strong>Ref:</strong> <a href="references.html#CFG+23">[CFG+23]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>A (semi&ndash;classical) guiding state such that $||\Pi_- \ket{s}|| \geq \delta^2$</li>
-                        <li>$\delta \in (0, 1 - \Omega(1/\mathsf{poly}(n)))$</li>
-                        <li>$a,b \in [0,1]$ such that $b-a \in \Omega(1/\mathsf{poly}(n))$</li>
-                        <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the $5$&ndash;local Hamiltonian (guided) problem</li>
-                        <li>To $2$&ndash;local Hamiltonians such as the (<span class="cm-serif-roman-small">xy/.</span>) and Heisenberg Hamiltonians</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item PFP-2LH-001 --><!-- Item PFP-2LH-001 --><!-- Item PFP-2LH-001 -->
-            <div class='alert alert-light'>
-                <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-2LH-001</small>
-                <div>
-                <strong>Hamiltonian:</strong> General $2$-local Hamiltonian
-                $$H = \sum_{e\in E(G)} H_e$$
-                </div>
-                    <div><strong>Problem:</strong> Partition function</div>
-                    <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPTAS</span></div>
-                    <div><strong>Ref:</strong> <a href='references.html#[MH20]'>[[MH20]]</a></div>
-                <hr class='border-top bs-border-color opacity-100' />
-                <div>
-                <strong>Conditionals:</strong>
-                <ul>
-                    <li>$2$&ndash;local interactions</li>
-                    <li>$||H_e|| \leq 1$</li>
-                    <li>The interaction graph $G$ has maximum degree $\Delta$</li>
-                    <li>$\beta \in \mathbb{C}$</li>
-                    <li>$\beta \leq 1 / (e^4 \Delta)$</li>
-                </ul>
-                </div>
-                </div>
-            <!-- Item PFP-kLH-001 --><!-- Item PFP-kLH-001 --><!-- Item PFP-kLH-001 -->
-        <div class='alert alert-light'>
-            <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-kLH-001</small>
-            <div>
-            <strong>Hamiltonian:</strong> General $k$-local Hamiltonian
-            $$H = \sum_{e\in E(G)} H_e$$
-            </div>
-                <div><strong>Problem:</strong> Partition function</div>
-                <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPTAS</span></div>
-                <div><strong>Ref:</strong> <a href='references.html#[MM24]'>[[MM24]]</a></div>
-            <hr class='border-top bs-border-color opacity-100' />
-            <div>
-            <strong>Conditionals:</strong>
-                <ul>
-                    <li>$2$&ndash;local interactions</li>
-                    <li>$||H_e|| \leq 1$</li>
-                    <li>The interaction (hyper)graph $G$ has maximum degree $\Delta$</li>
-                    <li>$\beta \in \mathbb{C}$</li>
-                    <li>$\beta \leq 1 / (e^4 \Delta{k \choose 2})$</li>
-                </ul>
-            </div>
-            </div>
-            <!-- Item PFP-GLH-001 --><!-- Item PFP-GLH-001 --><!-- Item PFP-GLH-001 -->
-        <div class='alert alert-light'>
-            <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-GLH-001</small>
-            <div>
-            <strong>Hamiltonian:</strong> Stable quantum perturbations of a classical spin system Hamiltonian
-            $$H = H_{\Phi} + \lambda H_{\Psi}$$
-            </div>
-            <div><strong>Problem:</strong> Partition function</div>
-            <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPTAS</span></div>
-            <div><strong>Ref:</strong> <a href='references.html#[MH23]'>[[MH23]]</a></div>
-            <hr class='border-top bs-border-color opacity-100' />
-            <div>
+      </div>
+      <main class="flex-grow w-100 px-4 pb-4">
+        <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+          <h2>General Local Models</h2>
+        </div>
+        <!-- Item 2LH901 --><!-- Item 2LH901 --><!-- Item 2LH901 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH901</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in
+            V(G)}H_v$$
+          </div>
+          <div><strong>Problem:</strong> Extremal product state</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> NP</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KPT+24">[KPT+24]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
             <strong>Conditionals:</strong>
             <ul>
-                <li>$H_{\Phi}$ is diagonal in a basis indexed by a classical spin system</li>
-                <li>$H_{\Psi}$ is local</li>
-                <li>$|\lambda|$ is small and $|\lambda|\leq \lambda^{\star}$</li>
-                <li>Stable quantum perturbation of classical spin system</li>
-                <li>$G$ is a finite induced subgraph of $\mathbb{Z}^\nu$</li>
-                <li>$\beta \geq \beta^{\star}$</li>
+              <li>2&ndash;local interactions</li>
+              <li>$G$ representing an interaction graph</li>
+              <li>Constant magnitude interaction strengths</li>
             </ul>
-            </div>
-            </div>
-            <!-- Item PFP-GLH-002 --><!-- Item PFP-GLH-002 --><!-- Item PFP-GLH-002 -->
-            <div class='alert alert-light'>
-                <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PFP-GLH-002</small>
-                    <div>
-                    <strong>Hamiltonian:</strong> The Ferromagnetic $q$-state Potts Model
-                    $$H(\sigma) = \sum_{\{i,j\} \in E(G)} \delta{\sigma_i \neq \sigma_j}$$
-                    </div>
-                    <div><strong>Problem:</strong> Partition function</div>
-                    <div><strong>Complexity:</strong><span class='cm-sans-serif'> FPRAS</span></div>
-                    <div><strong>Ref:</strong> <a href='references.html#[BCHPT19]'>[[BCHPT19]]</a></div>
-                    <hr class='border-top bs-border-color opacity-100' />
-                    <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$G$ is $\mathbb{T}_n^d$ where $d\geq 2$</li>
-                        <li>$q \geq q_0(d)$</li>
-                        <li>$\beta \in \mathbb{R}^+$</li>
-                    </ul>
-                    </div>
-                </div>
-        </main>
-    </div>
-</body>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From
+                <span class="cm-serif-roman-small">Max&ndash;Cut</span>$^L_W(G)$
+              </li>
+            </ul>
+          </div>
+        </div>
 
+        <!-- Item 2LH04 --><!-- Item 2LH04 --><!-- Item 2LH04 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH04</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in
+            V(G)}H_v$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>2&ndash;local interactions</li>
+              <li>$G$ representing a spatially sparse graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From 5&ndash;local Hamiltonian on a spatially sparse graph
+              </li>
+              <li>To 2&ndash;local Hamiltonian on planar graph</li>
+            </ul>
+          </div>
+          <div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>3&ndash;to&ndash;2 local</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 2LH05 --><!-- Item 2LH05 --><!-- Item 2LH05 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH05</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in
+            V(G)}H_v$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>2&ndash;local interactions</li>
+              <li>$G$ represents a planar graph</li>
+              <li>Pauli degree $\leq 3$</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From 2&ndash;local Hamiltonian on a spatially sparse graph
+              </li>
+              <li>To 2&ndash;local Hamiltonian on 2D square lattice</li>
+            </ul>
+          </div>
+          <div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>Subdivision, Fork, Cross</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 2LH06 --><!-- Item 2LH06 --><!-- Item 2LH06 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH06</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{e\in E(\Lambda)} H_e + \displaystyle\sum_{v\in
+            V(\Lambda)}H_v$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>2&ndash;local interactions</li>
+              <li>$\Lambda$ represents a 2D square lattice</li>
+              <li>Pauli degree $\leq 3$</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From 2&ndash;local Hamiltonian on planar graph via embedding on
+                a square lattice of sufficient granularity
+              </li>
+              <li>
+                To Heisenberg Hamiltonian with external field on spatially
+                sparse graph
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 2LH07 --><!-- Item 2LH07 --><!-- Item 2LH07 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH07</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Real Hamiltonian $$H
+            = \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#BL08">[BL08]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>2&ndash;local interactions</li>
+              <li>Real coefficients and gates</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From 2&ndash;local Hamiltonian</li>
+              <li>
+                To an instance of the (<span class="cm-serif-roman-small"
+                  >x&ndash;z/x&ndash;z</span
+                >)&ndash;Hamiltonian on some interaction graph and an instance
+                of the (<span class="cm-serif-roman-small"
+                  >$[\![$xz$]\!]$<sup>*</sup>/x&ndash;z</span
+                >)&ndash;Hamiltonian on some interaction graph
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 2LH15 --><!-- Item 2LH15 --><!-- Item 2LH15 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 2LH15</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{e\in E(G)} H_e + \displaystyle\sum_{v\in
+            V(G)}H_v$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KKR05">[KKR05]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>2&ndash;local interactions</li>
+              <li>$G$ representing an interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the 3&ndash;local Hamiltonian</li>
+              <li>
+                To the 2&ndash;local Hamiltonian on a spatially sparse lattice
+                and the 2&ndash;local real Hamiltonians
+              </li>
+            </ul>
+          </div>
+          <div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>3&ndash;to&ndash;2 local</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 3LH13 --><!-- Item 3LH13 --><!-- Item 3LH13 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 3LH13</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 3&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KR03">[KR03]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
+              <li>Each $H_j$ acts on at most 3 of the $n$ qubits</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the 5&ndash;local Hamiltonian</li>
+              <li>
+                To the 3&ndash;local Hamiltonian on a spatially sparse lattice
+                and the 3&ndash;local real Hamiltonian
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item 3LH14 --><!-- Item 3LH14 --><!-- Item 3LH14 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: 3LH14</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 3&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#Wai23">[W23]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>3&ndash;local interactions</li>
+              <li>A spatially sparse interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the 3&ndash;local Hamiltonian or the 5&ndash;local
+                Hamiltonian on a spatially sparse graph
+              </li>
+              <li>
+                To the 2&ndash;local Hamiltonian on a spatially sparse lattice
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item kLH10 --><!-- Item kLH10 --><!-- Item kLH10 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: kLH10</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#OT08">[OT08]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>5&ndash;local interactions</li>
+              <li>A spatially sparse interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From 5&ndash;local Hamiltonian on a generic graph</li>
+              <li>To 2&ndash;local Hamiltonian on a spatially sparse graph</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item kLH11 --><!-- Item kLH11 --><!-- Item kLH11 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: kLH11</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The $O(\log n)$&ndash;local
+            Hamiltonian $$H = \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KSV02">[KSV02]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
+              <li>Each $H_j$ acts on at most $O(\log n)$ of the $n$ qubits</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>To the 5&ndash;local Hamiltonian</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item kLH12 --><!-- Item kLH12 --><!-- Item kLH12 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: kLH12</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KSV02">[KSV02]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
+              <li>Each $H_j$ acts on at most 5 of the $n$ qubits</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the $O(\log n)$&ndash;local Hamiltonian</li>
+              <li>
+                To the 5&ndash;local Hamiltonian on a spatially sparse lattice
+                and the 3&ndash;local Hamiltonian
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item GLH01 --><!-- Item GLH01 --><!-- Item GLH01 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: GLH01</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 5&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy (Guided)</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> BQP</span>&ndash;hard
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#CFG+23">[CFG+23]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>
+                A (semi&ndash;classical) guiding state such that $||\Pi_-
+                \ket{s}|| \geq \delta^2$
+              </li>
+              <li>$\delta \in (0, 1 - \Omega(1/\mathsf{poly}(n)))$</li>
+              <li>
+                $a,b \in [0,1]$ such that $b-a \in \Omega(1/\mathsf{poly}(n))$
+              </li>
+              <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item GLH02 --><!-- Item GLH02 --><!-- Item GLH02 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: GLH02</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The 2&ndash;local Hamiltonian $$H =
+            \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy (Guided)</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> BQP</span>&ndash;hard
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#CFG+23">[CFG+23]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>
+                A (semi&ndash;classical) guiding state such that $||\Pi_-
+                \ket{s}|| \geq \delta^2$
+              </li>
+              <li>$\delta \in (0, 1 - \Omega(1/\mathsf{poly}(n)))$</li>
+              <li>
+                $a,b \in [0,1]$ such that $b-a \in \Omega(1/\mathsf{poly}(n))$
+              </li>
+              <li>$m = O\big(\mathsf{poly}(n)\big)$</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the $5$&ndash;local Hamiltonian (guided) problem</li>
+              <li>
+                To $2$&ndash;local Hamiltonians such as the (<span
+                  class="cm-serif-roman-small"
+                  >xy/.</span
+                >) and Heisenberg Hamiltonians
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item PFP-2LH-001 --><!-- Item PFP-2LH-001 --><!-- Item PFP-2LH-001 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: PFP-2LH-001</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> General $2$-local Hamiltonian $$H =
+            \sum_{e\in E(G)} H_e$$
+          </div>
+          <div><strong>Problem:</strong> Partition function</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> FPTAS</span>
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#[MH20]">[[MH20]]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$2$&ndash;local interactions</li>
+              <li>$||H_e|| \leq 1$</li>
+              <li>The interaction graph $G$ has maximum degree $\Delta$</li>
+              <li>$\beta \in \mathbb{C}$</li>
+              <li>$\beta \leq 1 / (e^4 \Delta)$</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item PFP-kLH-001 --><!-- Item PFP-kLH-001 --><!-- Item PFP-kLH-001 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: PFP-kLH-001</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> General $k$-local Hamiltonian $$H =
+            \sum_{e\in E(G)} H_e$$
+          </div>
+          <div><strong>Problem:</strong> Partition function</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> FPTAS</span>
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#[MM24]">[[MM24]]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$2$&ndash;local interactions</li>
+              <li>$||H_e|| \leq 1$</li>
+              <li>
+                The interaction (hyper)graph $G$ has maximum degree $\Delta$
+              </li>
+              <li>$\beta \in \mathbb{C}$</li>
+              <li>$\beta \leq 1 / (e^4 \Delta{k \choose 2})$</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item PFP-GLH-001 --><!-- Item PFP-GLH-001 --><!-- Item PFP-GLH-001 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: PFP-GLH-001</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> Stable quantum perturbations of a
+            classical spin system Hamiltonian $$H = H_{\Phi} + \lambda
+            H_{\Psi}$$
+          </div>
+          <div><strong>Problem:</strong> Partition function</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> FPTAS</span>
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#[MH23]">[[MH23]]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>
+                $H_{\Phi}$ is diagonal in a basis indexed by a classical spin
+                system
+              </li>
+              <li>$H_{\Psi}$ is local</li>
+              <li>$|\lambda|$ is small and $|\lambda|\leq \lambda^{\star}$</li>
+              <li>Stable quantum perturbation of classical spin system</li>
+              <li>$G$ is a finite induced subgraph of $\mathbb{Z}^\nu$</li>
+              <li>$\beta \geq \beta^{\star}$</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item PFP-GLH-002 --><!-- Item PFP-GLH-002 --><!-- Item PFP-GLH-002 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: PFP-GLH-002</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Ferromagnetic $q$-state Potts
+            Model $$H(\sigma) = \sum_{\{i,j\} \in E(G)} \delta{\sigma_i \neq
+            \sigma_j}$$
+          </div>
+          <div><strong>Problem:</strong> Partition function</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> FPRAS</span>
+          </div>
+          <div>
+            <strong>Ref:</strong>
+            <a href="references.html#[BCHPT19]">[[BCHPT19]]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$G$ is $\mathbb{T}_n^d$ where $d\geq 2$</li>
+              <li>$q \geq q_0(d)$</li>
+              <li>$\beta \in \mathbb{R}^+$</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>

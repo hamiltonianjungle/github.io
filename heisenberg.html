@@ -1,436 +1,699 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>The Hamiltonian Jungle | Heisenberg</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta
+      name="description"
+      content="A comprehensive list of known Hamiltonian complexity results."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="icon" href="media/graphics/favicon.ico"/>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-MMS1QCMRED');
+      MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
-</head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<body>
+      gtag("config", "G-MMS1QCMRED");
+    </script>
+  </head>
+
+  <body>
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
-                    class="d-inline-block align-text-top">
-                    <path
-                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
-                </svg>
-                <span>The Hamiltonian Jungle</span>
-            </a>
-            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            class="d-inline-block align-text-top"
+          >
+            <path
+              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
+            />
+          </svg>
+          <span>The Hamiltonian Jungle</span>
+        </a>
+        <button
+          class="navbar-toggler p-0 border-0 shadow-none"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebar"
+          aria-controls="sidebar"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
     </nav>
     <div class="d-flex">
-        <div class="sidebar bg-body-tertiary border-end">
-            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
-                aria-labelledby="sidebar">
-                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
-                    <div class="container p-0">
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
-                                    aria-expanded="true">Models</a></li>
-                            <ul class="collapse show p-0" id="models">
-                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
-                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
-                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
-                                <li><a class="nav-link" href="general.html">General</a></li>
-                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
-                                <li><a class="nav-link" href="heisenberg.html" aria-current="true">Heisenberg</a></li>
-                                <li><a class="nav-link" href="ising.html">Ising</a></li>
-                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
-                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
-                            </ul>
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
-                              aria-expanded="false">Techniques</a></li>
-                            <ul class="collapse p-0" id="techniques">
-                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
-                              <li><a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
-                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                          </ul>
-                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
-                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
-                            <li><a class="nav-link" href="references.html">References</a></li>
-                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="about.html">About</a></li>
-                            <li><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                        <hr class="m-0 border-top bs-border-color opacity-100" />
-                        <ul class="nav flex-column">
-                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
-                                    aria-expanded="false">Theme</a></li>
-                            <ul class="collapse p-0" id="themes">
-                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
-                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
-                            </ul>
-                        </ul>
-                    </div>
-                </div>
+      <div class="sidebar bg-body-tertiary border-end">
+        <div
+          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
+          id="sidebar"
+          data-bs-scroll="true"
+          aria-labelledby="sidebar"
+        >
+          <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+            <div class="container p-0">
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#models"
+                    aria-expanded="true"
+                    >Models</a
+                  >
+                </li>
+                <ul class="collapse show p-0" id="models">
+                  <li>
+                    <a class="nav-link" href="2-local-pauli.html"
+                      >2&ndash;Local Pauli</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="bose-hubbard.html"
+                      >Bose&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="commuting.html">Commuting</a>
+                  </li>
+                  <li>
+                    <a class="nav-link" href="fermi-hubbard.html"
+                      >Fermi&ndash;Hubbard</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="general.html">General</a></li>
+                  <li>
+                    <a class="nav-link" href="general-local.html"
+                      >General Local</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="nav-link"
+                      href="heisenberg.html"
+                      aria-current="true"
+                      >Heisenberg</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="ising.html">Ising</a></li>
+                  <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                  <li>
+                    <a class="nav-link" href="stoquastic.html">Stoquastic</a>
+                  </li>
+                </ul>
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#techniques"
+                    aria-expanded="false"
+                    >Techniques</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="techniques">
+                  <li>
+                    <a class="nav-link" href="cluster-expansions.html"
+                      >Cluster Expansions</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="cstar-algebras.html"
+                      ><span class="cm-sans-serif">C</span
+                      ><sup>&#42;</sup>&ndash;Algebras</a
+                    >
+                  </li>
+                  <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                  <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                </ul>
+                <li>
+                  <a class="nav-link" href="supplementary.html"
+                    >Supplementary</a
+                  >
+                </li>
+                <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                <li>
+                  <a class="nav-link" href="references.html">References</a>
+                </li>
+                <li>
+                  <a class="nav-link" href="open-problems.html"
+                    >Open Problems</a
+                  >
+                </li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+              <hr class="m-0 border-top bs-border-color opacity-100" />
+              <ul class="nav flex-column">
+                <li>
+                  <a
+                    class="nav-link"
+                    href="#"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#themes"
+                    aria-expanded="false"
+                    >Theme</a
+                  >
+                </li>
+                <ul class="collapse p-0" id="themes">
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="auto"
+                      >Auto</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="light"
+                      >Light</a
+                    >
+                  </li>
+                  <li>
+                    <a class="nav-link" href="#" data-bs-theme-value="dark"
+                      >Dark</a
+                    >
+                  </li>
+                </ul>
+              </ul>
             </div>
+          </div>
         </div>
-        <main class="flex-grow w-100 px-4 pb-4">
-            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-                <h2>Heisenberg Model</h2>
-            </div>
-            <!-- Item HbM01 --><!-- Item HbM01 --><!-- Item HbM01 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM01</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=J\displaystyle\sum_{\{i,j\}\in E(G)} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
-                    -\displaystyle\sum_{i\in V(G)} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#SV09">[SV09]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J>0$ or $J\lt0$</li>
-                        <li>$\Lambda$ representing a spatially sparse lattice</li>
-                        <li>External fields of the form: $-\displaystyle\sum_{i} \boldsymbol{B}_i \cdot
-                            \boldsymbol{\sigma}_i$</li>
-                        <li>$G$ is an interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the general $2$&ndash;local Pauli Hamiltonian</li>
-                        <li>To the Fermi&ndash;Hubbard Hamiltonian with external fields</li>
-                    </ul>
-                </div>
-                <div>
-                    <hr class="border-top bs-border-color opacity-100" />
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>Pauli Coupling Gadget, Pauli&ndash;to&ndash;Ising Gadget, Ising&ndash;to&ndash;$XX$ Gadget
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM01 --><!-- Item HbM01 --><!-- Item HbM01 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM01</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=J\displaystyle\sum_{\{i,j\}\in E(\Lambda)} \big(X_iX_j + Y_iY_j + Z_iZ_j\big)
-                    -\displaystyle\sum_{i\in V(\Lambda)} \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#SV09">[SV09]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J>0$ or $J\lt0$</li>
-                        <li>$\Lambda$ representing a 2D square lattice</li>
-                        <li>External fields of the form: $-\displaystyle\sum_{i\in\Lambda} \boldsymbol{B}_i \cdot
-                            \boldsymbol{\sigma}_i$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the Heisenebrg Hamiltonian with external fields on a spatially sparse lattice</li>
-                        <li>To the Fermi&ndash;Hubbard Hamiltonian with external fields</li>
-                    </ul>
-                </div>
-                <div>
-                    <hr class="border-top bs-border-color opacity-100" />
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>Erasure</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM108 --><!-- Item HbM108 --><!-- Item HbM108 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM108</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#CM16">[CM16]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$G$ representing an interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</li>
-                        <li>To the IaF&ndash;Heisenberg Hamiltonian or the Heisenberg Hamiltonian on a 2D square lattice
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM104 --><!-- Item HbM104 --><!-- Item HbM104 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM104</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$\Lambda$ representing a 2D square lattice</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian on a 2D
-                            square lattice</li>
-                        <li>To the Heisenberg Hamiltonian on a 2D triangular lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM105 --><!-- Item HbM105 --><!-- Item HbM105 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM105</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$\Lambda$ representing a 2D triangular lattice</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian on a 2D
-                            square lattice</li>
-                        <li>To the (<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian on a 2D triangular
-                            lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM110 --><!-- Item HbM110 --><!-- Item HbM110 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM110</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J_{ij}\geq 0$</li>
-                        <li>$G$ representing an interaction graph</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the Heisenberg Hamiltonian</li>
-                        <li>To the IaF&ndash;Heisenberg Hamiltonian on a 2D triangular lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM113 --><!-- Item HbM113 --><!-- Item HbM113 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM113</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong> in <span class="cm-sans-serif">StoqMA</span></div>
-                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J_{ij}\geq 0$</li>
-                        <li>$\Lambda$ representing a 2D bipartite lattice</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the IaF&ndash;Heisenberg Hamiltonian on a general graph</li>
-                        <li>To the ferromagnetic Heisenberg Hamiltonian on a bipartite lattice</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM114 --><!-- Item HbM114 --><!-- Item HbM114 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM114</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J_{ij}\geq 0$</li>
-                        <li>$\Lambda$ representing a 2D triangular lattice</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the IaF weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian on a 2D
-                            triangular lattice</li>
-                        <li>To the IaF&ndash;(<span class="cm-serif-roman-small">xy/.</span>) Hamiltonian on a 2D
-                            triangular lattice </li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Gadgets:</strong>
-                    <ul>
-                        <li>Positive and Negative subdivision</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM115 --><!-- Item HbM115 --><!-- Item HbM115 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM115</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Ferromagnetic Heisenberg Hamiltonian
-                    $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\leq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
-                </div>
-                <div><strong>Problem:</strong> Ground state energy</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> P</span></div>
-                <div><strong>Ref:</strong> <a href="references.html#Wai23">[Wai23]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>$J_{ij}\leq 0$</li>
-                        <li>$\Lambda$ representing a 2D bipartite lattice</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>From the IaF weighted (<span class="cm-serif-roman-small">xyz/.</span>) Hamiltonian</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM501 --><!-- Item HbM501 --><!-- Item HbM501 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM501</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
-                </div>
-                <div><strong>Problem:</strong> Quantum Max&ndash;Cut</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> QMA</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#BP24">[BP24]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>The graph $G$ has egde weights $w_{ij}$</li>
-                        <li>$w_{ij}\geq 0$ and $w_{ij} = O(\mathsf{poly}(n))$</li>
-                        <li>$\boldsymbol{S} = (S^1,S^2,S^3)$ denote the spin&ndash;$S$ operators</li>
-                        <li>$S\rightarrow\infty$</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>To the antiferromagnetic Heisenberg model</li>
-                    </ul>
-                </div>
-            </div>
-            <!-- Item HbM901 --><!-- Item HbM901 --><!-- Item HbM901 -->
-            <div class="alert alert-light">
-                <small class="badge float-end text-body-secondary fw-normal py-0">Key: HbM901</small>
-                <div>
-                    <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
-                    $$H_{QMC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot \boldsymbol{S}_j \right)$$
-                </div>
-                <div><strong>Problem:</strong> Quantum Max&ndash;Cut product states</div>
-                <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
-                <div><strong>Ref:</strong> <a href="references.html#KPT+24">[KPT+24]</a></div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Conditionals:</strong>
-                    <ul>
-                        <li>The graph $G$ has egde weights $w_{ij}$</li>
-                        <li>$w_{ij}\geq 0$ and $w_{ij} = O(\mathsf{poly}(n))$</li>
-                        <li>$\boldsymbol{S} = (S^1,S^2,S^3)$ denote the spin&ndash;$\frac{1}{2}$ operators</li>
-                    </ul>
-                </div>
-                <hr class="border-top bs-border-color opacity-100" />
-                <div>
-                    <strong>Reductions:</strong>
-                    <ul>
-                        <li>To the antiferromagnetic Heisenberg model and to <span class="cm-serif-roman-small">Max&ndash;Cut</span>$_3$</li>
-                    </ul>
-                </div>
-            </div>
-        </main>
+      </div>
+      <main class="flex-grow w-100 px-4 pb-4">
+        <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+          <h2>Heisenberg Model</h2>
+        </div>
+        <!-- Item HbM01 --><!-- Item HbM01 --><!-- Item HbM01 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM01</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H=J\displaystyle\sum_{\{i,j\}\in E(G)} \big(X_iX_j + Y_iY_j +
+            Z_iZ_j\big) -\displaystyle\sum_{i\in V(G)} \boldsymbol{B}_i \cdot
+            \boldsymbol{\sigma}_i$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#SV09">[SV09]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J>0$ or $J\lt0$</li>
+              <li>$\Lambda$ representing a spatially sparse lattice</li>
+              <li>
+                External fields of the form: $-\displaystyle\sum_{i}
+                \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$
+              </li>
+              <li>$G$ is an interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the general $2$&ndash;local Pauli Hamiltonian</li>
+              <li>
+                To the Fermi&ndash;Hubbard Hamiltonian with external fields
+              </li>
+            </ul>
+          </div>
+          <div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>
+                Pauli Coupling Gadget, Pauli&ndash;to&ndash;Ising Gadget,
+                Ising&ndash;to&ndash;$XX$ Gadget
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM01 --><!-- Item HbM01 --><!-- Item HbM01 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM01</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H=J\displaystyle\sum_{\{i,j\}\in E(\Lambda)} \big(X_iX_j + Y_iY_j
+            + Z_iZ_j\big) -\displaystyle\sum_{i\in V(\Lambda)} \boldsymbol{B}_i
+            \cdot \boldsymbol{\sigma}_i$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#SV09">[SV09]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J>0$ or $J\lt0$</li>
+              <li>$\Lambda$ representing a 2D square lattice</li>
+              <li>
+                External fields of the form: $-\displaystyle\sum_{i\in\Lambda}
+                \boldsymbol{B}_i \cdot \boldsymbol{\sigma}_i$
+              </li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the Heisenebrg Hamiltonian with external fields on a
+                spatially sparse lattice
+              </li>
+              <li>
+                To the Fermi&ndash;Hubbard Hamiltonian with external fields
+              </li>
+            </ul>
+          </div>
+          <div>
+            <hr class="border-top bs-border-color opacity-100" />
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>Erasure</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM108 --><!-- Item HbM108 --><!-- Item HbM108 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM108</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}\big(X_iX_j + Y_iY_j +
+            Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#CM16">[CM16]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$G$ representing an interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the weighted (<span class="cm-serif-roman-small"
+                  >xyz/.</span
+                >) Hamiltonian
+              </li>
+              <li>
+                To the IaF&ndash;Heisenberg Hamiltonian or the Heisenberg
+                Hamiltonian on a 2D square lattice
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM104 --><!-- Item HbM104 --><!-- Item HbM104 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM104</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j +
+            Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$\Lambda$ representing a 2D square lattice</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the weighted (<span class="cm-serif-roman-small"
+                  >xyz/.</span
+                >) Hamiltonian on a 2D square lattice
+              </li>
+              <li>To the Heisenberg Hamiltonian on a 2D triangular lattice</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM105 --><!-- Item HbM105 --><!-- Item HbM105 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM105</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}\big(X_iX_j +
+            Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#CMP18">[CMP18]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$\Lambda$ representing a 2D triangular lattice</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the weighted (<span class="cm-serif-roman-small"
+                  >xyz/.</span
+                >) Hamiltonian on a 2D square lattice
+              </li>
+              <li>
+                To the (<span class="cm-serif-roman-small">xy/.</span>)
+                Hamiltonian on a 2D triangular lattice
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM110 --><!-- Item HbM110 --><!-- Item HbM110 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM110</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(G)} J_{ij}^{^{(\geq
+            0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J_{ij}\geq 0$</li>
+              <li>$G$ representing an interaction graph</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From the Heisenberg Hamiltonian</li>
+              <li>
+                To the IaF&ndash;Heisenberg Hamiltonian on a 2D triangular
+                lattice
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM113 --><!-- Item HbM113 --><!-- Item HbM113 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM113</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq
+            0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong> in
+            <span class="cm-sans-serif">StoqMA</span>
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J_{ij}\geq 0$</li>
+              <li>$\Lambda$ representing a 2D bipartite lattice</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the IaF&ndash;Heisenberg Hamiltonian on a general graph
+              </li>
+              <li>
+                To the ferromagnetic Heisenberg Hamiltonian on a bipartite
+                lattice
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM114 --><!-- Item HbM114 --><!-- Item HbM114 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM114</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The IaF&ndash;Heisenberg Hamiltonian
+            $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)} J_{ij}^{^{(\geq
+            0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J_{ij}\geq 0$</li>
+              <li>$\Lambda$ representing a 2D triangular lattice</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the IaF weighted (<span class="cm-serif-roman-small"
+                  >xyz/.</span
+                >) Hamiltonian on a 2D triangular lattice
+              </li>
+              <li>
+                To the IaF&ndash;(<span class="cm-serif-roman-small">xy/.</span
+                >) Hamiltonian on a 2D triangular lattice
+              </li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Gadgets:</strong>
+            <ul>
+              <li>Positive and Negative subdivision</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM115 --><!-- Item HbM115 --><!-- Item HbM115 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM115</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Ferromagnetic Heisenberg
+            Hamiltonian $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)}
+            J_{ij}^{^{(\leq 0)}}\big(X_iX_j + Y_iY_j + Z_iZ_j\big)$$
+          </div>
+          <div><strong>Problem:</strong> Ground state energy</div>
+          <div>
+            <strong>Complexity:</strong><span class="cm-sans-serif"> P</span>
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#Wai23">[Wai23]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$J_{ij}\leq 0$</li>
+              <li>$\Lambda$ representing a 2D bipartite lattice</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                From the IaF weighted (<span class="cm-serif-roman-small"
+                  >xyz/.</span
+                >) Hamiltonian
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM501 --><!-- Item HbM501 --><!-- Item HbM501 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM501</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H_{QMC_S}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij}
+            \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot
+            \boldsymbol{S}_j \right)$$
+          </div>
+          <div><strong>Problem:</strong> Quantum Max&ndash;Cut</div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> QMA</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#BP24">[BP24]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>The graph $G$ has egde weights $w_{ij}$</li>
+              <li>$w_{ij}\geq 0$ and $w_{ij} = O(\mathsf{poly}(n))$</li>
+              <li>
+                $\boldsymbol{S} = (S^1,S^2,S^3)$ denote the spin&ndash;$S$
+                operators
+              </li>
+              <li>$S\rightarrow\infty$</li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>To the antiferromagnetic Heisenberg model</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item HbM901 --><!-- Item HbM901 --><!-- Item HbM901 -->
+        <div class="alert alert-light">
+          <small class="badge float-end text-body-secondary fw-normal py-0"
+            >Key: HbM901</small
+          >
+          <div>
+            <strong>Hamiltonian:</strong> The Heisenberg Hamiltonian
+            $$H_{QMC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij}
+            \left(\mathbb{I} - \frac{1}{S^2}\;\boldsymbol{S}_i \cdot
+            \boldsymbol{S}_j \right)$$
+          </div>
+          <div>
+            <strong>Problem:</strong> Quantum Max&ndash;Cut product states
+          </div>
+          <div>
+            <strong>Complexity:</strong
+            ><span class="cm-sans-serif"> NP</span>&ndash;complete
+          </div>
+          <div>
+            <strong>Ref:</strong> <a href="references.html#KPT+24">[KPT+24]</a>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>The graph $G$ has egde weights $w_{ij}$</li>
+              <li>$w_{ij}\geq 0$ and $w_{ij} = O(\mathsf{poly}(n))$</li>
+              <li>
+                $\boldsymbol{S} = (S^1,S^2,S^3)$ denote the
+                spin&ndash;$\frac{1}{2}$ operators
+              </li>
+            </ul>
+          </div>
+          <hr class="border-top bs-border-color opacity-100" />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>
+                To the antiferromagnetic Heisenberg model and to
+                <span class="cm-serif-roman-small">Max&ndash;Cut</span>$_3$
+              </li>
+            </ul>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
-
+  </body>
 </html>
