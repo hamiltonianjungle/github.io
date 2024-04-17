@@ -40,12 +40,9 @@
                 <span>The Hamiltonian Jungle</span>
             </a>
             <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-                <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false"
-                    aria-label="Toggle Navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         </div>
     </nav>
     <div class="d-flex">
@@ -213,7 +210,7 @@
             <hr class="border-top bs-border-color opacity-100" />
             <h3>Polymer Model of a Quantum Circuit</h3>
             <p>
-                Consider a simple quantum circuit on $n$ qubits, comprising of a sequence of $m$ unitary unitary gates, $U_1, \dots, U_m$. The probability ampltidue $\mathcal{A}:=\bra{0^n} {U_m \dots U_1} \ket{0^n}$ has a nice abstract polymer model representation <a href="references.html#MM24">[Lemma 12, MM24]</a>. Using the inclusion&ndash;exclusion principle we can translate each unitary $U_j$ in the following way:
+                Consider a simple quantum circuit on $n$ qubits, comprising of a sequence of $m$ unitary unitary gates, $U_1, \dots, U_m$. The probability amplitude $\mathcal{A}:=\bra{0^n} {U_m \dots U_1} \ket{0^n}$ has a nice abstract polymer model representation <a href="references.html#MM24">[Lemma 12, MM24]</a>. Using the inclusion&ndash;exclusion principle we can translate each unitary $U_j$ in the following way:
                 $$
                     \widetilde{U}_j := U_j - \mathbb{I}.
                 $$
@@ -290,7 +287,7 @@
             <hr class="border-top bs-border-color opacity-100" />
             <h3>Polymer Model of a Local Hamiltonian</h3>
             <p>
-                Previously we saw how mapping $\widetilde{U} = U - \mathbb{I}$ allowed us to represent the amplitude of a quantum circuit as a polymer model. We breifly sketch where this idea can be used in the context of a local Hamiltonian. First, consider a classical Hamiltonian with a kinetic term and a two-body potential term. The form of the Hamiltonian roughly follows
+                Previously we saw how mapping $\widetilde{U} = U - \mathbb{I}$ allowed us to represent the amplitude of a quantum circuit as a polymer model. We briefly sketch where this idea can be used in the context of a local Hamiltonian. First, consider a classical Hamiltonian with a kinetic term and a two-body potential term. The form of the Hamiltonian roughly follows
                 $$
                     H(r,p) = \sum_{i=1}^N \frac{p_i^2}{2m} + \sum_{i\lt j}^N \phi(r_i,r_j),
                 $$
