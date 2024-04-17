@@ -121,7 +121,7 @@
                     w(x) = e^{-\beta H(x)}.
                 $$
                 We are interested in approximating the partition function. 
-                By desgingin an ergodic Markov chain with the state space $\Omega$ and the stationary distribution $\pi$ we can sample from the stationary distribution and estimate the partition function. 
+                By designing an ergodic Markov chain with the state space $\Omega$ and the stationary distribution $\pi$ we can sample from the stationary distribution and estimate the partition function. 
                 The big problem with this method comes from knowing the mixing time of the Markov chain. 
                 It is known via the convergence to equilibrium theorem of Markov chains that any initial distribution will approach the stationary distribution as time tends to infinity. 
                 To make the algorithm efficient we require the mixing time to be small. 
@@ -169,7 +169,8 @@
             </p>
             <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px;">
                 <b>Theorem (Convergence to equilibrium) </b>
-                Let $P$ be an irreducible and aperiodic transition matrix on a finite state space with stationary distribution $\pi$. Then for any initial distribution $\mu$ the distribution of the Markov chain at time $t$ converges to the stationary distribution as $t\to\infty$,
+                Let $P$ be an irreducible and aperiodic transition matrix on a finite state space with stationary distribution $\pi$. 
+                Then for any initial distribution $\mu$ the distribution of the Markov chain at time $t$ converges to the stationary distribution as $t\to\infty$,
                     $$
                         ||\mu P^t - \pi||_{\text{TV}} \to 0 \quad \text{as} \quad t\to\infty.
                     $$
@@ -203,7 +204,7 @@
                 The transition probabilities of the Markov chain are related to the Maxwell-Boltzmann distribution of the chosen vertex and its neighbours. 
                 Running the dynamics for sufficient time allows the system to tend to equilibrium where in which the spin distribution is stabelised. 
                 Then at this equilibrium, the probability of a particular spin configuration is given by the Gibbs distribution. 
-                Sampleing states from this system after equilibrium is reached means we then sample from the Gibbs distribution.
+                Sampling states from this system after equilibrium is reached means we then sample from the Gibbs distribution.
             </p>
             <p>
                 Given some underlying graph $G = (V,E)$ and inverse temperature $\beta$ and an initial configuration of spins $\sigma$, 
@@ -237,7 +238,7 @@
                 $$
                     \mathbb{P}(\sigma_v = +1 | N(\sigma_v)) = \frac{\lambda^m}{\lambda^m + \lambda^p}.
                 $$
-                The quantity of interest here is the mixing time $\tau$ which is the number of steps needed to get close to the distribution of \cref{eq:ising_gibbs}. 
+                The quantity of interest here is the mixing time $\tau$ which is the number of steps needed to get close to the Gibbs distribution. 
                 It is common to define an error bound $\epsilon$ and then find the number of steps needed to get within $\epsilon$ of the stationary distribution. 
                 Typically it is chosen that $\epsilon = 1/2e$ then for times $\eta \tau$ then total variation distance is less than $\epsilon^{-\eta}$ <a href="references.html#HS07">[HS07]</a>,<a href="references.html#MS13">[MS13]</a>,<a href="references.html#AS17">[AS17]</a>. 
                 While the analysis in bounding the mixing time is fairly involved we are still able to quote some results regarding Glauber dynamics.

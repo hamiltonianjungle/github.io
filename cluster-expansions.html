@@ -173,15 +173,15 @@
                 Note that $\Gamma = \emptyset$ has a valid contribution of $+1$ to the partition function. A simple observation shows that the graphical representation of the polymer model renders the partition function as a weighted counting game over all possible independent sets. This makes intuitive sense recalling that the partition function problem is <span class="cm-sans-serif">&#35;P</span>&ndash;hard.
             </p>
             <p>
-                Using the polymer model we can express $\log(\mathcal{Z})$ as a formal power series. We call this the <i>cluster expansion</i>. If the cluster expansion is absolutely convergent then it is equivalent to $\log(\mathcal{Z})$ up to a rearrangement of terms. In order to find this series we perform a manipulation of the partition function to into the form $\mathcal{Z} = \exp(\dots)$. We will not analyse all the details of this manipulation but simply state the result and some key elements. Recall that $\Gamma$ represents a family of distinct polymers. Let $G_\Gamma$ be the \emph{incompatibility graph} of $\Gamma$, i.e. the graph with vertex set $\Gamma$ and edge set $\{(\gamma,\gamma') : \gamma \nsim \gamma'\}$. If $G_\Gamma$ is connected then we call $\Gamma$ a \emph{cluster}. Let $\mathcal{G}_C$ denote the set of all polymer clusters. The cluster expansion is then
+                Using the polymer model we can express $\log(\mathcal{Z})$ as a formal power series. We call this the <i>cluster expansion</i>. If the cluster expansion is absolutely convergent then it is equivalent to $\log(\mathcal{Z})$ up to a rearrangement of terms. In order to find this series we perform a manipulation of the partition function to into the form $\mathcal{Z} = \exp(\dots)$. We will not analyse all the details of this manipulation but simply state the result and some key elements. Recall that $\Gamma$ represents a family of distinct polymers. Let $G_\Gamma$ be the <i>incompatibility graph</i> of $\Gamma$, i.e. the graph with vertex set $\Gamma$ and edge set $\{(\gamma,\gamma') : \gamma \nsim \gamma'\}$. If $G_\Gamma$ is connected then we call $\Gamma$ a <i>cluster</i>. Let $\mathcal{G}_C$ denote the set of all polymer clusters. The cluster expansion is then
                 $$
                     \log(\mathcal{Z}) := \sum_{\Gamma \in \mathcal{G}_C} \varphi(G_\Gamma) \prod_{\gamma \in \Gamma} w(\gamma),
                 $$
-                where $\varphi(G_\Gamma)$ is the \emph{Ursell function} on the incompatibility graph $G_\Gamma$:
+                where $\varphi(G_\Gamma)$ is the <i>Ursell function</i> on the incompatibility graph $G_\Gamma$:
                 $$
                     \varphi(G_\Gamma) := \frac{1}{|G_\Gamma|!} \sum_{\substack{S \subseteq E(G_\Gamma) \\ \text{spanning} \\ \text{connected}}} (-1)^{|S|}.
                 $$
-                A Theorem due to Kotecký and Preiss gives conditions neccessary for absolute convergence of the cluster expansion cite{KP86}. An imporved version was given by Fernández and Procacci cite[Theorem 1]{FP07}. We do not state the theorem here but mention that imposing appropriate conditions on the weights of the polymers is sufficient to guarantee absolute convergence. 
+                A Theorem due to Kotecký and Preiss gives conditions necessary for absolute convergence of the cluster expansion <a href="references.html#KP86">[KP86]</a> An improved version was given by Fernández and Procacci <a href="references.html#FP07">[Theorem 1, FP07]</a>. We do not state the theorem here but mention that imposing appropriate conditions on the weights of the polymers is sufficient to guarantee absolute convergence. 
             </p>
             <hr class="border-top bs-border-color opacity-100" />
             <h3>A Simple Cluster Expansion</h3>
@@ -193,7 +193,7 @@
                                     &= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n}\;z^n.
                 \end{align}
                 $$
-                The goal of this example is to show how the cluster expansion gives the same result and argue a bound to give absolute convergence. The series in \cref{eq:cluster_expansion} shows 
+                The goal of this example is to show how the cluster expansion gives the same result and argue a bound to give absolute convergence. The series above shows 
                 \begin{equation}
                     \begin{split}
                         \log(\mathcal{Z}) &= \varphi(G_{\Gamma_1})\prod_{\gamma \in \Gamma_1} w(\gamma) + \varphi(G_{\Gamma_2})\prod_{\gamma \in \Gamma_2} w(\gamma) \\
@@ -225,7 +225,7 @@
                 $$
                     \bra{0^n}{\prod_{j=1}^m (\widetilde{U}_j + \mathbb{I})}\ket{0^n} = \sum_{S \subseteq [m]} \bra{0^n}{\prod_{s \in S} \widetilde{U}_s}\ket{0^n}.
                 $$
-                Each $S$ partitions the circuit into a subset of gates. For that given subset it is trivial to see some may act on common qubits and other may act on another disjoint set. We can therefore partition the instance into groups of maximally connected components. See \cref{fig:polymer_model_circuit} for a simple example. For a given $S$ we denote $\Gamma_S$ as the set of maximally connected components. Associating the problem to a polymer model this way allows a factorisation over $\Gamma_S$. Note that for a given string of operators $\gamma = \prod \widetilde{U}_j$ only the qubits in the support of the string are non-trivially affected and hence $\ket{0^n} \mapsto \ket{0^{|\gamma|}}$. This gives the simple expression 
+                Each $S$ partitions the circuit into a subset of gates. For that given subset it is trivial to see some may act on common qubits and other may act on another disjoint set. We can therefore partition the instance into groups of maximally connected components. See the circuit figure above for a simple example. For a given $S$ we denote $\Gamma_S$ as the set of maximally connected components. Associating the problem to a polymer model this way allows a factorisation over $\Gamma_S$. Note that for a given string of operators $\gamma = \prod \widetilde{U}_j$ only the qubits in the support of the string are non-trivially affected and hence $\ket{0^n} \mapsto \ket{0^{|\gamma|}}$. This gives the simple expression 
                 $$
                     \mathcal{A}=\sum_{S\subseteq [m]} \prod_{\gamma \in \Gamma_S} \bra{0^{|\gamma|}}{\prod_{j\in\gamma} \widetilde{U}_j}\ket{0^{|\gamma|}}.
                 $$
@@ -301,7 +301,7 @@
                                 &= Z_N^{(0)}(\beta) Q_N(\beta),
                 \end{align}
                 $$
-                where $Z_N^{(0)}(\beta)$ is the partition function of the non-interacting system and $Q_N(\beta)$ is the partition function of the interacting system termed the <i>configuration integral</i>. We define the Mayer function as $f_{ij} := e^{-\beta \phi(i,j)} - 1$ <a href="references.html#Salpater58">[Salpeter58]</a>. Using the Mayer function it is easy to see the configuration integral can be expressed as 
+                where $Z_N^{(0)}(\beta)$ is the partition function of the non-interacting system and $Q_N(\beta)$ is the partition function of the interacting system termed the <i>configuration integral</i>. We define the Mayer function as $f_{ij} := e^{-\beta \phi(i,j)} - 1$ <a href="references.html#Sal58">[Sal58]</a>. Using the Mayer function it is easy to see the configuration integral can be expressed as 
                 $$
                     Q_N(\beta) = \int \text{d}^3r\; \prod_{i\lt j} \left(1 + f_{ij}\right).
                 $$

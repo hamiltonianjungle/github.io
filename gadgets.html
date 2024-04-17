@@ -165,7 +165,7 @@
             </p>
             <p>
                 The usual format of reduction proofs is to start from a known problem that is complete for some complexity class. 
-                We commonly refer to this as the \emph{target} Hamiltonian, $H_{\text{targ.}}$, which acts on an $2^n$&ndash;dimensional Hilbert space 
+                We commonly refer to this as the <i>target</i> Hamiltonian, $H_{\text{targ.}}$, which acts on an $2^n$&ndash;dimensional Hilbert space 
                 $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$; $\mathcal{L}_-$ refers to the low&ndash;energy eigenspace and $\mathcal{L}_+$ the high&ndash;energy eigenspace. 
                 The reduction aims to show that a Hamiltonian, $H_{\text{sim}}$ that acts on a larger Hilbert space 
                 $\widetilde {\mathcal{H}} = \widetilde {\mathcal{L}}_- \oplus \widetilde {\mathcal{L}}_+$, can be constructed to have a low&ndash;energy subspace that approximates that of the target Hamiltonian. 
@@ -187,7 +187,7 @@
             </div>
             <p>
                 To understand what this definition is saying we can again turn to the ferromagnetic example above. 
-                Here we can envision the intial system of two spins having a Hamiltonian of the form $H = -\frac{\Delta}{2} ZZ$.
+                Here we can envision the initial system of two spins having a Hamiltonian of the form $H = -\frac{\Delta}{2} ZZ$.
                 Clearly this has a low&ndash;energy subspace of $\mathcal{L}_- = \{\ket{00}, \ket{11}\}$ (aligned spins) and a high&ndash;energy subspace of $\mathcal{L}_+ = \{\ket{01}, \ket{10}\}$ (anti&ndash;aligned spins).
                 The spectral gap is $\Delta$.
                 We can now discuss the form of the three spin situation (where particles interact antiferromagnetically); the Hamiltonian for this system is over three spins rather than two.
@@ -231,37 +231,6 @@
                     H_{\text{eff.}} = V_{--} - V_{-+}H^{-1}V_{+-}.
                 $$
             </p>
-            <!-- <p>
-                The rationale behind the use of perturbation techniques becomes evident through a straightforward illustration.
-                At the heart of all subsequent gadget constructions lies the concept of a <i>mediator gadget</i>.
-                As the name implies, a mediator gadget serves as an intermediary, facilitating a specific interaction between two particles.
-                To elaborate, consider a rudimentary example involving a two&ndash;particle ferromagnetic interaction, where spins tend to align.
-                Here, we introduce a mediator gadget that engages in an antiferromagnetic interaction with each of the original particles.
-                Assuming, without loss of generality, that the original spins are vertically aligned, the net outcome of the mediator particle being in a downward spin state is an effective ferromagnetic interaction between the original particles.
-                Moreover, this interaction indirectly connects the two original particles.
-            </p>
-            
-            <p>
-                The intricacies of perturbation gadgets involve complex mathematics. However, a somewhat informal yet
-                instructive overview can be provided as follows: When faced with a pre&ndash;existing interaction between
-                particles $i$ and $j$, the introduction of a mediator qubit $c$, serves to produce an effective indirect
-                interaction between $i$ and $$. This newly formed interaction approximates the original, while
-                preserving the low&ndash;energy
-                spectrum.
-            </p>
-            <p>
-                The gadgets we explore below are further developed in their respective areas. We provide a high&ndash;level
-                overview of the construction and possible use cases. The general construction procedure is as follows:
-            <ol>
-                <li>Define the target Hamiltonian term, $H_{\text{targ.}}$</li>
-                <li>Define the logical target Hamiltonian via some isometry, $\bar{H}_{\text{targ.}}$</li>
-                <li>Define the perturbation Hamiltonian, which is the sum of the unperturbed Hamiltonian and the
-                    perturbation term, $\widetilde{H} = H + V$</li>
-                <li>Use the perturbation theory expansion of the low-energy spectrum truncated to an appropriate
-                    order to define the effective Hamiltonian,
-                    $H_{\text{eff.}} \approx \widetilde{H}_{-}$</li>
-            </ol>
-            </p> -->
             <p>
                 One subtle condition that influences the construction of the gadgets is the allowed interaction terms of the Hamiltonian in question.
 
@@ -276,47 +245,6 @@
                 For example, requiring the interaction strengths to be particular large is a common condition.
                 These ideas are not developed here, rather we provide an overview of a <i>use case</i> for each gadget.
             </p>
-            <!-- <p>
-                Now we introduce a more formal, mathematical definition to perturbation gadgets. 
-                Note that this is not a full treatment but provides an overview of the equations used and the rationale behind the justification at each step.
-
-                Remember, we defined the perturbed Hamiltonian as $\widetilde{H} = H + V$. 
-                The unperturbed Hamiltonian, $H$, is chosen such that its Hilbert space is <i>split</i>, i.e., $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$. 
-                We denote $\mathcal{L}-$ as the <i>low&ndash;energy spectrum</i> and $\mathcal{L}+$ the <i>high&ndash;energy spectrum</i>. 
-                The <i>spectral gap</i> is defined as the distance between the maximal low&ndash;eigenenergy and the minimal high&ndash;eigenenergy. 
-                The unperturbed Hamiltonian can be thought of as a <i>penalty</i> Hamiltonian, in that, if a state is in the high&ndash;energy spectrum of $H$, it suffers a large penalty. 
-                For a natural system, such states are undesirable.
-                For analysis about the spectral information, it is useful to introduce the resolvent operator. 
-                The resolvent operator is formally defined as
-                $$
-                G(z) := (z\mathbb{I} - H)^{-1} = \sum_j (z - \lambda_j)^{-1}\ketbra{\psi_j}{\psi_j}.
-                $$
-                Notice, $G(z)$, has poles at the eigenvalues of $H$ &mdash; the resolvent is undefined on the spectrum
-                of
-                $H$. One property of the resolvent that will aid these perturbation analyses is
-                the fact that the poles of $G(z)$ are invariant under projections! 
-                We also define the self&ndash;energy operator,
-                $$
-                \Sigma_{-}(z) = z\mathbb{I} - \widetilde{G}^{-1}_{-}(z).
-                $$
-                The subscripts represent a projection on the low&ndash;energy subspace. 
-                The term $\widetilde{G}^{-1}_{-}(z)$ represents the perturbation Hamiltonian's resolvent operator projected onto the low&ndash;energy subspace. 
-                The self&ndash;energy operator approximates $\widetilde{H}_{-}$.
-                Furthermore, the self&ndash;energy operator has a Taylor expansion we must truncate and hence derive an effective Hamiltonian from, $H_{\text{eff}} :\approx \Sigma_{-}(z)$. 
-                The form of the effective Hamiltonian is chosen to mimic $\bar{H}_{\text{targ}}$. 
-                In this way, we have an approximation for the low&ndash;energy spectrum of $H_{\text{targ}}$ using $H_{\text{eff}}$.
-                To spare further mathematical details, we finish this section by mentioning how these ideas combine to
-                help us in the subsequent analyses; the discussion follows from the structure of the above steps.
-            </p>
-            <p>
-                Given a target Hamiltonian, $H_{\text{targ.}}$, our objective is to approximate its low&ndash;energy spectrum using a distinct Hamiltonian characterized by specific conditions, such as a lower degree of locality.
-                To achieve this, we use perturbation theory and mediator gadgets. 
-                Initially, we define an isometry, $\bar{H}_{\text{targ}} \sim H_{\text{targ}}\otimes\ketbra{0}{0}$ with the aim of determining $\bar{H}_{\text{targ}}$.                
-                We then introduce a perturbation Hamiltonian, $\widetilde{H} = H + V$, where the spectrum of $H$ undergoes a split. 
-                By analysing the low&ndash;energy spectrum of $\widetilde{H}$ and truncating the series expansion of its self&ndash;energy operator, we establish an effective Hamiltonian, $H_{\text{eff.}}$.                
-                Conducting spectral analysis and considering the overlap between $H_{\text{eff.}}$ and $\Sigma_{-}(z)$, we observe the low&ndash;energy eigenvalues of each are close. 
-                Consequently, we identify an alternate Hamiltonian possessing the desired characteristics, effectively approximating the original Hamiltonian.
-            </p> -->
             <p>
                 As a concluding remark, one can conceptualize perturbation gadget reductions as follows: 
                     "<i>The complexity of determining the ground state energy of Hamiltonian $A$ is known. 
