@@ -343,7 +343,7 @@
           Let $H$ be a Hamiltonian acting on a $2^n$&ndash;dimensional Hilbert
           space $\mathcal{H} = \mathcal{L}_- \oplus \mathcal{L}_+$. Let
           $H_{\text{sim}}$ be a Hamiltonian acting on a $2^m$&ndash;dimensional
-          Hilbert space, with $m>n$ and where $\widetilde {\mathcal{H}} =
+          Hilbert space, with $m \gt n$ and where $\widetilde {\mathcal{H}} =
           \widetilde {\mathcal{L}}_- \oplus \widetilde {\mathcal{L}}_+$. Let
           $\mathcal{E}: \mathcal{H}\rightarrow \widetilde {\mathcal{H}}$ be an
           isometry. We say that $H_{\text{sim}}$ is an effective Hamiltonian, or
@@ -374,10 +374,10 @@
           non&ndash;mediator spins do not interact directly. The
           antiferromagnetic interaction is one that tends to anti&ndash;align
           the spins; an antiferromagnetic interaction can be described by the
-          Hamiltonian $H = \alpha ZZ$ where $\alpha > 0$. Notice that we also
+          Hamiltonian $H = \alpha ZZ$ where $\alpha \gt 0$. Notice that we also
           wanted the simulator Hilbert space to be split. One way to achieve
           this is to split energy levels of the mediator spin. For example,
-          consider the Hamiltonian $H = \beta (\mathbb{I} - Z)$ where $\beta >
+          consider the Hamiltonian $H = \beta (\mathbb{I} - Z)$ where $\beta \gt
           0$; this Hamiltonian has a low&ndash;energy subspace of $\mathcal{L}_-
           = \{\ket{0}\}$ and a high&ndash;energy subspace of $\mathcal{L}_+ =
           \{\ket{1}\}$. If we are then able to find an approximate isometry that
@@ -540,10 +540,10 @@
                 </div>
                 <p>
                   This gadget can be used to reduce $k$&ndash;local
-                  interactions, for $k>3$, to $3$&ndash;local ones via repeated
-                  application 'in parallel'. This can trivially be seen with a
-                  small calculation. For this example, the isometry is defined
-                  as, $\bar{H}_{\text{targ}} \sim
+                  interactions, for $k\gt3$, to $3$&ndash;local ones via
+                  repeated application 'in parallel'. This can trivially be seen
+                  with a small calculation. For this example, the isometry is
+                  defined as, $\bar{H}_{\text{targ}} \sim
                   H_{\text{targ}}\otimes\ketbra{0}{0}$; where the final
                   '$\ketbra{0}{0}$' is for the mediator qubit and, as we will
                   see, is the ground state. We define the following equations:
@@ -1333,13 +1333,13 @@
                 <p>
                   Consider the interaction $\alpha XX + \beta YY + \gamma ZZ$
                   subject to the condition $(\alpha+\beta, \alpha+\gamma,
-                  \beta+\gamma)>0$. The matrix for this is trivially defined as,
-                  $$ \begin{bmatrix}
+                  \beta+\gamma)\gt0$. The matrix for this is trivially defined
+                  as, $$ \begin{bmatrix}
                   \gamma&0&0&\alpha-\beta\\0&-\gamma&\alpha+\beta&0\\0&\alpha+\beta&-\gamma&0\\\alpha-\beta&0&0&\gamma
                   \end{bmatrix} $$ Since the above condition is required, we
                   find the unique "low&ndash;energy" state to be given by
                   $\ket{\Psi^-}$. If the condition $(\alpha+\beta,
-                  \alpha+\gamma, \beta+\gamma)>0$ is not met we run into a
+                  \alpha+\gamma, \beta+\gamma)\gt0$ is not met we run into a
                   degenerate ground space. As per the general idea, we want a
                   block diagonal unperturbed Hamiltonian term $H$ such that the
                   low&ndash;energy eigenvalue is $0$ and all other eigenvalues
@@ -1377,7 +1377,7 @@
                   Let us denote the interaction between two qubits, $i$ and $j$
                   or the form $\alpha X_iX_j + \beta Y_iY_j + \gamma Z_iZ_j$ as
                   $H_{ij}$. We also have the added condition that
-                  $(\alpha+\beta, \alpha+\gamma, \beta+\gamma)>0$. Consider
+                  $(\alpha+\beta, \alpha+\gamma, \beta+\gamma)\gt0$. Consider
                   choosing the following terms, $$ \begin{align} \widetilde{H}
                   &= H+V \\ H &=
                   \Delta\big((\alpha+\beta)\ketbra{\Psi^+}{\Psi^+}_{ab}
