@@ -3,38 +3,21 @@
   <head>
     <title>The Hamiltonian Jungle | Ising</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta
-      name="description"
-      content="A comprehensive list of known Hamiltonian complexity results."
-    />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Lato"
-    />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -50,86 +33,47 @@
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-            class="d-inline-block align-text-top"
-          >
-            <path
-              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="d-inline-block align-text-top">
+            <path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
           </svg>
           <span>The Hamiltonian Jungle</span>
         </a>
-        <button
-          class="navbar-toggler p-0 border-0 shadow-none"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#sidebar"
-          aria-controls="sidebar"
-          aria-expanded="false"
-          aria-label="Toggle Navigation"
-        >
+        <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
     <div class="d-flex">
       <div class="sidebar bg-body-tertiary border-end">
-        <div
-          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
-          id="sidebar"
-          data-bs-scroll="true"
-          aria-labelledby="sidebar"
-        >
+        <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true" aria-labelledby="sidebar">
           <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
             <div class="container p-0">
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#models"
-                    aria-expanded="true"
-                    >Models</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models" aria-expanded="true">Models</a>
                 </li>
                 <ul class="collapse show p-0" id="models">
                   <li>
-                    <a class="nav-link" href="2-local-pauli.html"
-                      >2&ndash;Local Pauli</a
-                    >
+                    <a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="bose-hubbard.html"
-                      >Bose&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a>
                   </li>
                   <li>
                     <a class="nav-link" href="commuting.html">Commuting</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="fermi-hubbard.html"
-                      >Fermi&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a>
                   </li>
                   <li><a class="nav-link" href="general.html">General</a></li>
                   <li>
-                    <a class="nav-link" href="general-local.html"
-                      >General Local</a
-                    >
+                    <a class="nav-link" href="general-local.html">General Local</a>
                   </li>
                   <li>
                     <a class="nav-link" href="heisenberg.html">Heisenberg</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="ising.html" aria-current="true"
-                      >Ising</a
-                    >
+                    <a class="nav-link" href="ising.html" aria-current="true">Ising</a>
                   </li>
                   <li><a class="nav-link" href="qudit.html">Qudit</a></li>
                   <li>
@@ -137,43 +81,27 @@
                   </li>
                 </ul>
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#techniques"
-                    aria-expanded="false"
-                    >Techniques</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques" aria-expanded="false">Techniques</a>
                 </li>
                 <ul class="collapse p-0" id="techniques">
                   <li>
-                    <a class="nav-link" href="cluster-expansions.html"
-                      >Cluster Expansions</a
-                    >
+                    <a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="cstar-algebras.html"
-                      ><span class="cm-sans-serif">C</span
-                      ><sup>&#42;</sup>&ndash;Algebras</a
-                    >
+                    <a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a>
                   </li>
                   <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
                   <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
                 </ul>
                 <li>
-                  <a class="nav-link" href="supplementary.html"
-                    >Supplementary</a
-                  >
+                  <a class="nav-link" href="supplementary.html">Supplementary</a>
                 </li>
                 <li><a class="nav-link" href="glossary.html">Glossary</a></li>
                 <li>
                   <a class="nav-link" href="references.html">References</a>
                 </li>
                 <li>
-                  <a class="nav-link" href="open-problems.html"
-                    >Open Problems</a
-                  >
+                  <a class="nav-link" href="open-problems.html">Open Problems</a>
                 </li>
               </ul>
               <hr class="m-0 border-top bs-border-color opacity-100" />
@@ -184,30 +112,17 @@
               <hr class="m-0 border-top bs-border-color opacity-100" />
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#themes"
-                    aria-expanded="false"
-                    >Theme</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes" aria-expanded="false">Theme</a>
                 </li>
                 <ul class="collapse p-0" id="themes">
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="auto"
-                      >Auto</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="light"
-                      >Light</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="light">Light</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="dark"
-                      >Dark</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a>
                   </li>
                 </ul>
               </ul>
@@ -222,22 +137,11 @@
 
         <!-- Item IM16 --><!-- Item IM16 --><!-- Item IM16 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM16</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The Transverse Ising model
-            $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}Z_iZ_j +
-            \displaystyle\sum_{i\in V(G)}f_iX_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM16</small>
+          <div><strong>Hamiltonian:</strong> The Transverse Ising model $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}Z_iZ_j + \displaystyle\sum_{i\in V(G)}f_iX_i$$</div>
           <div><strong>Problem:</strong> Ground state energy</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> StoqMA</span>&ndash;complete
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#BH16">[BH16]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> StoqMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href="references.html#BH16">[BH16]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -258,21 +162,11 @@
         </div>
         <!-- Item IM17 --><!-- Item IM17 --><!-- Item IM17 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM17</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The Classical Ising model
-            $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)}L_{ij}S_iS_j$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM17</small>
+          <div><strong>Hamiltonian:</strong> The Classical Ising model $$H=\displaystyle\sum_{\{i,j\}\in E(\Lambda)}L_{ij}S_iS_j$$</div>
           <div><strong>Problem:</strong> Ground state energy</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> NP</span>&ndash;complete
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#Bar82">[Bar82]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href="references.html#Bar82">[Bar82]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -292,22 +186,11 @@
         </div>
         <!-- Item IM18 --><!-- Item IM18 --><!-- Item IM18 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM18</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The Classical Ising model
-            $$H=\displaystyle\sum_{\{i,j\}\in E(G)} S_iS_j +
-            \displaystyle\sum_{i\in V(G)} S_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM18</small>
+          <div><strong>Hamiltonian:</strong> The Classical Ising model $$H=\displaystyle\sum_{\{i,j\}\in E(G)} S_iS_j + \displaystyle\sum_{i\in V(G)} S_i$$</div>
           <div><strong>Problem:</strong> Ground state energy</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> NP</span>&ndash;hard
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#Bar82">[Bar82]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> NP</span>&ndash;hard</div>
+          <div><strong>Ref:</strong> <a href="references.html#Bar82">[Bar82]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -327,22 +210,11 @@
         </div>
         <!-- Item IM23 --><!-- Item IM23 --><!-- Item IM23 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM23</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The IaF&ndash;Transverse Ising model
-            $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\geq 0)}}Z_iZ_j +
-            \displaystyle\sum_{i\in V(G)}f_iX_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM23</small>
+          <div><strong>Hamiltonian:</strong> The IaF&ndash;Transverse Ising model $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\geq 0)}}Z_iZ_j + \displaystyle\sum_{i\in V(G)}f_iX_i$$</div>
           <div><strong>Problem:</strong> Ground state energy</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> StoqMA</span>&ndash;complete
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> StoqMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href="references.html#PM15">[PM15]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -368,21 +240,11 @@
         </div>
         <!-- Item IM24 --><!-- Item IM24 --><!-- Item IM24 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM24</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The IF&ndash;Transverse Ising model
-            $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\leq 0)}}Z_iZ_j +
-            \displaystyle\sum_{i\in V(G)}f_iX_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM24</small>
+          <div><strong>Hamiltonian:</strong> The IF&ndash;Transverse Ising model $$H=\displaystyle\sum_{\{i,j\}\in E(G)}L_{ij}^{^{(\leq 0)}}Z_iZ_j + \displaystyle\sum_{i\in V(G)}f_iX_i$$</div>
           <div><strong>Problem:</strong> Ground state energy</div>
-          <div>
-            <strong>Complexity:</strong><span class="cm-sans-serif"> BPP</span>
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#BH16">[BH16]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> BPP</span></div>
+          <div><strong>Ref:</strong> <a href="references.html#BH16">[BH16]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -401,22 +263,14 @@
         </div>
         <!-- Item IM501 --><!-- Item IM501 --><!-- Item IM501 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: IM501</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> The Ising model $$H_{MC}(G) =
-            \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - S_i
-            \cdot S_j\right)$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: IM501</small>
+          <div><strong>Hamiltonian:</strong> The Ising model $$H_{MC}(G) = \frac{1}{2} \sum_{\{i,j\} \in E(G)} w_{ij} \left(\mathbb{I} - S_i \cdot S_j\right)$$</div>
           <div><strong>Problem:</strong> Max&ndash;Cut</div>
           <div>
             <strong>Complexity:</strong>
             <span class="cm-sans-serif">NP</span>&ndash;complete
           </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#GW95">[GW95]</a>
-          </div>
+          <div><strong>Ref:</strong> <a href="references.html#GW95">[GW95]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -429,21 +283,11 @@
         </div>
         <!-- Item PFP-IM-001 --><!-- Item PFP-IM-001 --><!-- Item PFP-IM-001 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: PFP-IM-001</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> Ferromagnetic Ising model $$H =
-            -\sum_{\{i,j\}\in E(G)} L_{ij}Z_iZ_j - B\sum_{i \in V(G)}Z_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: PFP-IM-001</small>
+          <div><strong>Hamiltonian:</strong> Ferromagnetic Ising model $$H = -\sum_{\{i,j\}\in E(G)} L_{ij}Z_iZ_j - B\sum_{i \in V(G)}Z_i$$</div>
           <div><strong>Problem:</strong> Partition function</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> FPRAS</span>
-          </div>
-          <div>
-            <strong>Ref:</strong> <a href="references.html#JS93">[JS93]</a>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> FPRAS</span></div>
+          <div><strong>Ref:</strong> <a href="references.html#JS93">[JS93]</a></div>
           <hr class="border-top bs-border-color opacity-100" />
           <div>
             <strong>Conditionals:</strong>
@@ -457,19 +301,10 @@
         </div>
         <!-- Item PFP-IM-101 --><!-- Item PFP-IM-101 --><!-- Item PFP-IM-101 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: PFP-IM-101</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian
-            $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i
-            Z_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: PFP-IM-101</small>
+          <div><strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i Z_i$$</div>
           <div><strong>Problem:</strong> Partition function</div>
-          <div>
-            <strong>Complexity:</strong
-            ><span class="cm-sans-serif"> FPTAS</span>
-          </div>
+          <div><strong>Complexity:</strong><span class="cm-sans-serif"> FPTAS</span></div>
           <div>
             <strong>Ref:</strong>
             <a href="references.html#SST14">[SST14]</a>
@@ -480,24 +315,15 @@
             <ul>
               <li>$J_{ij} \in \mathbb{R}^+$</li>
               <li>$G$ has maximum degree $\Delta$</li>
-              <li>
-                Parameters in the interior of the uniqueness region of the
-                infinite $(\Delta &ndash; 1)$&ndash;regular tree
-              </li>
+              <li>Parameters in the interior of the uniqueness region of the infinite $(\Delta &ndash; 1)$&ndash;regular tree</li>
               <li>$\beta \in \mathbb{R}^+$</li>
             </ul>
           </div>
         </div>
         <!-- Item PFP-IM-102 --><!-- Item PFP-IM-102 --><!-- Item PFP-IM-102 -->
         <div class="alert alert-light">
-          <small class="badge float-end text-body-secondary fw-normal py-0"
-            >Key: PFP-IM-102</small
-          >
-          <div>
-            <strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian
-            $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i
-            Z_i$$
-          </div>
+          <small class="badge float-end text-body-secondary fw-normal py-0">Key: PFP-IM-102</small>
+          <div><strong>Hamiltonian:</strong> Antiferromagnetic Ising Hamiltonian $$H = \sum_{\{i,j\}\in E(G)} J_{ij} Z_iZ_j + \sum_{i \in V(G)} h_i Z_i$$</div>
           <div><strong>Problem:</strong> Partition function</div>
           <div><strong>Complexity:</strong> No FRPAS</div>
           <div>
@@ -511,10 +337,7 @@
             <ul>
               <li>$J_{ij} \in \mathbb{R}^+$</li>
               <li>$G$ has maximum degree $\Delta$</li>
-              <li>
-                Parameters in the interior of the non&ndash;uniqueness region of
-                the infinite $(\Delta &ndash; 1)$&ndash;regular tree
-              </li>
+              <li>Parameters in the interior of the non&ndash;uniqueness region of the infinite $(\Delta &ndash; 1)$&ndash;regular tree</li>
               <li>$\beta \in \mathbb{R}^+$</li>
               <li>No FPRAS unless RP=NP.</li>
             </ul>

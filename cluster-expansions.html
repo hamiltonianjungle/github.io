@@ -3,44 +3,23 @@
   <head>
     <title>The Hamiltonian Jungle | Cluster Expansions</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta
-      name="description"
-      content="A comprehensive list of known Hamiltonian complexity results."
-    />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Lato"
-    />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://tikzjax.com/v1/fonts.css"
-    />
+    <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css" />
     <script src="https://tikzjax.com/v1/tikzjax.js"></script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -56,78 +35,41 @@
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-            class="d-inline-block align-text-top"
-          >
-            <path
-              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="d-inline-block align-text-top">
+            <path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
           </svg>
           <span>The Hamiltonian Jungle</span>
         </a>
-        <button
-          class="navbar-toggler p-0 border-0 shadow-none"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#sidebar"
-          aria-controls="sidebar"
-          aria-expanded="false"
-          aria-label="Toggle Navigation"
-        >
+        <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
     <div class="d-flex">
       <div class="sidebar bg-body-tertiary border-end">
-        <div
-          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
-          id="sidebar"
-          data-bs-scroll="true"
-          aria-labelledby="sidebar"
-        >
+        <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true" aria-labelledby="sidebar">
           <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
             <div class="container p-0">
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#models"
-                    aria-expanded="false"
-                    >Models</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models" aria-expanded="false">Models</a>
                 </li>
                 <ul class="collapse p-0" id="models">
                   <li>
-                    <a class="nav-link" href="2-local-pauli.html"
-                      >2&ndash;Local Pauli</a
-                    >
+                    <a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="bose-hubbard.html"
-                      >Bose&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a>
                   </li>
                   <li>
                     <a class="nav-link" href="commuting.html">Commuting</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="fermi-hubbard.html"
-                      >Fermi&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a>
                   </li>
                   <li><a class="nav-link" href="general.html">General</a></li>
                   <li>
-                    <a class="nav-link" href="general-local.html"
-                      >General Local</a
-                    >
+                    <a class="nav-link" href="general-local.html">General Local</a>
                   </li>
                   <li>
                     <a class="nav-link" href="heisenberg.html">Heisenberg</a>
@@ -139,46 +81,27 @@
                   </li>
                 </ul>
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#techniques"
-                    aria-expanded="true"
-                    >Techniques</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques" aria-expanded="true">Techniques</a>
                 </li>
                 <ul class="collapse show p-0" id="techniques">
                   <li>
-                    <a
-                      class="nav-link"
-                      href="cluster-expansions.html"
-                      aria-current="true"
-                      >Cluster Expansions</a
-                    >
+                    <a class="nav-link" href="cluster-expansions.html" aria-current="true">Cluster Expansions</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="cstar-algebras.html"
-                      ><span class="cm-sans-serif">C</span
-                      ><sup>&#42;</sup>&ndash;Algebras</a
-                    >
+                    <a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a>
                   </li>
                   <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
                   <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
                 </ul>
                 <li>
-                  <a class="nav-link" href="supplementary.html"
-                    >Supplementary</a
-                  >
+                  <a class="nav-link" href="supplementary.html">Supplementary</a>
                 </li>
                 <li><a class="nav-link" href="glossary.html">Glossary</a></li>
                 <li>
                   <a class="nav-link" href="references.html">References</a>
                 </li>
                 <li>
-                  <a class="nav-link" href="open-problems.html"
-                    >Open Problems</a
-                  >
+                  <a class="nav-link" href="open-problems.html">Open Problems</a>
                 </li>
               </ul>
               <hr class="m-0 border-top bs-border-color opacity-100" />
@@ -189,30 +112,17 @@
               <hr class="m-0 border-top bs-border-color opacity-100" />
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#themes"
-                    aria-expanded="false"
-                    >Theme</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes" aria-expanded="false">Theme</a>
                 </li>
                 <ul class="collapse p-0" id="themes">
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="auto"
-                      >Auto</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="light"
-                      >Light</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="light">Light</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="dark"
-                      >Dark</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a>
                   </li>
                 </ul>
               </ul>
@@ -225,68 +135,17 @@
           <h2>Cluster Expansions</h2>
         </div>
         <p>
-          The cluster expansion is a technique for representing the power series
-          of the logarithm of the partition function. An important question when
-          studying such a series is to define the radius of convergence. One way
-          to bound the radius is by studying the clusters associated with the
-          underlying elements. In order to communicate the idea of a cluster
-          expansion we will first introduce the concept of a
-          <i>polymer model</i>. Polymer models naturally have a standard form of
-          a partition function. Such a formulation is a useful construction for
-          studying more physically motivated mathematical structures. One such
-          idea, which we will briefly discuss, is probability amplitudes. In
-          general this is known to be a
-          <span class="cm-sans-serif">&#35;P</span>&ndash;hard problem
-          <a href="references.html#GG17">[GG17]</a>. However, it can be shown
-          that specific instances of quantum circuits admit efficient
-          approximation algorithms. The review of this technique shows how the
-          cluster expansion can be applied to Hamiltonians in the context of
-          determining the statistical partition function. It is well known that
-          this problem is <span class="cm-sans-serif">&#35;P</span>&ndash;hard
-          and so the cluster expansion is a useful tool for
-          <i>approximating</i> solutions to specific instances. Note that the
-          cluster expansion is not always guaranteed to converge absolutely. An
-          informal metric for achieving convergence is to show that the polymer
-          weights are sufficiently small. This analysis closely follows the
-          works of <a href="references.html#MM24">[MH21]</a> and
-          <a href="references.html#MM24">[MM24]</a>.
+          The cluster expansion is a technique for representing the power series of the logarithm of the partition function. An important question when studying such a series is to define the radius of convergence. One way to bound the radius is by studying the clusters associated with the underlying elements. In order to communicate the idea of a cluster expansion we will first introduce the concept of a
+          <i>polymer model</i>. Polymer models naturally have a standard form of a partition function. Such a formulation is a useful construction for studying more physically motivated mathematical structures. One such idea, which we will briefly discuss, is probability amplitudes. In general this is known to be a <span class="cm-sans-serif">&#35;P</span>&ndash;hard problem <a href="references.html#GG17">[GG17]</a>. However, it can be shown that specific instances of quantum circuits admit efficient approximation algorithms. The review of this technique shows how the cluster expansion can be applied to Hamiltonians in the context of determining the statistical partition function. It is well known that this problem is <span class="cm-sans-serif">&#35;P</span>&ndash;hard and so the cluster expansion is a useful tool for <i>approximating</i> solutions to specific instances. Note that the cluster expansion is not always guaranteed to converge absolutely. An informal metric for achieving convergence is to show that the polymer weights are sufficiently small. This analysis closely follows the works of <a href="references.html#MM24">[MH21]</a> and <a href="references.html#MM24">[MM24]</a>.
         </p>
         <hr class="border-top bs-border-color opacity-100" />
         <h3>Polymer Model</h3>
-        <div
-          style="
-            padding-left: 40px;
-            padding-right: 40px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-          "
-        >
+        <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px">
           <b>Definition (Polymer model) </b>
-          A polymer model is a tuple $(C,w,\sim)$ where $C$ is a finite set of
-          objects called <i>polymers</i> $\gamma$, $w : C \rightarrow
-          \mathbb{C}$ is a set of weights associated to each polymer and $\sim :
-          C \times C \rightarrow \mathbb{R}$ is a symmetric and reflexive
-          relation called the <i>compatibility relation</i>.
+          A polymer model is a tuple $(C,w,\sim)$ where $C$ is a finite set of objects called <i>polymers</i> $\gamma$, $w : C \rightarrow \mathbb{C}$ is a set of weights associated to each polymer and $\sim : C \times C \rightarrow \mathbb{R}$ is a symmetric and reflexive relation called the <i>compatibility relation</i>.
         </div>
-        <p>
-          Two polymers $\gamma, \gamma' \in C$ are said to be compatible if
-          $\gamma \sim \gamma'$. A <i>admissible polymer family</i> for a given
-          polymer model is a subset of polymers $\Gamma \subset C$ such that all
-          distinct $\gamma, \gamma' \in \Gamma$ are compatible, i.e. $\gamma
-          \sim \gamma'$. All possible families form a set $\mathcal{F}$; we say
-          $\mathcal{F}$ is the set of all admissible polymer collections from
-          $C$.
-        </p>
-        <p>
-          A useful interpretation of a polymer model $(C,w,\sim)$ is via
-          graphical representations. Define a graph $G_C = (V,E)$ where $V = C$
-          and $E = \{(\gamma,\gamma') : \gamma \nsim \gamma'\}$, i.e. each edge
-          occurs between <i>incompatible</i> polymers. It turns out, the
-          independent sets of $G_C$ are in one-to-one correspondence with the
-          polymer families of the polymer model. All possible independent sets
-          form $\mathcal{F}$. Consider the simple example shown in
-          <a href="cluster-expansions.html#CE_fig_1">figure</a>.
-        </p>
+        <p>Two polymers $\gamma, \gamma' \in C$ are said to be compatible if $\gamma \sim \gamma'$. A <i>admissible polymer family</i> for a given polymer model is a subset of polymers $\Gamma \subset C$ such that all distinct $\gamma, \gamma' \in \Gamma$ are compatible, i.e. $\gamma \sim \gamma'$. All possible families form a set $\mathcal{F}$; we say $\mathcal{F}$ is the set of all admissible polymer collections from $C$.</p>
+        <p>A useful interpretation of a polymer model $(C,w,\sim)$ is via graphical representations. Define a graph $G_C = (V,E)$ where $V = C$ and $E = \{(\gamma,\gamma') : \gamma \nsim \gamma'\}$, i.e. each edge occurs between <i>incompatible</i> polymers. It turns out, the independent sets of $G_C$ are in one-to-one correspondence with the polymer families of the polymer model. All possible independent sets form $\mathcal{F}$. Consider the simple example shown in <a href="cluster-expansions.html#CE_fig_1">figure</a>.</p>
         <div id="CE_fig_1">
           <div class="gadget" style="display: flex; justify-content: center">
             <script type="text/tikz">
@@ -322,150 +181,28 @@
             </script>
           </div>
           <div style="padding-left: 20%; padding-right: 20%">
-            <p>
-              <b>Figure: </b> The graphical representation of a polymer model.
-              (Left) A connected graph with the vertices of two different
-              independent sets coloured red and blue. (Right) A disconnected
-              graph with the vertices of two different independent sets coloured
-              orange and green. The independent sets are in one-to-one
-              correspondence with the admissible polymer families of the polymer
-              model.
-            </p>
+            <p><b>Figure: </b> The graphical representation of a polymer model. (Left) A connected graph with the vertices of two different independent sets coloured red and blue. (Right) A disconnected graph with the vertices of two different independent sets coloured orange and green. The independent sets are in one-to-one correspondence with the admissible polymer families of the polymer model.</p>
           </div>
         </div>
-        <p>
-          The polymer model is a useful tool for studying the partition function
-          and the cluster expansion. Two important quantities we define for a
-          given graph include the <i>order</i> and the <i>size</i>. The order of
-          a graph is the number of vertices denoted $|G|:= |V(G)|$, and the size
-          is the number of edges denoted $||G||:= |E(G)|$. For a strong and
-          concise review of the polymer model and its applications we refer the
-          reader to <a href="references.html#MM24">[MM24]</a>.
-        </p>
+        <p>The polymer model is a useful tool for studying the partition function and the cluster expansion. Two important quantities we define for a given graph include the <i>order</i> and the <i>size</i>. The order of a graph is the number of vertices denoted $|G|:= |V(G)|$, and the size is the number of edges denoted $||G||:= |E(G)|$. For a strong and concise review of the polymer model and its applications we refer the reader to <a href="references.html#MM24">[MM24]</a>.</p>
         <hr class="border-top bs-border-color opacity-100" />
         <h3>The Partition Function</h3>
         <p>
-          The partition function has a succinct definition in terms of the
-          polymer model. For a given model, we define the standard form
-          partition function as $$ \mathcal{Z}(C,w,\sim) := \sum_{\Gamma \in
-          \mathcal{F}} \prod_{\gamma \in \Gamma} w(\gamma). $$ Note that $\Gamma
-          = \emptyset$ has a valid contribution of $+1$ to the partition
-          function. A simple observation shows that the graphical representation
-          of the polymer model renders the partition function as a weighted
-          counting game over all possible independent sets. This makes intuitive
-          sense recalling that the partition function problem is
+          The partition function has a succinct definition in terms of the polymer model. For a given model, we define the standard form partition function as $$ \mathcal{Z}(C,w,\sim) := \sum_{\Gamma \in \mathcal{F}} \prod_{\gamma \in \Gamma} w(\gamma). $$ Note that $\Gamma = \emptyset$ has a valid contribution of $+1$ to the partition function. A simple observation shows that the graphical representation of the polymer model renders the partition function as a weighted counting game over all possible independent sets. This makes intuitive sense recalling that the partition function problem is
           <span class="cm-sans-serif">&#35;P</span>&ndash;hard.
         </p>
-        <p>
-          Using the polymer model we can express $\log(\mathcal{Z})$ as a formal
-          power series. We call this the <i>cluster expansion</i>. If the
-          cluster expansion is absolutely convergent then it is equivalent to
-          $\log(\mathcal{Z})$ up to a rearrangement of terms. In order to find
-          this series we perform a manipulation of the partition function to
-          into the form $\mathcal{Z} = \exp(\dots)$. We will not analyse all the
-          details of this manipulation but simply state the result and some key
-          elements. Recall that $\Gamma$ represents a family of distinct
-          polymers. Let $G_\Gamma$ be the <i>incompatibility graph</i> of
-          $\Gamma$, i.e. the graph with vertex set $\Gamma$ and edge set
-          $\{(\gamma,\gamma') : \gamma \nsim \gamma'\}$. If $G_\Gamma$ is
-          connected then we call $\Gamma$ a <i>cluster</i>. Let $\mathcal{G}_C$
-          denote the set of all polymer clusters. The cluster expansion is then
-          $$ \log(\mathcal{Z}) := \sum_{\Gamma \in \mathcal{G}_C}
-          \varphi(G_\Gamma) \prod_{\gamma \in \Gamma} w(\gamma), $$ where
-          $\varphi(G_\Gamma)$ is the <i>Ursell function</i> on the
-          incompatibility graph $G_\Gamma$: $$ \varphi(G_\Gamma) :=
-          \frac{1}{|G_\Gamma|!} \sum_{\substack{S \subseteq E(G_\Gamma) \\
-          \text{spanning} \\ \text{connected}}} (-1)^{|S|}. $$ A Theorem due to
-          Kotecký and Preiss gives conditions necessary for absolute convergence
-          of the cluster expansion <a href="references.html#KP86">[KP86]</a> An
-          improved version was given by Fernández and Procacci
-          <a href="references.html#FP07">[Theorem 1, FP07]</a>. We do not state
-          the theorem here but mention that imposing appropriate conditions on
-          the weights of the polymers is sufficient to guarantee absolute
-          convergence.
-        </p>
+        <p>Using the polymer model we can express $\log(\mathcal{Z})$ as a formal power series. We call this the <i>cluster expansion</i>. If the cluster expansion is absolutely convergent then it is equivalent to $\log(\mathcal{Z})$ up to a rearrangement of terms. In order to find this series we perform a manipulation of the partition function to into the form $\mathcal{Z} = \exp(\dots)$. We will not analyse all the details of this manipulation but simply state the result and some key elements. Recall that $\Gamma$ represents a family of distinct polymers. Let $G_\Gamma$ be the <i>incompatibility graph</i> of $\Gamma$, i.e. the graph with vertex set $\Gamma$ and edge set $\{(\gamma,\gamma') : \gamma \nsim \gamma'\}$. If $G_\Gamma$ is connected then we call $\Gamma$ a <i>cluster</i>. Let $\mathcal{G}_C$ denote the set of all polymer clusters. The cluster expansion is then $$ \log(\mathcal{Z}) := \sum_{\Gamma \in \mathcal{G}_C} \varphi(G_\Gamma) \prod_{\gamma \in \Gamma} w(\gamma), $$ where $\varphi(G_\Gamma)$ is the <i>Ursell function</i> on the incompatibility graph $G_\Gamma$: $$ \varphi(G_\Gamma) := \frac{1}{|G_\Gamma|!} \sum_{\substack{S \subseteq E(G_\Gamma) \\ \text{spanning} \\ \text{connected}}} (-1)^{|S|}. $$ A Theorem due to Kotecký and Preiss gives conditions necessary for absolute convergence of the cluster expansion <a href="references.html#KP86">[KP86]</a> An improved version was given by Fernández and Procacci <a href="references.html#FP07">[Theorem 1, FP07]</a>. We do not state the theorem here but mention that imposing appropriate conditions on the weights of the polymers is sufficient to guarantee absolute convergence.</p>
         <hr class="border-top bs-border-color opacity-100" />
         <h3>A Simple Cluster Expansion</h3>
         <p>
-          To demonstrate how the cluster expansion works we consider a simple
-          example of a polymer model. Let $C = \{\gamma\}$ and $w(\gamma) = z$.
-          Clearly the partition function is $\mathcal{Z} = 1+z$. The
-          incompatibility relation is $\gamma \sim \gamma$ and so the only
-          cluster is $\Gamma = \{\gamma\}$. The incompatibility graph is a
-          single vertex and so $\varphi(G_\Gamma) = 1$. The series expansion for
-          $\log(\mathcal{Z})$ is well-known and given by $$ \begin{align}
-          \log(\mathcal{Z}) &= z - \frac{z^2}{2} + \frac{z^3}{3} - \dots,
-          \notag\\ &= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n}\;z^n. \end{align}
-          $$ The goal of this example is to show how the cluster expansion gives
-          the same result and argue a bound to give absolute convergence. The
-          series above shows \begin{equation} \begin{split} \log(\mathcal{Z}) &=
-          \varphi(G_{\Gamma_1})\prod_{\gamma \in \Gamma_1} w(\gamma) +
-          \varphi(G_{\Gamma_2})\prod_{\gamma \in \Gamma_2} w(\gamma) \\ &\qquad+
-          \varphi(G_{\Gamma_3})\prod_{\gamma \in \Gamma_3} w(\gamma) + \dots,
-          \end{split} \end{equation} where $\Gamma_n$ is the $n$-th cluster.
-          Since there is only one polymer, each cluster is the complete graph on
-          $n$ vertices. One slight issue however is the value of the Ursell
-          function for a given complete graph. A non-trivial combinatorial
-          equivalence exists for the Ursell function $\varphi_n :=
-          \varphi(\gamma, \dots, \gamma)$, specifically, \begin{equation}
-          \varphi_n = \frac{1}{n!}(-1)^{n-1}(n-1)! = \frac{(-1)^{n-1}}{n}.
-          \end{equation} Additionally the product of weights for the $n$-th
-          cluster is $z^n$. It is not hard to see then how we recover the series
-          expansion of $\log(\mathcal{Z})$. To guarantee absolute convergence we
-          require <a href="references.html#FV17">[Theorem 5.4, FV17]</a>
-          $$ |z|e^{a(\gamma)} \leq a(\gamma), $$ where $a(\gamma)\gt0$ is some
-          constant. It is not hard to see that $ae^{-a}$ is maximal when $a=1$
-          and so the condition for convergence is $|z| \leq e^{-1}$. This is in
-          contrast to the radius of convergence of the series expansion in the
-          equation above, which is $|z| \leq 1$. The arguments for convergence
-          we used on the cluster expansion are clearly not as strong as the
-          conventional argument. Nevertheless, the bound still lies within the
-          appropriate region and so the cluster expansion is absolutely
-          convergent.
+          To demonstrate how the cluster expansion works we consider a simple example of a polymer model. Let $C = \{\gamma\}$ and $w(\gamma) = z$. Clearly the partition function is $\mathcal{Z} = 1+z$. The incompatibility relation is $\gamma \sim \gamma$ and so the only cluster is $\Gamma = \{\gamma\}$. The incompatibility graph is a single vertex and so $\varphi(G_\Gamma) = 1$. The series expansion for $\log(\mathcal{Z})$ is well-known and given by $$ \begin{align} \log(\mathcal{Z}) &= z - \frac{z^2}{2} + \frac{z^3}{3} - \dots, \notag\\ &= \sum_{n=1}^\infty \frac{(-1)^{n-1}}{n}\;z^n. \end{align} $$ The goal of this example is to show how the cluster expansion gives the same result and argue a bound to give absolute convergence. The series above shows \begin{equation} \begin{split} \log(\mathcal{Z}) &= \varphi(G_{\Gamma_1})\prod_{\gamma \in \Gamma_1} w(\gamma) + \varphi(G_{\Gamma_2})\prod_{\gamma \in \Gamma_2} w(\gamma) \\ &\qquad+ \varphi(G_{\Gamma_3})\prod_{\gamma \in \Gamma_3} w(\gamma) + \dots, \end{split} \end{equation} where $\Gamma_n$ is the $n$-th cluster. Since there is only one polymer, each cluster is the complete graph on $n$ vertices. One slight issue however is the value of the Ursell function for a given complete graph. A non-trivial combinatorial equivalence exists for the Ursell function $\varphi_n := \varphi(\gamma, \dots, \gamma)$, specifically, \begin{equation} \varphi_n = \frac{1}{n!}(-1)^{n-1}(n-1)! = \frac{(-1)^{n-1}}{n}. \end{equation} Additionally the product of weights for the $n$-th cluster is $z^n$. It is not hard to see then how we recover the series expansion of $\log(\mathcal{Z})$. To guarantee absolute convergence we require <a href="references.html#FV17">[Theorem 5.4, FV17]</a>
+          $$ |z|e^{a(\gamma)} \leq a(\gamma), $$ where $a(\gamma)\gt0$ is some constant. It is not hard to see that $ae^{-a}$ is maximal when $a=1$ and so the condition for convergence is $|z| \leq e^{-1}$. This is in contrast to the radius of convergence of the series expansion in the equation above, which is $|z| \leq 1$. The arguments for convergence we used on the cluster expansion are clearly not as strong as the conventional argument. Nevertheless, the bound still lies within the appropriate region and so the cluster expansion is absolutely convergent.
         </p>
         <hr class="border-top bs-border-color opacity-100" />
         <h3>Polymer Model of a Quantum Circuit</h3>
         <p>
-          Consider a simple quantum circuit on $n$ qubits, comprising of a
-          sequence of $m$ unitary unitary gates, $U_1, \dots, U_m$. The
-          probability amplitude $\mathcal{A}:=\bra{0^n} {U_m \dots U_1}
-          \ket{0^n}$ has a nice abstract polymer model representation
-          <a href="references.html#MM24">[Lemma 12, MM24]</a>. Using the
-          inclusion&ndash;exclusion principle we can translate each unitary
-          $U_j$ in the following way: $$ \widetilde{U}_j := U_j - \mathbb{I}. $$
-          A simple calculation shows that $(\widetilde{U}_j +
-          \mathbb{I})(\widetilde{U}_k + \mathbb{I})= U_jU_k$ and by direction
-          substitution we find that $$ \mathcal{A}=\bra{0^n}{\prod_{j=1}^m
-          U_j}\ket{0^n} = \bra{0^n}{\prod_{j=1}^m (\widetilde{U}_j +
-          \mathbb{I})}\ket{0^n}. $$ A further simple manipulation shows that $$
-          \bra{0^n}{\prod_{j=1}^m (\widetilde{U}_j + \mathbb{I})}\ket{0^n} =
-          \sum_{S \subseteq [m]} \bra{0^n}{\prod_{s \in S}
-          \widetilde{U}_s}\ket{0^n}. $$ Each $S$ partitions the circuit into a
-          subset of gates. For that given subset it is trivial to see some may
-          act on common qubits and other may act on another disjoint set. We can
-          therefore partition the instance into groups of maximally connected
-          components. See the circuit figure above for a simple example. For a
-          given $S$ we denote $\Gamma_S$ as the set of maximally connected
-          components. Associating the problem to a polymer model this way allows
-          a factorisation over $\Gamma_S$. Note that for a given string of
-          operators $\gamma = \prod \widetilde{U}_j$ only the qubits in the
-          support of the string are non-trivially affected and hence $\ket{0^n}
-          \mapsto \ket{0^{|\gamma|}}$. This gives the simple expression $$
-          \mathcal{A}=\sum_{S\subseteq [m]} \prod_{\gamma \in \Gamma_S}
-          \bra{0^{|\gamma|}}{\prod_{j\in\gamma}
-          \widetilde{U}_j}\ket{0^{|\gamma|}}. $$ By associating the weight of
-          polymer $\gamma$ with the amplitude
-          $\bra{0^{|\gamma|}}{\prod_{j\in\gamma}
-          \widetilde{U}_j}\ket{0^{|\gamma|}}$, the ampltidue admits a abstract
-          polymer model representation. The partition function of this model is
-          then the amplitude of the quantum circuit. Notice that the set of all
-          maximally connected components is the set of all polymer clusters
-          $\mathcal{G}_C$ where $C$ is the set of polymers. $$ \mathcal{Z} =
-          \sum_{\Gamma \in \mathcal{G}_C} \prod_{\gamma \in \Gamma} w(\gamma),
-          $$ where $$ w(\gamma) = \bra{0^{|\gamma|}}{\prod_{j\in\gamma} (U_j -
-          \mathbb{I})}\ket{0^{|\gamma|}}. $$ Notice for $||U_j - \mathbb{I}||
-          \ll 1$ the weight $w(\gamma)$ is small and so the cluster expansion is
-          expected to be absolutely convergent.
+          Consider a simple quantum circuit on $n$ qubits, comprising of a sequence of $m$ unitary unitary gates, $U_1, \dots, U_m$. The probability amplitude $\mathcal{A}:=\bra{0^n} {U_m \dots U_1} \ket{0^n}$ has a nice abstract polymer model representation
+          <a href="references.html#MM24">[Lemma 12, MM24]</a>. Using the inclusion&ndash;exclusion principle we can translate each unitary $U_j$ in the following way: $$ \widetilde{U}_j := U_j - \mathbb{I}. $$ A simple calculation shows that $(\widetilde{U}_j + \mathbb{I})(\widetilde{U}_k + \mathbb{I})= U_jU_k$ and by direction substitution we find that $$ \mathcal{A}=\bra{0^n}{\prod_{j=1}^m U_j}\ket{0^n} = \bra{0^n}{\prod_{j=1}^m (\widetilde{U}_j + \mathbb{I})}\ket{0^n}. $$ A further simple manipulation shows that $$ \bra{0^n}{\prod_{j=1}^m (\widetilde{U}_j + \mathbb{I})}\ket{0^n} = \sum_{S \subseteq [m]} \bra{0^n}{\prod_{s \in S} \widetilde{U}_s}\ket{0^n}. $$ Each $S$ partitions the circuit into a subset of gates. For that given subset it is trivial to see some may act on common qubits and other may act on another disjoint set. We can therefore partition the instance into groups of maximally connected components. See the circuit figure above for a simple example. For a given $S$ we denote $\Gamma_S$ as the set of maximally connected components. Associating the problem to a polymer model this way allows a factorisation over $\Gamma_S$. Note that for a given string of operators $\gamma = \prod \widetilde{U}_j$ only the qubits in the support of the string are non-trivially affected and hence $\ket{0^n} \mapsto \ket{0^{|\gamma|}}$. This gives the simple expression $$ \mathcal{A}=\sum_{S\subseteq [m]} \prod_{\gamma \in \Gamma_S} \bra{0^{|\gamma|}}{\prod_{j\in\gamma} \widetilde{U}_j}\ket{0^{|\gamma|}}. $$ By associating the weight of polymer $\gamma$ with the amplitude $\bra{0^{|\gamma|}}{\prod_{j\in\gamma} \widetilde{U}_j}\ket{0^{|\gamma|}}$, the ampltidue admits a abstract polymer model representation. The partition function of this model is then the amplitude of the quantum circuit. Notice that the set of all maximally connected components is the set of all polymer clusters $\mathcal{G}_C$ where $C$ is the set of polymers. $$ \mathcal{Z} = \sum_{\Gamma \in \mathcal{G}_C} \prod_{\gamma \in \Gamma} w(\gamma), $$ where $$ w(\gamma) = \bra{0^{|\gamma|}}{\prod_{j\in\gamma} (U_j - \mathbb{I})}\ket{0^{|\gamma|}}. $$ Notice for $||U_j - \mathbb{I}|| \ll 1$ the weight $w(\gamma)$ is small and so the cluster expansion is expected to be absolutely convergent.
         </p>
         <div id="CE_fig_2">
           <div class="gadget" style="display: flex; justify-content: center">
@@ -506,115 +243,24 @@
             </script>
           </div>
           <div style="padding-left: 20%; padding-right: 20%">
-            <p>
-              <b>Figure: </b> (Above) A portion of a simple quantum circuit.
-              (Below) The circuit partitioned into maximally connected
-              components for a subset $S = \{i,j,k\}$. The associated set
-              $\Gamma_S = \{\gamma_1,\gamma_2\}$.
-            </p>
+            <p><b>Figure: </b> (Above) A portion of a simple quantum circuit. (Below) The circuit partitioned into maximally connected components for a subset $S = \{i,j,k\}$. The associated set $\Gamma_S = \{\gamma_1,\gamma_2\}$.</p>
           </div>
         </div>
-        <p>
-          By covering this example we gain some intuition for how the
-          inclusion&ndash;exclusion principle is used to simplify the problem.
-          Additionally we also see how to simplify the problem by considering
-          the set of maximally connected components, i.e. the terms that
-          contribute to the amplitude. This is specifically important when
-          dealing with the partition function of a Hamiltonian.
-        </p>
-        <p>
-          One slight issue is that the inclusion&ndash;exclusion method employed
-          here does not always extend to Hamiltonians &mdash; specifically those
-          with terms that do not commute. We will see in the next section how
-          the inclusion&ndash;exclusion principle can be used in a more abstract
-          way to simplify the problem of finding the partition function of a
-          local Hamiltonian.
-        </p>
+        <p>By covering this example we gain some intuition for how the inclusion&ndash;exclusion principle is used to simplify the problem. Additionally we also see how to simplify the problem by considering the set of maximally connected components, i.e. the terms that contribute to the amplitude. This is specifically important when dealing with the partition function of a Hamiltonian.</p>
+        <p>One slight issue is that the inclusion&ndash;exclusion method employed here does not always extend to Hamiltonians &mdash; specifically those with terms that do not commute. We will see in the next section how the inclusion&ndash;exclusion principle can be used in a more abstract way to simplify the problem of finding the partition function of a local Hamiltonian.</p>
         <hr class="border-top bs-border-color opacity-100" />
         <h3>Polymer Model of a Local Hamiltonian</h3>
         <p>
-          Previously we saw how mapping $\widetilde{U} = U - \mathbb{I}$ allowed
-          us to represent the amplitude of a quantum circuit as a polymer model.
-          We briefly sketch where this idea can be used in the context of a
-          local Hamiltonian. First, consider a classical Hamiltonian with a
-          kinetic term and a two-body potential term. The form of the
-          Hamiltonian roughly follows $$ H(r,p) = \sum_{i=1}^N \frac{p_i^2}{2m}
-          + \sum_{i\lt j}^N \phi(r_i,r_j), $$ where $\phi(r_i,r_j) = \phi(i,j)$
-          is the potential between particles $i$ and $j$ dependent on their
-          positions. The partition function of this system is given by $$
-          \begin{align} Z_N(\beta) &= \frac{1}{\mathcal{N}} \int
-          \text{d}^3r\;\text{d}^3p\; e^{-\beta H(r,p)}, \\ &= Z_N^{(0)}(\beta)
-          Q_N(\beta), \end{align} $$ where $Z_N^{(0)}(\beta)$ is the partition
-          function of the non-interacting system and $Q_N(\beta)$ is the
-          partition function of the interacting system termed the
-          <i>configuration integral</i>. We define the Mayer function as $f_{ij}
-          := e^{-\beta \phi(i,j)} - 1$
-          <a href="references.html#Sal58">[Sal58]</a>. Using the Mayer function
-          it is easy to see the configuration integral can be expressed as $$
-          Q_N(\beta) = \int \text{d}^3r\; \prod_{i\lt j} \left(1 +
-          f_{ij}\right). $$ Expanding this product for a simple case of two
-          particles we easily recover the expected form. The reason this happens
-          is due to the fact that the two-body terms commute! This is not the
-          case for a local quantum Hamiltonian where in general the terms do not
-          commute. So while it is possible to use the inclusion&ndash;exclusion
-          method in a straightforward way for a classical Hamiltonian, it is not
-          so for a quantum Hamiltonian. We assume no vanishing commutative
-          properties and so we must use a more abstract method to simplify the
-          problem. We also now define the local Hamiltonian based on the
-          interaction graph.
+          Previously we saw how mapping $\widetilde{U} = U - \mathbb{I}$ allowed us to represent the amplitude of a quantum circuit as a polymer model. We briefly sketch where this idea can be used in the context of a local Hamiltonian. First, consider a classical Hamiltonian with a kinetic term and a two-body potential term. The form of the Hamiltonian roughly follows $$ H(r,p) = \sum_{i=1}^N \frac{p_i^2}{2m} + \sum_{i\lt j}^N \phi(r_i,r_j), $$ where $\phi(r_i,r_j) = \phi(i,j)$ is the potential between particles $i$ and $j$ dependent on their positions. The partition function of this system is given by $$ \begin{align} Z_N(\beta) &= \frac{1}{\mathcal{N}} \int \text{d}^3r\;\text{d}^3p\; e^{-\beta H(r,p)}, \\ &= Z_N^{(0)}(\beta) Q_N(\beta), \end{align} $$ where $Z_N^{(0)}(\beta)$ is the partition function of the non-interacting system and $Q_N(\beta)$ is the partition function of the interacting system termed the
+          <i>configuration integral</i>. We define the Mayer function as $f_{ij} := e^{-\beta \phi(i,j)} - 1$ <a href="references.html#Sal58">[Sal58]</a>. Using the Mayer function it is easy to see the configuration integral can be expressed as $$ Q_N(\beta) = \int \text{d}^3r\; \prod_{i\lt j} \left(1 + f_{ij}\right). $$ Expanding this product for a simple case of two particles we easily recover the expected form. The reason this happens is due to the fact that the two-body terms commute! This is not the case for a local quantum Hamiltonian where in general the terms do not commute. So while it is possible to use the inclusion&ndash;exclusion method in a straightforward way for a classical Hamiltonian, it is not so for a quantum Hamiltonian. We assume no vanishing commutative properties and so we must use a more abstract method to simplify the problem. We also now define the local Hamiltonian based on the interaction graph.
         </p>
-        <p>
-          We have already outlined the equation for the partition function of a
-          Hamiltonian as given by statistical mechanics. We restate this here in
-          the context of the interaction graph. Define $$ \mathcal{Z}(G) =
-          \text{Tr}\left(e^{-\beta H(G)}\right), $$ as the partition function of
-          a local Hamiltonian $H(G)$ on an interaction (hyper)graph $G$. Let $H$
-          be $k$-local in that $$ H(G) := \sum_{e\in E(G)} h(e), $$ where $h(e)
-          \in \mathbf{L}(\bigotimes_{u\in e}\mathcal{H}_u) \otimes \mathbb{I}$
-          is a non-trivial self-adjoint $k$-local operator acting on the qubit
-          interaction edge $e$. Since no underling commutative properties are
-          present $\exp(\sum h(e)) \neq \prod \exp(h(e))$. To employ
-          inclusion&ndash;exclusion on this problem there is a neat, well-known,
-          lemma that formalises the inclusion&ndash;exclusion principle; we use
-          the prescription from <a href="references.html#MM24">[MM24]</a>.
-        </p>
-        <div
-          style="
-            padding-left: 40px;
-            padding-right: 40px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-          "
-        >
+        <p>We have already outlined the equation for the partition function of a Hamiltonian as given by statistical mechanics. We restate this here in the context of the interaction graph. Define $$ \mathcal{Z}(G) = \text{Tr}\left(e^{-\beta H(G)}\right), $$ as the partition function of a local Hamiltonian $H(G)$ on an interaction (hyper)graph $G$. Let $H$ be $k$-local in that $$ H(G) := \sum_{e\in E(G)} h(e), $$ where $h(e) \in \mathbf{L}(\bigotimes_{u\in e}\mathcal{H}_u) \otimes \mathbb{I}$ is a non-trivial self-adjoint $k$-local operator acting on the qubit interaction edge $e$. Since no underling commutative properties are present $\exp(\sum h(e)) \neq \prod \exp(h(e))$. To employ inclusion&ndash;exclusion on this problem there is a neat, well-known, lemma that formalises the inclusion&ndash;exclusion principle; we use the prescription from <a href="references.html#MM24">[MM24]</a>.</p>
+        <div style="padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px">
           <b>Lemma (Principle of inclusion&ndash;exclusion) </b>
-          Let $f$ be function defined on the subsets of a finite set $A$, then
-          $$ f(A) = \sum_{S\subseteq A} (-1)^{|S|} \sum_{T\subseteq S}
-          (-1)^{|T|}f(T). $$
+          Let $f$ be function defined on the subsets of a finite set $A$, then $$ f(A) = \sum_{S\subseteq A} (-1)^{|S|} \sum_{T\subseteq S} (-1)^{|T|}f(T). $$
         </div>
         <p>
-          By identifying the finite set of objects $A$ as the edge set of the
-          interaction graph $G$ we can use this lemma to find a polymer model
-          representation of the partition function. Note that $f(E(G)) =
-          \mathcal{Z}(G)$ and therefore, $$ \mathcal{Z}(G) = \sum_{S\subseteq
-          E(G)} (-1)^{|S|} \sum_{T\subseteq S}
-          (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right) . $$
-          Again, we define $\Gamma_S$ as the set of maximally connected
-          components for a given subset $S \subseteq E(G)$. For each $\gamma \in
-          \Gamma_S$ we define an edge set $E(\gamma) \subseteq E(G)$ and recall
-          that $||\gamma||$ represents the size of the corresponding subgraph
-          $\gamma$ is associated with. Factorising over $\Gamma_S$ we find $$
-          \begin{equation} \mathcal{Z}(G) = \sum_{S\subseteq E(G)} \prod_{\gamma
-          \in \Gamma_S}(-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)}
-          (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right).
-          \end{equation} $$ Defining the weight of a polymer $\gamma$ as $$
-          w(\gamma) = (-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)}
-          (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right), $$ we
-          recover the standard form of the partition function of a polymer
-          model. To guarantee convergence for the cluster expansion of
-          $\log(\mathcal{Z})$ we require a bound on the inverse temperature
-          $\beta$. An example of such a bound is $|\beta| \leq (e^4
-          \Delta)^{-1}$ for the case where $G$ is a bounded degree graph of
-          maximum degree $\Delta$
+          By identifying the finite set of objects $A$ as the edge set of the interaction graph $G$ we can use this lemma to find a polymer model representation of the partition function. Note that $f(E(G)) = \mathcal{Z}(G)$ and therefore, $$ \mathcal{Z}(G) = \sum_{S\subseteq E(G)} (-1)^{|S|} \sum_{T\subseteq S} (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right) . $$ Again, we define $\Gamma_S$ as the set of maximally connected components for a given subset $S \subseteq E(G)$. For each $\gamma \in \Gamma_S$ we define an edge set $E(\gamma) \subseteq E(G)$ and recall that $||\gamma||$ represents the size of the corresponding subgraph $\gamma$ is associated with. Factorising over $\Gamma_S$ we find $$ \begin{equation} \mathcal{Z}(G) = \sum_{S\subseteq E(G)} \prod_{\gamma \in \Gamma_S}(-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)} (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right). \end{equation} $$ Defining the weight of a polymer $\gamma$ as $$ w(\gamma) = (-1)^{||\gamma||} \sum_{T\subseteq E(\gamma)} (-1)^{|T|}\text{Tr}\left(e^{-\beta \sum_{e\in T} h(e)}\right), $$ we recover the standard form of the partition function of a polymer model. To guarantee convergence for the cluster expansion of $\log(\mathcal{Z})$ we require a bound on the inverse temperature $\beta$. An example of such a bound is $|\beta| \leq (e^4 \Delta)^{-1}$ for the case where $G$ is a bounded degree graph of maximum degree $\Delta$
           <a href="references.html#MH21">[Theorem 1, MH21]</a>.
         </p>
       </main>

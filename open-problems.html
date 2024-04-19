@@ -3,38 +3,21 @@
   <head>
     <title>The Hamiltonian Jungle | Open Problems</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta
-      name="description"
-      content="A comprehensive list of known Hamiltonian complexity results."
-    />
+    <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Lato"
-    />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
     <link rel="icon" href="media/graphics/favicon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script
-      id="MathJax-script"
-      async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-    ></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
       MathJax = { tex: { inlineMath: [["$", "$"]] } };
     </script>
     <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -50,78 +33,41 @@
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            viewBox="0 0 16 16"
-            class="d-inline-block align-text-top"
-          >
-            <path
-              d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z"
-            />
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="d-inline-block align-text-top">
+            <path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
           </svg>
           <span>The Hamiltonian Jungle</span>
         </a>
-        <button
-          class="navbar-toggler p-0 border-0 shadow-none"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#sidebar"
-          aria-controls="sidebar"
-          aria-expanded="false"
-          aria-label="Toggle Navigation"
-        >
+        <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
     </nav>
     <div class="d-flex">
       <div class="sidebar bg-body-tertiary border-end">
-        <div
-          class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top"
-          id="sidebar"
-          data-bs-scroll="true"
-          aria-labelledby="sidebar"
-        >
+        <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true" aria-labelledby="sidebar">
           <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
             <div class="container p-0">
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#models"
-                    aria-expanded="false"
-                    >Models</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models" aria-expanded="false">Models</a>
                 </li>
                 <ul class="collapse p-0" id="models">
                   <li>
-                    <a class="nav-link" href="2-local-pauli.html"
-                      >2&ndash;Local Pauli</a
-                    >
+                    <a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="bose-hubbard.html"
-                      >Bose&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a>
                   </li>
                   <li>
                     <a class="nav-link" href="commuting.html">Commuting</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="fermi-hubbard.html"
-                      >Fermi&ndash;Hubbard</a
-                    >
+                    <a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a>
                   </li>
                   <li><a class="nav-link" href="general.html">General</a></li>
                   <li>
-                    <a class="nav-link" href="general-local.html"
-                      >General Local</a
-                    >
+                    <a class="nav-link" href="general-local.html">General Local</a>
                   </li>
                   <li>
                     <a class="nav-link" href="heisenberg.html">Heisenberg</a>
@@ -133,46 +79,27 @@
                   </li>
                 </ul>
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#techniques"
-                    aria-expanded="false"
-                    >Techniques</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques" aria-expanded="false">Techniques</a>
                 </li>
                 <ul class="collapse p-0" id="techniques">
                   <li>
-                    <a class="nav-link" href="cluster-expansions.html"
-                      >Cluster Expansions</a
-                    >
+                    <a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="cstar-algebras.html"
-                      ><span class="cm-sans-serif">C</span
-                      ><sup>&#42;</sup>&ndash;Algebras</a
-                    >
+                    <a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a>
                   </li>
                   <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
                   <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
                 </ul>
                 <li>
-                  <a class="nav-link" href="supplementary.html"
-                    >Supplementary</a
-                  >
+                  <a class="nav-link" href="supplementary.html">Supplementary</a>
                 </li>
                 <li><a class="nav-link" href="glossary.html">Glossary</a></li>
                 <li>
                   <a class="nav-link" href="references.html">References</a>
                 </li>
                 <li>
-                  <a
-                    class="nav-link"
-                    href="open-problems.html"
-                    aria-current="true"
-                    >Open Problems</a
-                  >
+                  <a class="nav-link" href="open-problems.html" aria-current="true">Open Problems</a>
                 </li>
               </ul>
               <hr class="m-0 border-top bs-border-color opacity-100" />
@@ -183,30 +110,17 @@
               <hr class="m-0 border-top bs-border-color opacity-100" />
               <ul class="nav flex-column">
                 <li>
-                  <a
-                    class="nav-link"
-                    href="#"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#themes"
-                    aria-expanded="false"
-                    >Theme</a
-                  >
+                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes" aria-expanded="false">Theme</a>
                 </li>
                 <ul class="collapse p-0" id="themes">
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="auto"
-                      >Auto</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="light"
-                      >Light</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="light">Light</a>
                   </li>
                   <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="dark"
-                      >Dark</a
-                    >
+                    <a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a>
                   </li>
                 </ul>
               </ul>
@@ -221,72 +135,25 @@
         <ul>
           <li>
             Bose&ndash;Hubbard CGW14 proof on different geometries. The proof of
-            <a href="references.html#CGW14">[CGW14]</a> is for symmetric
-            $0$&ndash;$1$ graphs with at most one self-loop. What about simple
-            graphs? Lattices? No self&ndash;loops?
+            <a href="references.html#CGW14">[CGW14]</a> is for symmetric $0$&ndash;$1$ graphs with at most one self-loop. What about simple graphs? Lattices? No self&ndash;loops?
+          </li>
+          <li>What are the complexities of the HaF instances of Hamiltonians?</li>
+          <li>What is the complexity of varying Ising Model instances on different geometries?</li>
+          <li>What are the complexity classifications of Hamiltonians with interaction strengths of the form $J = O(1)$?</li>
+          <li>The general definition of the models admits algebraic locality and not geometrical locality. It is therefore natural to ask what the complexity is for interaction strengths of the form, $J_{ij} = |i - j|^{-\alpha}$.</li>
+          <li>The <span class="cm-sans-serif">BPP</span> algorithm presented by Bravyi <a href="references.html#Bra15">[Bra15]</a> for calculating the partition function of the ferromagnetic TIM is not practical. Is there an improved version that can offer practicality?</li>
+          <li>The advent of guided local Hamiltonian instances begs the question as to whether similar results can be found for the likes of the Fermi&ndash;Hubbard, Bose&ndash;Hubbard, and Electronic Structure Hamiltonian.</li>
+          <li>Are hybrid interaction systems of interest and can their complexity also be defined?</li>
+          <li>What is the complete impact of guiding states on the complexity of local Hamiltonians?</li>
+          <li>
+            Can a robust framework of local Hamiltonians with restricted ground states be defined?
+            <div class="text-body-secondary">Guiding states have been proposed that have a semi&ndash;classical strucutre. Recently, local Hamiltonians with succinct ground states have been proposed. Furthermore, finding extremal product states for local Hamiltonians has been studied. Is there a better framework with which we can discuss these ideas and find possible links?</div>
           </li>
           <li>
-            What are the complexities of the HaF instances of Hamiltonians?
+            What alternate ideas exist for circuit&ndash;to&ndash;Hamiltonian constructions?
+            <div class="text-body-secondary">Are there good constructions without the need for a clock? Furthermore, are there constructions that are more physically motivated?</div>
           </li>
-          <li>
-            What is the complexity of varying Ising Model instances on different
-            geometries?
-          </li>
-          <li>
-            What are the complexity classifications of Hamiltonians with
-            interaction strengths of the form $J = O(1)$?
-          </li>
-          <li>
-            The general definition of the models admits algebraic locality and
-            not geometrical locality. It is therefore natural to ask what the
-            complexity is for interaction strengths of the form, $J_{ij} = |i -
-            j|^{-\alpha}$.
-          </li>
-          <li>
-            The <span class="cm-sans-serif">BPP</span> algorithm presented by
-            Bravyi <a href="references.html#Bra15">[Bra15]</a> for calculating
-            the partition function of the ferromagnetic TIM is not practical. Is
-            there an improved version that can offer practicality?
-          </li>
-          <li>
-            The advent of guided local Hamiltonian instances begs the question
-            as to whether similar results can be found for the likes of the
-            Fermi&ndash;Hubbard, Bose&ndash;Hubbard, and Electronic Structure
-            Hamiltonian.
-          </li>
-          <li>
-            Are hybrid interaction systems of interest and can their complexity
-            also be defined?
-          </li>
-          <li>
-            What is the complete impact of guiding states on the complexity of
-            local Hamiltonians?
-          </li>
-          <li>
-            Can a robust framework of local Hamiltonians with restricted ground
-            states be defined?
-            <div class="text-body-secondary">
-              Guiding states have been proposed that have a semi&ndash;classical
-              strucutre. Recently, local Hamiltonians with succinct ground
-              states have been proposed. Furthermore, finding extremal product
-              states for local Hamiltonians has been studied. Is there a better
-              framework with which we can discuss these ideas and find possible
-              links?
-            </div>
-          </li>
-          <li>
-            What alternate ideas exist for circuit&ndash;to&ndash;Hamiltonian
-            constructions?
-            <div class="text-body-secondary">
-              Are there good constructions without the need for a clock?
-              Furthermore, are there constructions that are more physically
-              motivated?
-            </div>
-          </li>
-          <li>
-            Is it <span class="cm-sans-serif">#P</span>-hard to approximate
-            partition functions at real temperature?
-          </li>
+          <li>Is it <span class="cm-sans-serif">#P</span>-hard to approximate partition functions at real temperature?</li>
         </ul>
       </main>
     </div>
