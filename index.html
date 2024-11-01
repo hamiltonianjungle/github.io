@@ -1,253 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>The Hamiltonian Jungle</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="A comprehensive list of known Hamiltonian complexity results." />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="media/style/default.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato" />
-    <link rel="icon" href="media/graphics/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="icon" href="media/graphics/favicon.ico"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="media/scripts/theme.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>
-      MathJax = { tex: { inlineMath: [["$", "$"]] } };
-    </script>
+    <script>MathJax = { tex: { inlineMath: [["$", "$"]] } };</script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MMS1QCMRED"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag("config", "G-MMS1QCMRED");
+    gtag('config', 'G-MMS1QCMRED');
     </script>
-  </head>
+</head>
 
-  <body>
+<body>
     <nav class="navbar navbar-expand-lg sticky-top border-bottom">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16" class="d-inline-block align-text-top">
-            <path d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
-          </svg>
-          <span>The Hamiltonian Jungle</span>
-        </a>
-        <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16"
+                    class="d-inline-block align-text-top">
+                    <path
+                        d="M5 2V0H0v5h2v6H0v5h5v-2h6v2h5v-5h-2V5h2V0h-5v2H5zm6 1v2h2v6h-2v2H5v-2H3V5h2V3h6zm1-2h3v3h-3V1zm3 11v3h-3v-3h3zM4 15H1v-3h3v3zM1 4V1h3v3H1z" />
+                </svg>
+                <span>The Hamiltonian Jungle</span>
+            </a>
+            <button class="navbar-toggler p-0 border-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
     </nav>
     <div class="d-flex">
-      <div class="sidebar bg-body-tertiary border-end">
-        <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true" aria-labelledby="sidebar">
-          <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
-            <div class="container p-0">
-              <ul class="nav flex-column">
-                <li>
-                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models" aria-expanded="false">Models</a>
-                </li>
-                <ul class="collapse p-0" id="models">
-                  <li>
-                    <a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="commuting.html">Commuting</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a>
-                  </li>
-                  <li><a class="nav-link" href="general.html">General</a></li>
-                  <li>
-                    <a class="nav-link" href="general-local.html">General Local</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="heisenberg.html">Heisenberg</a>
-                  </li>
-                  <li><a class="nav-link" href="ising.html">Ising</a></li>
-                  <li><a class="nav-link" href="qudit.html">Qudit</a></li>
-                  <li>
-                    <a class="nav-link" href="stoquastic.html">Stoquastic</a>
-                  </li>
-                </ul>
-                <li>
-                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques" aria-expanded="false">Techniques</a>
-                </li>
-                <ul class="collapse p-0" id="techniques">
-                  <li>
-                    <a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a>
-                  </li>
-                  <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
-                  <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
-                </ul>
-                <li>
-                  <a class="nav-link" href="supplementary.html">Supplementary</a>
-                </li>
-                <li><a class="nav-link" href="glossary.html">Glossary</a></li>
-                <li>
-                  <a class="nav-link" href="references.html">References</a>
-                </li>
-                <li>
-                  <a class="nav-link" href="open-problems.html">Open Problems</a>
-                </li>
-              </ul>
-              <hr class="m-0 border-top bs-border-color opacity-100" />
-              <ul class="nav flex-column">
-                <li><a class="nav-link" href="about.html">About</a></li>
-                <li><a class="nav-link" href="contact.html">Contact</a></li>
-              </ul>
-              <hr class="m-0 border-top bs-border-color opacity-100" />
-              <ul class="nav flex-column">
-                <li>
-                  <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes" aria-expanded="false">Theme</a>
-                </li>
-                <ul class="collapse p-0" id="themes">
-                  <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="light">Light</a>
-                  </li>
-                  <li>
-                    <a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a>
-                  </li>
-                </ul>
-              </ul>
+        <div class="sidebar bg-body-tertiary border-end">
+            <div class="sidebar-menu offcanvas-lg offcanvas-start sticky-lg-top" id="sidebar" data-bs-scroll="true"
+                aria-labelledby="sidebar">
+                <div class="sidebar-offcanvas offcanvas-body p-0 bg-body-tertiary">
+                    <div class="container p-0">
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#models"
+                                    aria-expanded="false">Models</a></li>
+                            <ul class="collapse p-0" id="models">
+                                <li><a class="nav-link" href="2-local-pauli.html">2&ndash;Local Pauli</a></li>
+                                <li><a class="nav-link" href="bose-hubbard.html">Bose&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="commuting.html">Commuting</a></li>
+                                <li><a class="nav-link" href="fermi-hubbard.html">Fermi&ndash;Hubbard</a></li>
+                                <li><a class="nav-link" href="general.html">General</a></li>
+                                <li><a class="nav-link" href="general-local.html">General Local</a></li>
+                                <li><a class="nav-link" href="heisenberg.html">Heisenberg</a></li>
+                                <li><a class="nav-link" href="ising.html">Ising</a></li>
+                                <li><a class="nav-link" href="qudit.html">Qudit</a></li>
+                                <li><a class="nav-link" href="stoquastic.html">Stoquastic</a></li>
+                            </ul>
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#techniques"
+                              aria-expanded="false">Techniques</a></li>
+                            <ul class="collapse p-0" id="techniques">
+                              <li><a class="nav-link" href="cluster-expansions.html">Cluster Expansions</a></li>
+                              <li><a class="nav-link" href="cstar-algebras.html"><span class="cm-sans-serif">C</span><sup>&#42;</sup>&ndash;Algebras</a></li>
+                              <li><a class="nav-link" href="gadgets.html">Gadgets</a></li>
+                              <li><a class="nav-link" href="mcmc.html">MCMC</a></li>
+                          </ul>
+                            <li><a class="nav-link" href="supplementary.html">Supplementary</a></li>
+                            <li><a class="nav-link" href="glossary.html">Glossary</a></li>
+                            <li><a class="nav-link" href="references.html">References</a></li>
+                            <li><a class="nav-link" href="open-problems.html">Open Problems</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="about.html">About</a></li>
+                            <li><a class="nav-link" href="contact.html">Contact</a></li>
+                        </ul>
+                        <hr class="m-0 border-top bs-border-color opacity-100" />
+                        <ul class="nav flex-column">
+                            <li><a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#themes"
+                                    aria-expanded="false">Theme</a></li>
+                            <ul class="collapse p-0" id="themes">
+                                <li><a class="nav-link" href="#" data-bs-theme-value="auto">Auto</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="light">Light</a></li>
+                                <li><a class="nav-link" href="#" data-bs-theme-value="dark">Dark</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <main class="flex-grow w-100 px-4 pb-4">
-        <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
-          <h2>Home</h2>
-        </div>
-        <p>
-          Welcome to the Hamiltonian Jungle &mdash; an online resource for categorising the complexity classifications of various Hamiltonian problems. Please note, this is a work in progress! If you have any suggestions please refer to the
-          <a href="https://hamiltonianjungle.xyz/contact.html">Contact</a> page.
-        </p>
-        <h4>Models</h4>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="2-local-pauli.html">
-                  <div class="card-body">
-                    <h6 class="card-title">2&ndash;Local Pauli</h6>
+        <main class="flex-grow w-100 px-4 pb-4">
+            <div class="d-flex pt-3 pb-2 mb-3 border-bottom">
+              <h2>Home</h2>
+            </div>
+            <p>
+              Welcome to the Hamiltonian Jungle &mdash; an online resource for categorising the complexity
+              classifications of various Hamiltonian problems.
+              Please note, this is a work in progress!
+              If you have any suggestions please refer to the <a href="https://hamiltonianjungle.xyz/contact.html">Contact</a> page.
+            </p>
+            <h4>Models</h4>
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="2-local-pauli.html">
+                      <div class="card-body">
+                        <h6 class="card-title">2&ndash;Local Pauli</h6>
+                      </div>
+                    </a>
                   </div>
-                </a>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="bose-hubbard.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Bose&ndash;Hubbard</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="commuting.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Commuting</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="fermi-hubbard.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Fermi&ndash;Hubbard</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="general.html">
+                      <div class="card-body">
+                        <h6 class="card-title">General</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="general-local.html">
+                      <div class="card-body">
+                        <h6 class="card-title">General Local</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="heisenberg.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Heisenberg</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="ising.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Ising</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="qudit.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Qudit</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-sm-3 p-2">
+                  <div class="card h-100 d-flex align-items-center justify-content-center">
+                    <a href="stoquastic.html">
+                      <div class="card-body">
+                        <h6 class="card-title">Stoquastic</h6>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="bose-hubbard.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Bose&ndash;Hubbard</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="commuting.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Commuting</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="fermi-hubbard.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Fermi&ndash;Hubbard</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="general.html">
-                  <div class="card-body">
-                    <h6 class="card-title">General</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="general-local.html">
-                  <div class="card-body">
-                    <h6 class="card-title">General Local</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="heisenberg.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Heisenberg</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="ising.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Ising</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="qudit.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Qudit</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-sm-3 p-2">
-              <div class="card h-100 d-flex align-items-center justify-content-center">
-                <a href="stoquastic.html">
-                  <div class="card-body">
-                    <h6 class="card-title">Stoquastic</h6>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr class="border-top bs-border-color opacity-100" />
-        <h4>Reading Guide</h4>
-        <p>For those interested in learning more about Hamiltonian complexity, we recommend the following resources:</p>
-        <ul>
-          <li><a href="references.html#KSV02">[KSV02]</a>: The $5$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#KR03">[KR03]</a>: The $3$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#KKR05">[KKR05]</a>: The $2$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#OT08">[OT08]</a>: The $2$&ndash;local Hamiltonian problem on a square lattice is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#BBT06">[BBT06]</a>: The $2$&ndash;local stoquastic Hamiltonian problem is <span class="cm-sans-serif">StoqMA</span>&ndash;complete</li>
-          <li><a href="references.html#BL08">[BL08]</a>: $2$&ndash;local Hamiltonians with no $Y$ terms are <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#SV09">[SV09]</a>: The Fermi&ndash;Hubbard Hamiltonian is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
-          <li><a href="references.html#BH16">[BH16]</a>: The complexity of the transverse field Ising model</li>
-          <li><a href="references.html#CM16">[CM16]</a>: The complexity classification of local Hamiltonians</li>
-          <li><a href="references.html#PM15">[PM15]</a>: The complexity classification of antiferromagnetic local Hamiltonians</li>
-          <li><a href="references.html#MM24">[MM24]</a>: Algorithmic Cluster Expansions for Quantum Problems</li>
-        </ul>
-      </main>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>Reading Guide</h4>
+            <p>
+              For those interested in learning more about Hamiltonian complexity, we recommend the following resources:
+              <ul>
+                <li><a href="references.html#KSV02">[KSV02]</a>: The $5$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#KR03">[KR03]</a>: The $3$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#KKR05">[KKR05]</a>: The $2$&ndash;local Hamiltonian problem is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#OT08">[OT08]</a>: The $2$&ndash;local Hamiltonian problem on a square lattice is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#BBT06">[BBT06]</a>: The $2$&ndash;local stoquastic Hamiltonian problem is <span class="cm-sans-serif">StoqMA</span>&ndash;complete</li>
+                <li><a href="references.html#BL08">[BL08]</a>: $2$&ndash;local Hamiltonians with no $Y$ terms are <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#SV09">[SV09]</a>: The Fermi&ndash;Hubbard Hamiltonian is <span class="cm-sans-serif">QMA</span>&ndash;complete</li>
+                <li><a href="references.html#BH16">[BH16]</a>: The complexity of the transverse field Ising model</li>
+                <li><a href="references.html#CM16">[CM16]</a>: The complexity classification of local Hamiltonians</li>
+                <li><a href="references.html#PM15">[PM15]</a>: The complexity classification of antiferromagnetic local Hamiltonians</li>
+                <li><a href="references.html#MM24">[MM24]</a>: Algorithmic Cluster Expansions for Quantum Problems</li>
+              </ul>
+            </p>
+            <hr class="border-top bs-border-color opacity-100" />
+            <h4>New Paper!</h4>
+            <p>
+              We have a new paper looking at the complexity of stoquastic local Hamiltonians on square lattices.
+              This will soon be available on the <a href="https://arxiv.org">arXiv</a>.
+            </p>
+            <a href="media/files/main.pdf" download="main.pdf">
+              <button type="button" class="btn btn-outline-success">Download PDF</button>
+            </a>
+          </main>
     </div>
-  </body>
+</body>
 </html>
