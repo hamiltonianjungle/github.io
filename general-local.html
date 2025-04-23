@@ -544,6 +544,311 @@
             </ul>
           </div>
         </div>
+        <!-- Item LCLES-2LH-001 --><!-- Item LCLES-2LH-001 --><!-- Item LCLES-2LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: LCLES-2LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> $2$-local Hamiltonian
+            $$H = \sum_j h_j$$
+          </div>
+          <div><strong>Problem:</strong> Low Complexity Low Energy States</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> QCMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href='references.html#Chen19'>[Chen19]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$2$&ndash;local interactions</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item LMTP-2LH-001 --><!-- Item LMTP-2LH-001 --><!-- Item LMTP-2LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: LMTP-2LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> The 2D circuit-to-Hamiltonian $H_C$
+            $$H_C := H_{\mathrm{clock}} + H_{\mathrm{in}} + H_{\mathrm{prop}}$$
+          </div>
+          <div><strong>Problem:</strong> Local minimum under thermal perturbations</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> BQP</span>&ndash;hard</div>
+          <div><strong>Ref:</strong> <a href='references.html#CHPZ23'>[CHPZ23]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>Hamiltonian $H_C$ encodes a polynomial&ndash;size quantum circuit $U_C$ via a modified Kitaev
+                circuit&ndash;to&ndash;Hamiltonian construction on a 2D lattice with $n+T$ qubits</li>
+              <li>$T = \mathrm{poly}(n)$ gates; $H_{\mathrm{clock}}, H_{\mathrm{in}}, H_{\mathrm{prop}}$ defined as in
+                Definition 14</li>
+              <li>Inverse temperature $\beta$ and time scale $\tau$ satisfy $0 \le \beta, \tau \le \mathrm{poly}(n)$</li>
+              <li>$m = \mathrm{poly}(n)$ local jump operators $\{A_a\}$ generate the thermal Lindbladian</li>
+              <li>Observable $O$ is single&ndash;qubit with $\|O\|_\infty \le 1$</li>
+              <li>$\epsilon = 1/\mathrm{poly}(n)$ for $\epsilon$&ndash;approximate local minimum</li>
+            </ul>
+          </div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Reductions:</strong>
+            <ul>
+              <li>From any polynomial&ndash;time quantum decision problem via circuit&ndash;to&ndash;Hamiltonian</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item FEP-2LH-001 --><!-- Item FEP-2LH-001 --><!-- Item FEP-2LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: FEP-2LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> Dense 2-local Hamiltonian
+            $$H = \sum_{i\lt j} H_{ij}$$ </div>
+              <div><strong>Problem:</strong> Free energy approximation</div>
+              <div><strong>Complexity:</strong><span class='cm-sans-serif'> P</span>TAS</div>
+              <div><strong>Ref:</strong> <a href='references.html#BCGW23'>[BCGW23]</a></div>
+              <hr class='border-top bs-border-color opacity-100' />
+              <div>
+                <strong>Conditionals:</strong>
+                <ul>
+                  <li>H is $\Delta$&ndash;dense: $||H||_{\max} \leq \frac{1}{\Delta n^2}\sum ||H_{ij}||$</li>
+                  <li>Inverse temperature $\beta$</li>
+                  <li>Precision parameter $\varepsilon \in (0,1)$</li>
+                  <li>$n \ge \varepsilon^{&ndash;3}\Delta^{&ndash;2}$</li>
+                </ul>
+              </div>
+              <hr class='border-top bs-border-color opacity-100' />
+              <div>
+                <strong>Techniques:</strong>
+                <ul>
+                  <li>Convex relaxation</li>
+                  <li>Variational characterization</li>
+                  <li>Quantum rounding map</li>
+                </ul>
+              </div>
+          </div>
+          <!-- Item PLH-2LH-001 --><!-- Item PLH-2LH-001 --><!-- Item PLH-2LH-001 -->
+          <div class='alert alert-light'>
+            <small class='badge float-end text-body-secondary fw-normal py-0'>Key: PLH-2LH-001</small>
+            <div>
+              <strong>Hamiltonian:</strong> The Pinned 2-Local Hamiltonian
+              $$H = \sum_{j=1}^m H_j$$
+            </div>
+            <div><strong>Problem:</strong> Pinned Local Hamiltonian</div>
+            <div><strong>Complexity:</strong><span class='cm-sans-serif'> QMA</span>&ndash;complete</div>
+            <div><strong>Ref:</strong> <a href='references.html#NHES20'>[NHES20]</a></div>
+            <hr class='border-top bs-border-color opacity-100' />
+            <div>
+              <strong>Conditionals:</strong>
+              <ul>
+                <li>$2$&ndash;local interactions</li>
+                <li>$|\phi\rangle$ is a fixed state over $p < n$ qubits</li>
+              </ul>
+            </div>
+          </div>
+
+        <!-- Item LCLES-3LH-001 --><!-- Item LCLES-3LH-001 --><!-- Item LCLES-3LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: LCLES-3LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> $3$-local Hamiltonian
+            $$H = \sum_j h_j$$
+          </div>
+          <div><strong>Problem:</strong> Low Complexity Low Energy States</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> QCMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href='references.html#WJB03'>[WJB03]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$3$&ndash;local interactions</li>
+              <li>Gates in the Shor basis</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item GSCON-3LH-001 --><!-- Item GSCON-3LH-001 --><!-- Item GSCON-3LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: GSCON-3LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> $3$-local Hamiltonian
+            $$H = \sum_j h_j$$
+          </div>
+          <div><strong>Problem:</strong> Ground State Connectivity</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> P</span>SPACE&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href='references.html#GS15'>[GS15]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>$3$&ndash;local interactions</li>
+              <li>$1$&ndash;local unitaries</li>
+              <li>$\Delta$ exponentially&ndash;small</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item ULHP-3LH-001 --><!-- Item ULHP-3LH-001 --><!-- Item ULHP-3LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: ULHP-3LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> $3$-Local Hamiltonian
+            $$H = \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Unique Local Hamiltonian</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> UQMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href='references.html#Amb14'>[Amb14]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>Each Hamiltonian term $H_j$ is $3$&ndash;local</li>
+              <li>$m = O(\mathsf{poly}(n))$</li>
+              <li>There is a unique ground state</li>
+            </ul>
+          </div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Techniques:</strong>
+            <ul>
+              <li>Feynman&ndash;Kitaev circuit&ndash;to&ndash;Hamiltonian construction</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Item ELHP-3LH-001 --><!-- Item ELHP-3LH-001 --><!-- Item ELHP-3LH-001 -->
+        <div class='alert alert-light'>
+          <small class='badge float-end text-body-secondary fw-normal py-0'>Key: ELHP-3LH-001</small>
+          <div>
+            <strong>Hamiltonian:</strong> The EXACT $3$-Local Hamiltonian
+            $$H = \displaystyle\sum_{j=1}^m H_j$$
+          </div>
+          <div><strong>Problem:</strong> Exact Local Hamiltonian</div>
+          <div><strong>Complexity:</strong><span class='cm-sans-serif'> DQMA</span>&ndash;complete</div>
+          <div><strong>Ref:</strong> <a href='references.html#Amb14'>[Amb14]</a></div>
+          <hr class='border-top bs-border-color opacity-100' />
+          <div>
+            <strong>Conditionals:</strong>
+            <ul>
+              <li>Each Hamiltonian term $H_j$ is $3$&ndash;local</li>
+              <li>$m = O(\mathsf{poly}(n))$</li>
+            </ul>
+          </div>
+        </div>
+      <!-- Item APXSIM-kLH-001 --><!-- Item APXSIM-kLH-001 --><!-- Item APXSIM-kLH-001 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: APXSIM-kLH-001</small>
+        <div>
+          <strong>Hamiltonian:</strong> $5$-local Hamiltonian $H$ and $1$-lcoal observable $A$
+          $$H = \sum_j h_j$$
+        </div>
+        <div><strong>Problem:</strong> Approximate Simulation</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> P</span>^QMA[log]&ndash;complete</div>
+        <div><strong>Ref:</strong> <a href='references.html#GY19'>[GY19]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>$5$&ndash;local Hamiltonian interactions</li>
+            <li>$1$&ndash;local observable $A$</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Item APXCORR-kLH-001 --><!-- Item APXCORR-kLH-001 --><!-- Item APXCORR-kLH-001 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: APXCORR-kLH-001</small>
+        <div>
+          <strong>Hamiltonian:</strong> $5$-local Hamiltonian $H$ and a pair of $1$-local observables $A$ and $B$
+          $$H = \sum_j h_j$$
+        </div>
+        <div><strong>Problem:</strong> Approximate Correlation</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> P</span><sup>QMA[log]</sup>&ndash;complete</div>
+        <div><strong>Ref:</strong> <a href='references.html#GY19'>[GY19]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>$5$&ndash;local Hamiltonian interactions</li>
+            <li>$1$&ndash;local observables $A$ and $B$</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Item GSCON-kLH-001 --><!-- Item GSCON-kLH-001 --><!-- Item GSCON-kLH-001 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: GSCON-kLH-001</small>
+        <div>
+          <strong>Hamiltonian:</strong> $5$-local Hamiltonian
+          $$H = \sum_j h_j$$
+        </div>
+        <div><strong>Problem:</strong> Ground State Connectivity</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> QCMA</span>&ndash;complete</div>
+        <div><strong>Ref:</strong> <a href='references.html#GS15'>[GS15]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>$5$&ndash;local interactions</li>
+            <li>$2$&ndash;local unitaries</li>
+            <li>$\Delta$ polynomially&ndash;small</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Item GSCON-kLH-101 --><!-- Item GSCON-kLH-101 --><!-- Item GSCON-kLH-101 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: GSCON-kLH-101</small>
+        <div>
+          <strong>Hamiltonian:</strong> $5$-local Hamiltonian
+          $$H = \sum_j h_j$$
+        </div>
+        <div><strong>Problem:</strong> Succinct Ground State Connectivity</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> NEXP</span>&ndash;complete</div>
+        <div><strong>Ref:</strong> <a href='references.html#GS15'>[GS15]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>$5$&ndash;local interactions</li>
+            <li>$1$&ndash;local unitaries</li>
+            <li>$\Delta$ exponentially&ndash;small</li>
+            <li>$H$ on exponentially many qubits</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Item CGSCON-kLH-001 --><!-- Item CGSCON-kLH-001 --><!-- Item CGSCON-kLH-001 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: CGSCON-kLH-001</small>
+        <div>
+          <strong>Hamiltonian:</strong> $21$-local Hamiltonian
+          $$H = \sum_j h_j$$
+        </div>
+        <div><strong>Problem:</strong> Commuting Ground State Connectivity</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> QCMA</span>&ndash;complete</div>
+        <div><strong>Ref:</strong> <a href='references.html#GMV17'>[GMV17]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>$21$&ndash;local interactions</li>
+            <li>Commuting interactions</li>
+            <li>$2$&ndash;local unitaries</li>
+            <li>$\Delta$ is polynomially&ndash;small</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Item SG-kLH-001 --><!-- Item SG-kLH-001 --><!-- Item SG-kLH-001 -->
+      <div class='alert alert-light'>
+        <small class='badge float-end text-body-secondary fw-normal py-0'>Key: SG-kLH-001</small>
+        <div>
+          <strong>Hamiltonian:</strong> $k$-Local Hamiltonian
+          $$H = \displaystyle\sum_{j=1}^m H_j$$
+        </div>
+        <div><strong>Problem:</strong> Spectral Gap</div>
+        <div><strong>Complexity:</strong><span class='cm-sans-serif'> P</span><sup>QMA[log]</sup></div>
+        <div><strong>Ref:</strong> <a href='references.html#Amb14'>[Amb14]</a></div>
+        <hr class='border-top bs-border-color opacity-100' />
+        <div>
+          <strong>Conditionals:</strong>
+          <ul>
+            <li>Each Hamiltonian term $H_j$ is $k$&ndash;local</li>
+            <li>$m = O(\mathsf{poly}(n))$</li>
+            <li>$\gamma \leq \frac{1}{\mathsf{poly}(n)}$ or $\gamma \geq \frac{2}{\mathsf{poly}(n)}$</li>
+          </ul>
+        </div>
+      </div>
+
       </main>
     </div>
   </body>
